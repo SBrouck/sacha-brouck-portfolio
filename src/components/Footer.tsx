@@ -65,10 +65,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </button>
           </div>
           
-          <div className="text-sm text-gray-500 flex items-center">
-            &copy; {new Date().getFullYear()} Sacha Brouck
-            <span className="mx-2 text-gray-300">|</span>
-            <span className="text-gray-400 text-xs">Made with Lovable</span>
+          <div className="text-center w-full md:w-auto mt-6 md:mt-0">
+            <p className="font-serif text-sm text-gray-500">
+              © {new Date().getFullYear()} Sacha Brouck · Made with Parisian Inspiration
+            </p>
           </div>
         </div>
       </div>

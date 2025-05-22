@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Github, Linkedin } from 'lucide-react';
 
 interface HeaderProps {
   className?: string;
@@ -58,6 +59,26 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         
         <div className="hidden md:flex items-center space-x-8">
           <NavLinks scrollToSection={scrollToSection} />
+          <div className="flex space-x-4 items-center">
+            <a 
+              href="https://github.com/SBrouck" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-700 hover:text-terracotta transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/sacha-brouck/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-terracotta transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
         </div>
         
         <button 
@@ -122,6 +143,28 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           >
             Contact
           </button>
+          <div className="flex space-x-4 pt-4">
+            <a 
+              href="https://github.com/SBrouck" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-terracotta transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} /> <span className="ml-2">GitHub</span>
+            </a>
+          </div>
+          <div className="flex space-x-4">
+            <a 
+              href="https://www.linkedin.com/in/sacha-brouck/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-terracotta transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} /> <span className="ml-2">LinkedIn</span>
+            </a>
+          </div>
         </nav>
       </div>
     </header>

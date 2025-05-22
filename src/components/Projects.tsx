@@ -3,6 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import FadeIn from './animations/FadeIn';
+import { Github } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -12,16 +13,28 @@ interface ProjectCardProps {
   title: string;
   tools: string;
   description: string;
+  githubUrl?: string;
   delay?: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, tools, description, delay = 0 }) => (
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, tools, description, githubUrl, delay = 0 }) => (
   <FadeIn delay={delay}>
     <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow">
       <CardContent className="p-6">
         <h3 className="text-xl font-medium mb-2 font-playfair">{title}</h3>
         <p className="text-sm text-terracotta mb-3">{tools}</p>
-        <p className="text-gray-600">{description}</p>
+        <p className="text-gray-600 mb-4">{description}</p>
+        {githubUrl && (
+          <a 
+            href={githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
+          >
+            <Github size={16} />
+            <span>View on GitHub</span>
+          </a>
+        )}
       </CardContent>
     </Card>
   </FadeIn>
@@ -35,12 +48,14 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {
           title: "Construction Permits Forecasting (Chicago)",
           tools: "Python, XGBoost, Prophet",
-          description: "Built time-series models to predict monthly construction activity; <5% MAE."
+          description: "Built time-series models to predict monthly construction activity; <5% MAE.",
+          githubUrl: "https://github.com/SBrouck/chicago-construction-forecast"
         },
         {
           title: "Seattle Housing Price Prediction",
           tools: "scikit-learn, regression, visualization",
-          description: "Trained models to predict property value using listing + location features."
+          description: "Trained models to predict property value using listing + location features.",
+          githubUrl: "https://github.com/SBrouck/seattle-housing-prediction"
         }
       ]
     },
@@ -50,7 +65,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {
           title: "Real Estate Deal Screener",
           tools: "Python, Email Parser, Regex, Excel",
-          description: "Automatically extracted and filtered acquisition opportunities from broker emails."
+          description: "Automatically extracted and filtered acquisition opportunities from broker emails.",
+          githubUrl: "https://github.com/SBrouck/deal-screener-pipeline"
         },
         {
           title: "Off-Market Watcher (in progress)",
@@ -65,12 +81,14 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {
           title: "Power BI Portfolio Dashboard",
           tools: "Power BI, SQL",
-          description: "Unified view for board-level KPI tracking across a $200M RE portfolio."
+          description: "Unified view for board-level KPI tracking across a $200M RE portfolio.",
+          githubUrl: "https://github.com/SBrouck/real-estate-powerbi-dashboard"
         },
         {
           title: "Streamlit Real Estate KPIs",
           tools: "Streamlit, pandas",
-          description: "Web-based dashboard inspired by my work at Mantu."
+          description: "Web-based dashboard inspired by my work at Mantu.",
+          githubUrl: "https://github.com/SBrouck/streamlit-re-kpis"
         }
       ]
     }
@@ -106,6 +124,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   title={project.title}
                   tools={project.tools}
                   description={project.description}
+                  githubUrl={project.githubUrl}
                   delay={200 + projIndex * 50}
                 />
               ))}

@@ -2,6 +2,13 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 
 interface KurautoJourneyProps {
   className?: string;
@@ -16,6 +23,21 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
     "Represented the company at VivaTech & Go Entrepreneur"
   ];
 
+  const images = [
+    {
+      src: "/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png",
+      caption: "Kurauto founding team",
+    },
+    {
+      src: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
+      caption: "Product showcase",
+    },
+    {
+      src: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
+      caption: "Partnership meeting",
+    }
+  ];
+
   return (
     <section id="kurauto" className={cn('py-20 md:py-32 bg-white', className)}>
       <div className="container mx-auto px-6 md:px-12">
@@ -26,12 +48,33 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn delay={100}>
-              <div className="relative h-[400px] w-full rounded-sm overflow-hidden">
-                <img 
-                  src="/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
-                  alt="Kurauto startup journey"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-full mb-8">
+                <Carousel className="w-full max-w-full">
+                  <CarouselContent>
+                    {images.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+                            <img 
+                              src={image.src}
+                              alt={image.caption}
+                              className="w-full aspect-[4/3] object-cover"
+                            />
+                            {image.caption && (
+                              <div className="p-3 text-center text-sm text-gray-600">
+                                {image.caption}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex items-center justify-center gap-2 mt-4">
+                    <CarouselPrevious className="relative inset-auto h-8 w-8 rounded-full" />
+                    <CarouselNext className="relative inset-auto h-8 w-8 rounded-full" />
+                  </div>
+                </Carousel>
               </div>
             </FadeIn>
             

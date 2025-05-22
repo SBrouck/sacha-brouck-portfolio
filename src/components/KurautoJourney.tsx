@@ -25,16 +25,20 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
 
   const images = [
     {
-      src: "/lovable-uploads/47f9a1d0-4458-400a-8fc0-79adf093cf18.png",
-      caption: "Kurauto founding team",
+      src: "/lovable-uploads/5753c967-9494-46bf-9064-d690f8040bab.png",
+      caption: "Kurauto service in action",
     },
     {
-      src: "/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png",
-      caption: "Product showcase",
+      src: "/lovable-uploads/641c98fb-c1b7-4649-9de3-474b82db27c6.png",
+      caption: "Mobile service in Paris",
     },
     {
-      src: "/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png",
-      caption: "Partnership meeting",
+      src: "/lovable-uploads/06af1053-9676-4dd2-aca3-2fcb20b1e5a7.png",
+      caption: "Premium car detailing",
+    },
+    {
+      src: "/lovable-uploads/a3d37439-d950-45c7-aded-69b2d76f7765.png",
+      caption: "Luxury vehicle care",
     }
   ];
 

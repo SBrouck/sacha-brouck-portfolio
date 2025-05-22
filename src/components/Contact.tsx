@@ -5,18 +5,22 @@ import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, PhoneCall, Database } from 'lucide-react';
+import { Separator } from './ui/separator';
+import { useToast } from '@/hooks/use-toast';
 
 interface ContactProps {
   className?: string;
 }
 
 const Contact: React.FC<ContactProps> = ({ className }) => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,13 +30,73 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real app, you would send this data to a server
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      // In a real implementation, this would send an email
+      // For now we'll simulate a successful submission
+      console.log('Form submitted to sachabrou@gmail.com:', formData);
+      
+      // Show success message
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out! I'll get back to you shortly.",
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Your message couldn't be sent. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  // Contact channels data
+  const contactChannels = [
+    {
+      icon: <PhoneCall />,
+      label: "WhatsApp",
+      href: "https://wa.me/33628926140",
+      value: "+33 6 28 92 61 40"
+    },
+    {
+      icon: <Mail />,
+      label: "Email (UW)",
+      href: "mailto:sbrouck@uw.edu",
+      value: "sbrouck@uw.edu"
+    },
+    {
+      icon: <Mail />,
+      label: "Email (Personal)",
+      href: "mailto:sachabrou@gmail.com",
+      value: "sachabrou@gmail.com"
+    },
+    {
+      icon: <Github />,
+      label: "GitHub",
+      href: "https://github.com/SBrouck",
+      value: "github.com/SBrouck"
+    },
+    {
+      icon: <Linkedin />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/sacha-brouck",
+      value: "linkedin.com/in/sacha-brouck"
+    },
+    {
+      icon: <Database />,
+      label: "DataCamp",
+      href: "https://www.datacamp.com/portfolio/sachabrouck",
+      value: "datacamp.com/portfolio/sachabrouck"
+    }
+  ];
 
   return (
     <section id="contact" className={cn('py-20 md:py-32 bg-gray-50', className)}>
@@ -88,41 +152,36 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
               <Button 
                 type="submit"
                 className="w-full md:w-auto bg-terracotta hover:bg-navy transition-colors rounded-none py-6"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </FadeIn>
           
           <FadeIn delay={150}>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-700 hover:text-terracotta transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-                <span>LinkedIn</span>
-              </a>
+            <div className="border-t border-gray-200 pt-8 mt-8">
+              <h3 className="text-lg font-medium text-gray-800 mb-6">Additional Contact Channels</h3>
               
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-700 hover:text-terracotta transition-colors"
-              >
-                <Github className="w-5 h-5" />
-                <span>GitHub</span>
-              </a>
-              
-              <a 
-                href="mailto:contact@example.com" 
-                className="flex items-center gap-2 text-gray-700 hover:text-terracotta transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-                <span>contact@example.com</span>
-              </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {contactChannels.map((channel, index) => (
+                  <a 
+                    key={index}
+                    href={channel.href}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 transition-colors hover:bg-gray-100 rounded-md group"
+                  >
+                    <span className="text-gray-500 group-hover:text-terracotta transition-colors">
+                      {channel.icon}
+                    </span>
+                    <div>
+                      <p className="text-sm font-medium text-gray-700">{channel.label}</p>
+                      <p className="text-xs text-gray-500 group-hover:underline">{channel.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>

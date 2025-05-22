@@ -1,6 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { NavLink } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;
@@ -34,6 +34,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         });
       }
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -46,13 +47,14 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         className
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <NavLink 
-          to="/" 
-          className="text-xl font-serif font-medium tracking-tight transition-opacity hover:opacity-80"
+      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+        <a 
+          href="#" 
+          onClick={() => scrollToSection('home')}
+          className="text-xl font-playfair font-medium tracking-tight transition-opacity hover:opacity-80 text-gray-900"
         >
-          Orangery Ventures
-        </NavLink>
+          Sacha Brouck
+        </a>
         
         <div className="hidden md:flex items-center space-x-8">
           <NavLinks scrollToSection={scrollToSection} />
@@ -67,9 +69,9 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             "block w-6 transition-all duration-300",
             isMobileMenuOpen ? "opacity-0" : "opacity-100"
           )}>
-            <span className="block w-6 h-0.5 bg-foreground mb-1.5" />
-            <span className="block w-6 h-0.5 bg-foreground mb-1.5" />
-            <span className="block w-4 h-0.5 bg-foreground" />
+            <span className="block w-6 h-0.5 bg-gray-900 mb-1.5" />
+            <span className="block w-6 h-0.5 bg-gray-900 mb-1.5" />
+            <span className="block w-4 h-0.5 bg-gray-900" />
           </span>
         </button>
       </div>
@@ -85,38 +87,40 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           onClick={() => setIsMobileMenuOpen(false)}
           aria-label="Close menu"
         >
-          <span className="block w-6 h-0.5 bg-foreground transform rotate-45 translate-y-0.5" />
-          <span className="block w-6 h-0.5 bg-foreground transform -rotate-45" />
+          <span className="block w-6 h-0.5 bg-gray-900 transform rotate-45 translate-y-0.5" />
+          <span className="block w-6 h-0.5 bg-gray-900 transform -rotate-45" />
         </button>
         
         <nav className="flex flex-col space-y-6 text-lg">
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => cn(
-              "hover:text-orangery-500 transition-colors",
-              isActive && "text-orangery-500 font-semibold"
-            )}
-            onClick={() => setIsMobileMenuOpen(false)}
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('home')}
           >
             Home
-          </NavLink>
-          <button 
-            className="text-left hover:text-orangery-500 transition-colors"
-            onClick={() => {
-              scrollToSection('thesis');
-              setIsMobileMenuOpen(false);
-            }}
-          >
-            Thesis
           </button>
           <button 
-            className="text-left hover:text-orangery-500 transition-colors"
-            onClick={() => {
-              scrollToSection('investment');
-              setIsMobileMenuOpen(false);
-            }}
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('projects')}
           >
-            Investment
+            Projects
+          </button>
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('experience')}
+          >
+            Experience
+          </button>
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('kurauto')}
+          >
+            Kurauto
+          </button>
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('contact')}
+          >
+            Contact
           </button>
         </nav>
       </div>
@@ -131,22 +135,34 @@ interface NavLinksProps {
 const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection }) => (
   <>
     <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
       onClick={() => scrollToSection('home')}
     >
       Home
     </button>
     <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
-      onClick={() => scrollToSection('thesis')}
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
+      onClick={() => scrollToSection('projects')}
     >
-      Thesis
+      Projects
     </button>
     <button 
-      className="text-sm font-medium hover:text-orangery-500 transition-colors"
-      onClick={() => scrollToSection('investment')}
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
+      onClick={() => scrollToSection('experience')}
     >
-      Investment
+      Experience
+    </button>
+    <button 
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
+      onClick={() => scrollToSection('kurauto')}
+    >
+      Kurauto
+    </button>
+    <button 
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
+      onClick={() => scrollToSection('contact')}
+    >
+      Contact
     </button>
   </>
 );

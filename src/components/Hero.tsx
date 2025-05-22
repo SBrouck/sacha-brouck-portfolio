@@ -1,6 +1,9 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import { Button } from './ui/button';
+import { Github, Linkedin } from 'lucide-react';
 
 interface HeroProps {
   className?: string;
@@ -8,31 +11,57 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
-    <section className={cn('relative min-h-screen flex items-center overflow-hidden', className)}>
+    <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
           src="/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png" 
-          alt="Orangery" 
+          alt="Impressionist background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-white/25"></div>
       </div>
       
-      <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 relative z-10 max-w-4xl">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="container mx-auto px-6 md:px-12 py-20 md:py-32 relative z-10 max-w-5xl">
+        <div className="max-w-3xl">
           <FadeIn delay={200}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white leading-tight mb-6">
-              Orangery Ventures
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium tracking-tight text-gray-900 leading-tight mb-6">
+              Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-gray-700">Data & Analytics Professional</span>
             </h1>
           </FadeIn>
           
           <FadeIn delay={300}>
-            <p className="text-lg md:text-xl text-white/90 mb-4">
-              We believe founders with unfair advantages & domain expertise.
+            <p className="text-xl md:text-2xl text-gray-700 font-medium mb-6">
+              Turning data into predictions, automation and business clarity
             </p>
-            <p className="text-lg md:text-xl text-white/90 mb-8">
-              We back diverse teams and overlooked founders. First check, Baltic focus.
+            
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+              I'm a French data analyst and MSBA candidate at the University of Washington – Foster School of Business. 
+              I design and deploy end-to-end data systems that forecast, automate, and drive strategic decisions. 
+              With strong foundations in Python, SQL and BI tools, I translate raw data into real business value — at scale, with clarity.
             </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <Button 
+                className="bg-terracotta hover:bg-navy transition-colors flex items-center gap-2 px-6 py-6 rounded-none"
+                asChild
+              >
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 flex items-center gap-2 px-6 py-6 rounded-none"
+                asChild
+              >
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                </a>
+              </Button>
+            </div>
           </FadeIn>
         </div>
       </div>

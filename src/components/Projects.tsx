@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import FadeIn from './animations/FadeIn';
-import { Github, ExternalLink, Play } from 'lucide-react';
+import { Github, ExternalLink, Play, Linkedin } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -17,6 +17,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   externalUrl?: string;
   demoUrl?: string;
+  linkedinUrl?: string;
   isWip?: boolean;
   isInternal?: boolean;
   delay?: number;
@@ -29,6 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl, 
   externalUrl, 
   demoUrl,
+  linkedinUrl,
   isWip = false,
   isInternal = false,
   delay = 0 
@@ -61,7 +63,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
             >
               <ExternalLink size={16} />
-              <span>View on DataCamp</span>
+              <span>View on Tableau</span>
+            </a>
+          )}
+          
+          {linkedinUrl && (
+            <a 
+              href={linkedinUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
+            >
+              <Linkedin size={16} />
+              <span>View on LinkedIn</span>
             </a>
           )}
           
@@ -98,19 +112,19 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const mlProjects = [
     {
       title: "Construction Permits Forecasting (Chicago)",
-      description: "Forecasted monthly building permits with XGBoost & Prophet, MAE < 5%.",
-      stack: "Python, Prophet, XGBoost",
-      githubUrl: "https://github.com/SBrouck/Chicago-Construction-Permits-Forecasting"
+      description: "Forecasting building permit volumes in Chicago through 2025 using time-series models. Includes feature engineering, benchmarking (XGBoost, Prophet), and accuracy evaluation.",
+      stack: "Python, pandas, XGBoost, Prophet",
+      githubUrl: "https://github.com/SBrouck/chicago-construction-ts-modeling"
     },
     {
       title: "Seattle Housing Price Prediction",
-      description: "Built regression models to predict housing value from listing metadata.",
-      stack: "scikit-learn, matplotlib, pandas",
+      description: "Built regression models to estimate housing prices using property and postal code features. Includes geospatial visualization with Folium.",
+      stack: "Python, pandas, scikit-learn, XGBoost, Folium",
       githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling"
     },
     {
       title: "Real Estate Deal Screener",
-      description: "Parsed acquisition leads from email inbox using custom filters.",
+      description: "Script to parse and extract off-market real estate leads from broker emails.",
       stack: "Python, Regex, Gmail API",
       githubUrl: "https://github.com/SBrouck/RealEstate-Deal-Screener"
     }
@@ -118,34 +132,34 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   const analyticsProjects = [
     {
-      title: "Real Estate Dashboard – Leasing & KPIs (Power BI)",
-      description: "Built leasing & risk visualizer dashboard from office portfolio data.",
-      stack: "Power BI",
+      title: "Real Estate Dashboard – Leasing & KPIs",
+      description: "Streamlit application to simulate real estate investments, track leasing performance, and visualize financial KPIs.",
+      stack: "Streamlit, pandas, NumPy",
       githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
       demoUrl: "https://www.youtube.com/watch?v=eujHW_2d-Zg"
     },
     {
-      title: "USA Data Center Dashboard (Tableau)",
-      description: "Interactive Tableau tool based on CBRE's 2024 US markets data.",
-      stack: "Tableau, CSV",
+      title: "USA Data Center Dashboard",
+      description: "Interactive Tableau dashboard analyzing pricing, power, and availability trends across 18 U.S. markets using CBRE data.",
+      stack: "Python, Tableau",
       githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard"
     },
     {
       title: "Île-de-France Policy Analytics",
-      description: "Analyzed citizen survey data for policy feedback across 3000+ responses.",
-      stack: "Python, seaborn, pandas",
-      externalUrl: "https://www.datacamp.com/portfolio/sachabrouck"
+      description: "Survey analysis for a public policy evaluation project. Explored satisfaction levels across education and mobility domains.",
+      stack: "Python, pandas, seaborn",
+      linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/"
     },
     {
       title: "Product Analytics Simulator",
-      description: "Simulated product funnel for exploratory & retention analytics.",
+      description: "Simulated e-commerce customer funnel for behavioral analytics and segmentation.",
       stack: "Python, NumPy",
       githubUrl: "https://github.com/SBrouck/product-analytics-simulator"
     },
     {
-      title: "Airbnb SQL Analytics (Seattle)",
-      description: "Data cleaning and EDA over 100k+ Airbnb listings.",
-      stack: "SQL, PostgreSQL",
+      title: "Airbnb Seattle SQL Analysis",
+      description: "Exploratory analysis of Airbnb listings using SQL. Built queries to investigate pricing trends and occupancy metrics.",
+      stack: "PostgreSQL, SQL",
       githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics"
     }
   ];
@@ -153,14 +167,15 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const automationProjects = [
     {
       title: "Airbnb & Booking.com Revenue Scraper",
-      description: "Built a script to extract revenues from user dashboards into Excel.",
+      description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",
       stack: "Python, Selenium, Openpyxl",
       githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb"
     },
     {
-      title: "Master's Thesis – ML Workflow for RE Sourcing",
-      description: "Building an automated ML pipeline to identify off-market real estate deals using weak signals.",
-      stack: "Python, scikit-learn, NLP, PostgreSQL",
+      title: "Master's Thesis – ML Workflow for Real Estate Sourcing",
+      description: "Designing a machine learning pipeline to identify off-market real estate investment opportunities using weak signals from public data.",
+      stack: "Python, NLP, scikit-learn, PostgreSQL",
+      linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/",
       isWip: true
     }
   ];
@@ -230,6 +245,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       githubUrl={project.githubUrl}
                       externalUrl={project.externalUrl}
                       demoUrl={project.demoUrl}
+                      linkedinUrl={project.linkedinUrl}
                       delay={200 + index * 50}
                     />
                   </CarouselItem>
@@ -258,18 +274,19 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 description={project.description}
                 stack={project.stack}
                 githubUrl={project.githubUrl}
+                linkedinUrl={project.linkedinUrl}
                 isWip={project.isWip}
                 delay={200 + index * 50}
               />
             ))}
             
-            {/* Placeholder card for symmetry */}
+            {/* Placeholder card for visual balance */}
             <FadeIn delay={300}>
               <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow opacity-50">
                 <CardContent className="p-6 flex items-center justify-center h-full">
                   <div className="text-center text-gray-400">
-                    <h3 className="text-xl font-medium mb-2 font-playfair">New Project Coming Soon</h3>
-                    <p className="text-sm">→ Slot reserved for future development</p>
+                    <h3 className="text-xl font-medium mb-2 font-playfair">Reserved for Future Project</h3>
+                    <p className="text-sm">→ This placeholder is intentionally left to maintain visual balance and will be replaced shortly.</p>
                   </div>
                 </CardContent>
               </Card>

@@ -2,8 +2,9 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import FadeIn from './animations/FadeIn';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink, Play } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
@@ -15,6 +16,7 @@ interface ProjectCardProps {
   stack: string;
   githubUrl?: string;
   externalUrl?: string;
+  demoUrl?: string;
   isWip?: boolean;
   isInternal?: boolean;
   delay?: number;
@@ -26,6 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   stack, 
   githubUrl, 
   externalUrl, 
+  demoUrl,
   isWip = false,
   isInternal = false,
   delay = 0 
@@ -37,115 +40,128 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className="text-gray-600 mb-3">{description}</p>
         <p className="text-sm text-terracotta mb-4">Stack: {stack}</p>
         
-        {githubUrl && (
-          <a 
-            href={githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
-          >
-            <Github size={16} />
-            <span>View on GitHub</span>
-          </a>
-        )}
-        
-        {externalUrl && (
-          <a 
-            href={externalUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
-          >
-            <span>View Portfolio</span>
-          </a>
-        )}
-        
-        {isWip && (
-          <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-            <span>In progress</span>
-          </span>
-        )}
-        
-        {isInternal && (
-          <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-            <span>Internal project</span>
-          </span>
-        )}
+        <div className="flex flex-col gap-2">
+          {githubUrl && (
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
+            >
+              <Github size={16} />
+              <span>View on GitHub</span>
+            </a>
+          )}
+          
+          {externalUrl && (
+            <a 
+              href={externalUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-[#1B1F3B] hover:underline transition-all gap-1.5"
+            >
+              <ExternalLink size={16} />
+              <span>View on DataCamp</span>
+            </a>
+          )}
+          
+          {demoUrl && (
+            <a 
+              href={demoUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-terracotta hover:underline transition-all gap-1.5"
+            >
+              <Play size={16} />
+              <span>Watch Demo</span>
+            </a>
+          )}
+          
+          {isWip && (
+            <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
+              <span>→ In progress</span>
+            </span>
+          )}
+          
+          {isInternal && (
+            <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
+              <span>→ Internal project</span>
+            </span>
+          )}
+        </div>
       </CardContent>
     </Card>
   </FadeIn>
 );
 
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
-  const categories = [
+  const mlProjects = [
     {
-      title: "Machine Learning & Predictive Modeling",
-      projects: [
-        {
-          title: "Construction Permits Forecasting (Chicago)",
-          description: "Forecasting monthly permits using XGBoost and Prophet, MAE < 5%.",
-          stack: "Python, XGBoost, Prophet, pandas",
-          githubUrl: "https://github.com/SBrouck/Chicago-Construction-Permits-Forecasting"
-        },
-        {
-          title: "Seattle Housing Price Prediction",
-          description: "Built regression models to estimate housing values using location + features.",
-          stack: "scikit-learn, pandas, matplotlib",
-          githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling"
-        },
-        {
-          title: "Master's Thesis — ML for Real Estate Signals",
-          description: "ML model to identify off-market deals from weak signals (permits, moves…).",
-          stack: "Python, NLP, vectorization, PostgreSQL",
-          isWip: true
-        }
-      ]
+      title: "Construction Permits Forecasting (Chicago)",
+      description: "Forecasted monthly building permits with XGBoost & Prophet, MAE < 5%.",
+      stack: "Python, Prophet, XGBoost",
+      githubUrl: "https://github.com/SBrouck/Chicago-Construction-Permits-Forecasting"
     },
     {
-      title: "Analytics Dashboards & BI",
-      projects: [
-        {
-          title: "Power BI – RE Portfolio KPI Tracking",
-          description: "Designed and deployed board dashboards across a €200M real estate portfolio.",
-          stack: "Power BI, Excel, SQL",
-          isInternal: true
-        },
-        {
-          title: "USA Data Center Tableau Dashboard",
-          description: "Market dashboard visualizing power, pricing, and vacancy trends across 18 markets.",
-          stack: "Tableau, CSV",
-          githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard"
-        },
-        {
-          title: "Conseil Régional Île-de-France — Survey Analytics",
-          description: "Analyzed 3K+ survey entries for mobility & education policy insights.",
-          stack: "pandas, seaborn, Python",
-          externalUrl: "https://www.datacamp.com/portfolio/sachabrouck"
-        }
-      ]
+      title: "Seattle Housing Price Prediction",
+      description: "Built regression models to predict housing value from listing metadata.",
+      stack: "scikit-learn, matplotlib, pandas",
+      githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling"
     },
     {
-      title: "Data Automation & Engineering",
-      projects: [
-        {
-          title: "Airbnb & Booking.com Revenue Scraper",
-          description: "Daily automation to extract and log revenue from user dashboards to Excel.",
-          stack: "Python, Selenium, Openpyxl",
-          githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb"
-        },
-        {
-          title: "Real Estate Deal Screener",
-          description: "Parsed and extracted acquisition leads from broker emails.",
-          stack: "Python, Regex, Gmail API",
-          githubUrl: "https://github.com/SBrouck/RealEstate-Deal-Screener"
-        },
-        {
-          title: "Off-Market Watcher",
-          description: "Web scraper detecting early RE opportunities via local news, permits, signals.",
-          stack: "Scrapy, pandas",
-          isWip: true
-        }
-      ]
+      title: "Real Estate Deal Screener",
+      description: "Parsed acquisition leads from email inbox using custom filters.",
+      stack: "Python, Regex, Gmail API",
+      githubUrl: "https://github.com/SBrouck/RealEstate-Deal-Screener"
+    }
+  ];
+
+  const analyticsProjects = [
+    {
+      title: "Real Estate Dashboard – Leasing & KPIs (Power BI)",
+      description: "Built leasing & risk visualizer dashboard from office portfolio data.",
+      stack: "Power BI",
+      githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
+      demoUrl: "https://www.youtube.com/watch?v=eujHW_2d-Zg"
+    },
+    {
+      title: "USA Data Center Dashboard (Tableau)",
+      description: "Interactive Tableau tool based on CBRE's 2024 US markets data.",
+      stack: "Tableau, CSV",
+      githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard"
+    },
+    {
+      title: "Île-de-France Policy Analytics",
+      description: "Analyzed citizen survey data for policy feedback across 3000+ responses.",
+      stack: "Python, seaborn, pandas",
+      externalUrl: "https://www.datacamp.com/portfolio/sachabrouck"
+    },
+    {
+      title: "Product Analytics Simulator",
+      description: "Simulated product funnel for exploratory & retention analytics.",
+      stack: "Python, NumPy",
+      githubUrl: "https://github.com/SBrouck/product-analytics-simulator"
+    },
+    {
+      title: "Airbnb SQL Analytics (Seattle)",
+      description: "Data cleaning and EDA over 100k+ Airbnb listings.",
+      stack: "SQL, PostgreSQL",
+      githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics"
+    }
+  ];
+
+  const automationProjects = [
+    {
+      title: "Airbnb & Booking.com Revenue Scraper",
+      description: "Built a script to extract revenues from user dashboards into Excel.",
+      stack: "Python, Selenium, Openpyxl",
+      githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb"
+    },
+    {
+      title: "Master's Thesis – ML Workflow for RE Sourcing",
+      description: "Building an automated ML pipeline to identify off-market real estate deals using weak signals.",
+      stack: "Python, scikit-learn, NLP, PostgreSQL",
+      isWip: true
     }
   ];
 
@@ -164,31 +180,102 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </FadeIn>
         </div>
         
-        {categories.map((category, catIndex) => (
-          <div key={category.title} className="mb-16 last:mb-0">
-            <FadeIn delay={150 + catIndex * 50}>
-              <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-                {category.title}
-              </h3>
-            </FadeIn>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              {category.projects.map((project, projIndex) => (
-                <ProjectCard 
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  stack={project.stack}
-                  githubUrl={project.githubUrl}
-                  externalUrl={project.externalUrl}
-                  isWip={project.isWip}
-                  isInternal={project.isInternal}
-                  delay={200 + projIndex * 50}
-                />
-              ))}
-            </div>
+        {/* Machine Learning & Predictive Modeling */}
+        <div className="mb-16">
+          <FadeIn delay={150}>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
+              <span>🤖</span>
+              Machine Learning & Predictive Modeling
+            </h3>
+          </FadeIn>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {mlProjects.map((project, index) => (
+              <ProjectCard 
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                stack={project.stack}
+                githubUrl={project.githubUrl}
+                delay={200 + index * 50}
+              />
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Analytics Dashboards & Business Intelligence - Carousel */}
+        <div className="mb-16">
+          <FadeIn delay={150}>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
+              <span>📊</span>
+              Analytics Dashboards & Business Intelligence
+            </h3>
+          </FadeIn>
+          
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {analyticsProjects.map((project, index) => (
+                  <CarouselItem key={project.title} className="pl-2 md:pl-4 basis-full md:basis-1/3">
+                    <ProjectCard 
+                      title={project.title}
+                      description={project.description}
+                      stack={project.stack}
+                      githubUrl={project.githubUrl}
+                      externalUrl={project.externalUrl}
+                      demoUrl={project.demoUrl}
+                      delay={200 + index * 50}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
+        </div>
+
+        {/* Data Automation & Engineering */}
+        <div className="mb-16 last:mb-0">
+          <FadeIn delay={150}>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
+              <span>⚙️</span>
+              Data Automation & Engineering
+            </h3>
+          </FadeIn>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {automationProjects.map((project, index) => (
+              <ProjectCard 
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                stack={project.stack}
+                githubUrl={project.githubUrl}
+                isWip={project.isWip}
+                delay={200 + index * 50}
+              />
+            ))}
+            
+            {/* Placeholder card for symmetry */}
+            <FadeIn delay={300}>
+              <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow opacity-50">
+                <CardContent className="p-6 flex items-center justify-center h-full">
+                  <div className="text-center text-gray-400">
+                    <h3 className="text-xl font-medium mb-2 font-playfair">New Project Coming Soon</h3>
+                    <p className="text-sm">→ Slot reserved for future development</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </FadeIn>
+          </div>
+        </div>
       </div>
     </section>
   );

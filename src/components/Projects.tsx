@@ -16,6 +16,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   externalUrl?: string;
   isWip?: boolean;
+  isInternal?: boolean;
   delay?: number;
 }
 
@@ -25,7 +26,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   stack, 
   githubUrl, 
   externalUrl, 
-  isWip = false, 
+  isWip = false,
+  isInternal = false,
   delay = 0 
 }) => (
   <FadeIn delay={delay}>
@@ -34,6 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className="text-xl font-medium mb-2 font-playfair">{title}</h3>
         <p className="text-gray-600 mb-3">{description}</p>
         <p className="text-sm text-terracotta mb-4">Stack: {stack}</p>
+        
         {githubUrl && (
           <a 
             href={githubUrl} 
@@ -45,6 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span>View on GitHub</span>
           </a>
         )}
+        
         {externalUrl && (
           <a 
             href={externalUrl} 
@@ -55,14 +59,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span>View Portfolio</span>
           </a>
         )}
+        
         {isWip && (
           <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-            <span>Work in progress</span>
+            <span>In progress</span>
           </span>
         )}
-        {!githubUrl && !externalUrl && !isWip && (
+        
+        {isInternal && (
           <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-            <span>Internal project – not public</span>
+            <span>Internal project</span>
           </span>
         )}
       </CardContent>
@@ -77,42 +83,43 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       projects: [
         {
           title: "Construction Permits Forecasting (Chicago)",
-          description: "Time-series forecasting of construction permit volumes in Chicago using Prophet & XGBoost, with <5% MAE.",
-          stack: "Python, pandas, Prophet, XGBoost",
+          description: "Forecasting monthly permits using XGBoost and Prophet, MAE < 5%.",
+          stack: "Python, XGBoost, Prophet, pandas",
           githubUrl: "https://github.com/SBrouck/Chicago-Construction-Permits-Forecasting"
         },
         {
           title: "Seattle Housing Price Prediction",
-          description: "Regression models to predict property values based on listing and neighborhood features.",
-          stack: "Python, scikit-learn, matplotlib",
+          description: "Built regression models to estimate housing values using location + features.",
+          stack: "scikit-learn, pandas, matplotlib",
           githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling"
         },
         {
-          title: "Master's Thesis – Real Estate ML Deal Sourcing",
-          description: "Ongoing research project applying ML to identify off-market investment opportunities from weak signals.",
-          stack: "NLP, scikit-learn, custom features, PostgreSQL",
+          title: "Master's Thesis — ML for Real Estate Signals",
+          description: "ML model to identify off-market deals from weak signals (permits, moves…).",
+          stack: "Python, NLP, vectorization, PostgreSQL",
           isWip: true
         }
       ]
     },
     {
-      title: "Analytics Dashboards & Business Intelligence",
+      title: "Analytics Dashboards & BI",
       projects: [
         {
-          title: "Power BI – Real Estate Portfolio KPIs",
-          description: "Developed investor-level dashboards tracking cash flow, tenant risk and leasing KPIs for a €200M portfolio.",
-          stack: "Power BI, Excel, SQL"
+          title: "Power BI – RE Portfolio KPI Tracking",
+          description: "Designed and deployed board dashboards across a €200M real estate portfolio.",
+          stack: "Power BI, Excel, SQL",
+          isInternal: true
         },
         {
-          title: "USA Data Center Market Dashboard",
-          description: "Interactive Tableau dashboard from CBRE 2024 data, benchmarking pricing, supply and power access across 18 U.S. markets.",
-          stack: "Tableau, geospatial data",
+          title: "USA Data Center Tableau Dashboard",
+          description: "Market dashboard visualizing power, pricing, and vacancy trends across 18 markets.",
+          stack: "Tableau, CSV",
           githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard"
         },
         {
-          title: "Data Analysis – Conseil Régional d'Île-de-France",
-          description: "Analyzed survey data from 3,000+ respondents to evaluate regional education & mobility policy satisfaction.",
-          stack: "Python, Pandas, DataCamp Workspace",
+          title: "Conseil Régional Île-de-France — Survey Analytics",
+          description: "Analyzed 3K+ survey entries for mobility & education policy insights.",
+          stack: "pandas, seaborn, Python",
           externalUrl: "https://www.datacamp.com/portfolio/sachabrouck"
         }
       ]
@@ -121,21 +128,21 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       title: "Data Automation & Engineering",
       projects: [
         {
-          title: "Airbnb & Booking.com Scraper",
-          description: "Built a daily automation pipeline to extract revenues from Airbnb & Booking dashboards and sync them to Excel.",
-          stack: "Python, Selenium, Pandas, Openpyxl",
+          title: "Airbnb & Booking.com Revenue Scraper",
+          description: "Daily automation to extract and log revenue from user dashboards to Excel.",
+          stack: "Python, Selenium, Openpyxl",
           githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb"
         },
         {
           title: "Real Estate Deal Screener",
-          description: "Automated the parsing of broker emails to extract and structure off-market acquisition opportunities.",
-          stack: "Python, Regex, Gmail parser",
+          description: "Parsed and extracted acquisition leads from broker emails.",
+          stack: "Python, Regex, Gmail API",
           githubUrl: "https://github.com/SBrouck/RealEstate-Deal-Screener"
         },
         {
-          title: "Off-Market Investment Watcher",
-          description: "Developing a real estate alert system scraping weak signals from public data (company moves, permits, news).",
-          stack: "Scrapy, Airflow, Pandas",
+          title: "Off-Market Watcher",
+          description: "Web scraper detecting early RE opportunities via local news, permits, signals.",
+          stack: "Scrapy, pandas",
           isWip: true
         }
       ]
@@ -175,6 +182,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                   githubUrl={project.githubUrl}
                   externalUrl={project.externalUrl}
                   isWip={project.isWip}
+                  isInternal={project.isInternal}
                   delay={200 + projIndex * 50}
                 />
               ))}

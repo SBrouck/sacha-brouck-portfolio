@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 className="bg-terracotta hover:bg-navy transition-colors flex items-center gap-2 px-6 py-6 rounded-none"
                 asChild
               >
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/sacha-brouck/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5" />
                   <span>LinkedIn</span>
                 </a>
@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 flex items-center gap-2 px-6 py-6 rounded-none"
                 asChild
               >
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/SBrouck" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>

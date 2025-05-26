@@ -113,19 +113,19 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Construction Permits Forecasting (Chicago)",
       description: "Forecasting building permit volumes in Chicago through 2025 using time-series models. Includes feature engineering, benchmarking (XGBoost, Prophet), and accuracy evaluation.",
-      stack: "Python, pandas, XGBoost, Prophet",
+      stack: "Python, pandas, XGBoost, Prophet, forecasting, time-series modeling",
       githubUrl: "https://github.com/SBrouck/chicago-construction-ts-modeling"
     },
     {
       title: "Seattle Housing Price Prediction",
       description: "Built regression models to estimate housing prices using property and postal code features. Includes geospatial visualization with Folium.",
-      stack: "Python, pandas, scikit-learn, XGBoost, Folium",
+      stack: "Python, pandas, scikit-learn, XGBoost, Folium, data modeling",
       githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling"
     },
     {
       title: "Real Estate Deal Screener",
       description: "Script to parse and extract off-market real estate leads from broker emails.",
-      stack: "Python, Regex, Gmail API",
+      stack: "Python, Regex, Gmail API, automation workflows",
       githubUrl: "https://github.com/SBrouck/RealEstate-Deal-Screener"
     }
   ];
@@ -134,32 +134,32 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Real Estate Dashboard – Leasing & KPIs",
       description: "Streamlit application to simulate real estate investments, track leasing performance, and visualize financial KPIs.",
-      stack: "Streamlit, pandas, NumPy",
+      stack: "Streamlit, pandas, NumPy, dashboard design, stakeholder reporting",
       githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
       demoUrl: "https://www.youtube.com/watch?v=eujHW_2d-Zg"
     },
     {
       title: "USA Data Center Dashboard",
       description: "Interactive Tableau dashboard analyzing pricing, power, and availability trends across 18 U.S. markets using CBRE data.",
-      stack: "Python, Tableau",
+      stack: "Python, Tableau, dashboard design, data visualization",
       githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard"
     },
     {
       title: "Île-de-France Policy Analytics",
       description: "Survey analysis for a public policy evaluation project. Explored satisfaction levels across education and mobility domains.",
-      stack: "Python, pandas, seaborn",
+      stack: "Python, pandas, seaborn, stakeholder reporting",
       linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/"
     },
     {
       title: "Product Analytics Simulator",
       description: "Simulated e-commerce customer funnel for behavioral analytics and segmentation.",
-      stack: "Python, NumPy",
+      stack: "Python, NumPy, data modeling",
       githubUrl: "https://github.com/SBrouck/product-analytics-simulator"
     },
     {
       title: "Airbnb Seattle SQL Analysis",
       description: "Exploratory analysis of Airbnb listings using SQL. Built queries to investigate pricing trends and occupancy metrics.",
-      stack: "PostgreSQL, SQL",
+      stack: "PostgreSQL, SQL, BigQuery, data analysis",
       githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics"
     }
   ];
@@ -168,13 +168,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Airbnb & Booking.com Revenue Scraper",
       description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",
-      stack: "Python, Selenium, Openpyxl",
+      stack: "Python, Selenium, Openpyxl, web scraping, automation workflows",
       githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb"
     },
     {
       title: "Master's Thesis – ML Workflow for Real Estate Sourcing",
       description: "Designing a machine learning pipeline to identify off-market real estate investment opportunities using weak signals from public data.",
-      stack: "Python, NLP, scikit-learn, PostgreSQL",
+      stack: "Python, NLP, scikit-learn, PostgreSQL, data modeling",
       linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/",
       isWip: true
     }
@@ -198,8 +198,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {/* Machine Learning & Predictive Modeling */}
         <div className="mb-16">
           <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
-              <span>🤖</span>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
               Machine Learning & Predictive Modeling
             </h3>
           </FadeIn>
@@ -221,8 +220,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {/* Analytics Dashboards & Business Intelligence - Carousel */}
         <div className="mb-16">
           <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
-              <span>📊</span>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
               Analytics Dashboards & Business Intelligence
             </h3>
           </FadeIn>
@@ -243,7 +241,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                       description={project.description}
                       stack={project.stack}
                       githubUrl={project.githubUrl}
-                      externalUrl={project.externalUrl}
                       demoUrl={project.demoUrl}
                       linkedinUrl={project.linkedinUrl}
                       delay={200 + index * 50}
@@ -260,8 +257,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         {/* Data Automation & Engineering */}
         <div className="mb-16 last:mb-0">
           <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3 flex items-center gap-2">
-              <span>⚙️</span>
+            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
               Data Automation & Engineering
             </h3>
           </FadeIn>
@@ -286,7 +282,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 <CardContent className="p-6 flex items-center justify-center h-full">
                   <div className="text-center text-gray-400">
                     <h3 className="text-xl font-medium mb-2 font-playfair">Reserved for Future Project</h3>
-                    <p className="text-sm">→ This placeholder is intentionally left to maintain visual balance and will be replaced shortly.</p>
+                    <p className="text-sm">This placeholder is intentionally left to maintain visual balance and will be replaced shortly.</p>
                   </div>
                 </CardContent>
               </Card>

@@ -38,13 +38,24 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ role, company, period, achi
 const Experience: React.FC<ExperienceProps> = ({ className }) => {
   const experiences = [
     {
-      role: "Investment Analyst",
+      role: "Founder & CEO",
+      company: "Kurauto",
+      period: "2022–2024",
+      achievements: [
+        "Built and scaled an eco-friendly car care startup (€100K+ revenue)",
+        "Closed €37,500 pre-seed round with AYOMI, exited at €300K valuation",
+        "Led analytics, ops, growth, partnerships with luxury hotels"
+      ]
+    },
+    {
+      role: "Investment Analyst (Full-time offer received)",
       company: "Mantu / H4 Family Office",
       period: "2025",
       achievements: [
         "Built automated Python tool for email-based deal sourcing (7M+ EUR sourced)",
         "Developed financial models for acquisitions in Lisbon, Madrid, Bogota",
-        "Created Power BI dashboard for board KPI tracking ($200M+ portfolio)"
+        "Created Power BI dashboard for board KPI tracking ($200M+ portfolio)",
+        "Worked on data extraction, normalization, and modeling to support Yardi implementation across the portfolio"
       ]
     },
     {
@@ -54,16 +65,6 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       achievements: [
         "Designed state-wide real estate performance dashboards (Power BI)",
         "Analyzed CRM + NWMLS data with SQL to optimize agent efficiency"
-      ]
-    },
-    {
-      role: "Founder",
-      company: "Kurauto (Exited)",
-      period: "2022–2024",
-      achievements: [
-        "Built and scaled an eco-friendly car care startup (€100K+ revenue)",
-        "Closed €37,500 pre-seed round with AYOMI, exited at €300K valuation",
-        "Led analytics, ops, growth, partnerships with luxury hotels"
       ]
     }
   ];

@@ -9,7 +9,13 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [react()],
-  base: './',
+  base: '/Sacha-Brouck-testportfolio/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: true
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

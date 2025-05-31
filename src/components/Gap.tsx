@@ -89,7 +89,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
             <div className="relative">
               <div className="w-full h-[500px] overflow-hidden">
                 <img 
-                  src="/images/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
+                  src="/Sacha-Brouck-testportfolio/images/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
                   alt="Gap section background" 
                   className="w-full h-full object-cover"
                 />

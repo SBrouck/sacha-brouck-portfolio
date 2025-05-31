@@ -24,19 +24,19 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
 
   const images = [
     {
-      src: "/images/5753c967-9494-46bf-9064-d690f8040bab.png",
+      src: "/Sacha-Brouck-testportfolio/images/5753c967-9494-46bf-9064-d690f8040bab.png",
       alt: "Kurauto Journey 1"
     },
     {
-      src: "/images/641c98fb-c1b7-4649-9de3-474b82db27c6.png",
+      src: "/Sacha-Brouck-testportfolio/images/641c98fb-c1b7-4649-9de3-474b82db27c6.png",
       alt: "Kurauto Journey 2"
     },
     {
-      src: "/images/06af1053-9676-4dd2-aca3-2fcb20b1e5a7.png",
+      src: "/Sacha-Brouck-testportfolio/images/06af1053-9676-4dd2-aca3-2fcb20b1e5a7.png",
       alt: "Kurauto Journey 3"
     },
     {
-      src: "/images/a3d37439-d950-45c7-aded-69b2d76f7765.png",
+      src: "/Sacha-Brouck-testportfolio/images/a3d37439-d950-45c7-aded-69b2d76f7765.png",
       alt: "Kurauto Journey 4"
     }
   ];

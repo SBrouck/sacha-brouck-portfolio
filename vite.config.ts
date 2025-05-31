@@ -9,12 +9,17 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [react()],
-  base: '/Sacha-Brouck-testportfolio/',
+  base: process.env.VITE_BASE_URL || '/Sacha-Brouck-testportfolio/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   resolve: {
     alias: {

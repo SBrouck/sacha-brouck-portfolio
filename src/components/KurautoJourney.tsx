@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -24,6 +28,7 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
 
   const images = [
     {
+<<<<<<< HEAD
       src: "/images/5753c967-9494-46bf-9064-d690f8040bab.png",
       alt: "Kurauto Journey 1"
     },
@@ -38,6 +43,22 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
     {
       src: "/images/a3d37439-d950-45c7-aded-69b2d76f7765.png",
       alt: "Kurauto Journey 4"
+=======
+      src: "/lovable-uploads/5753c967-9494-46bf-9064-d690f8040bab.png",
+      caption: "Kurauto service in action",
+    },
+    {
+      src: "/lovable-uploads/641c98fb-c1b7-4649-9de3-474b82db27c6.png",
+      caption: "Mobile service in Paris",
+    },
+    {
+      src: "/lovable-uploads/06af1053-9676-4dd2-aca3-2fcb20b1e5a7.png",
+      caption: "Premium car detailing",
+    },
+    {
+      src: "/lovable-uploads/a3d37439-d950-45c7-aded-69b2d76f7765.png",
+      caption: "Luxury vehicle care",
+>>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
     }
   ];
 
@@ -60,9 +81,20 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
                           <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
                             <img 
                               src={image.src}
+<<<<<<< HEAD
                               alt={image.alt}
                               className="w-full aspect-[4/3] object-cover"
                             />
+=======
+                              alt={image.caption}
+                              className="w-full aspect-[4/3] object-cover"
+                            />
+                            {image.caption && (
+                              <div className="p-3 text-center text-sm text-gray-600">
+                                {image.caption}
+                              </div>
+                            )}
+>>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
                           </div>
                         </div>
                       </CarouselItem>

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -94,8 +98,13 @@ const Gap: React.FC<GapProps> = ({ className }) => {
             <div className="relative">
               <div className="w-full h-[500px] overflow-hidden">
                 <img 
+<<<<<<< HEAD
                   src="/images/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
                   alt="Gap section background" 
+=======
+                  src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
+                  alt="Beautiful orangery with palm trees and plants" 
+>>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>

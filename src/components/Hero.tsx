@@ -4,6 +4,8 @@ import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
 import { Github, Linkedin } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+import heroBg from '@/assets/images/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png';
+import avatarImage from '@/assets/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png';
 
 interface HeroProps {
   className?: string;
@@ -14,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
-          src="/Sacha-Brouck-testportfolio/images/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png"
+          src={heroBg}
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -26,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <FadeIn delay={200}>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
               <Avatar className="w-[180px] h-[180px] border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
-                <AvatarImage src="/Sacha-Brouck-testportfolio/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png" alt="Sacha Brouck" className="object-cover" />
+                <AvatarImage src={avatarImage} alt="Sacha Brouck" className="object-cover" />
                 <AvatarFallback>SB</AvatarFallback>
               </Avatar>
               

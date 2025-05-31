@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
+import aboutImage from '@/assets/images/47f9a1d0-4458-400a-8fc0-79adf093cf18.png';
 
 interface AboutProps {
   className?: string;
@@ -8,32 +9,42 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ className }) => {
   return (
-    <section id="about" className={cn('py-20 md:py-32 bg-gray-50', className)}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-20 items-start">
-          <FadeIn className="md:col-span-5">
-            <div className="flex flex-col space-y-6">
-              <div>
-                <span className="text-sm md:text-base font-medium text-orangery-500 mb-2 inline-block">About us</span>
-                <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight mb-6">We got started 2025 with a single mission</h2>
+    <section className={cn('py-24 bg-white', className)}>
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-terracotta/10 rounded-lg transform rotate-3"></div>
+                <img 
+                  src={aboutImage}
+                  alt="About Sacha Brouck"
+                  className="relative rounded-lg shadow-lg w-full h-auto"
+                />
               </div>
               
-              <p className="text-lg text-muted-foreground">
-                To bring a fresh take into Baltic venture ecosystem.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                We are founder-driven and embrace diversity. Orangery brings an inclusive take to venture, inviting and inspiring first-time founders to try tech entrepreneurship.
-              </p>
-            </div>
-          </FadeIn>
-          
-          <FadeIn delay={150} className="md:col-span-7">
-            <div className="relative h-[500px] lg:h-[600px] w-full rounded-lg overflow-hidden">
-              <img 
-                src="/Sacha-Brouck-testportfolio/images/47f9a1d0-4458-400a-8fc0-79adf093cf18.png"
-                alt="About section background"
-                className="w-full h-full object-cover"
-              />
+              <div>
+                <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#1B1F3B] mb-6">
+                  About Me
+                </h2>
+                
+                <div className="space-y-4 text-gray-700">
+                  <p>
+                    I'm a data analyst and MSBA candidate at the University of Washington – Foster School of Business. 
+                    My passion lies in transforming complex data into actionable insights that drive business decisions.
+                  </p>
+                  
+                  <p>
+                    With a strong foundation in Python, SQL, and BI tools, I specialize in designing and deploying 
+                    end-to-end data systems that forecast trends, automate processes, and provide strategic clarity.
+                  </p>
+                  
+                  <p>
+                    My approach combines technical expertise with business acumen, ensuring that data solutions 
+                    not only work technically but also deliver real business value at scale.
+                  </p>
+                </div>
+              </div>
             </div>
           </FadeIn>
         </div>

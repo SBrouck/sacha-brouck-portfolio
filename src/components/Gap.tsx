@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -26,16 +22,12 @@ const Gap: React.FC<GapProps> = ({ className }) => {
   
   React.useEffect(() => {
     const interval = setInterval(() => {
-      // Start fading out
       setOpacity(0);
-      
-      // Change message after fade out
       setTimeout(() => {
         setMessageIndex((prev) => (prev + 1) % messages.length);
-        // Start fading in
         setOpacity(1);
       }, 1000);
-    }, 4000); // Total time for each message
+    }, 4000);
     
     return () => clearInterval(interval);
   }, [messages.length]);
@@ -44,7 +36,6 @@ const Gap: React.FC<GapProps> = ({ className }) => {
     e.preventDefault();
     if (email) {
       console.log('Subscribing email:', email);
-      // Here you would typically send this to a backend
       alert(`Thanks for subscribing with ${email}!`);
       setEmail('');
     }
@@ -98,19 +89,13 @@ const Gap: React.FC<GapProps> = ({ className }) => {
             <div className="relative">
               <div className="w-full h-[500px] overflow-hidden">
                 <img 
-<<<<<<< HEAD
                   src="/images/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
                   alt="Gap section background" 
-=======
-                  src="/lovable-uploads/dabbf929-5dd0-4794-a011-fe43bf4b3418.png" 
-                  alt="Beautiful orangery with palm trees and plants" 
->>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>
               </div>
               
-              {/* Centered newsletter box overlaid on the image */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md max-w-md w-full mx-4">
                   <h3 className="text-2xl font-serif mb-6 text-center">Subscribe for Updates</h3>

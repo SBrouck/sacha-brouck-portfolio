@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -18,15 +14,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
-<<<<<<< HEAD
           src="/images/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png"
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"
-=======
-          src="/lovable-uploads/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png" 
-          alt="Impressionist background" 
-          className="w-full h-full object-cover"
->>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
         />
         <div className="absolute inset-0 bg-white/25"></div>
       </div>
@@ -36,11 +26,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <FadeIn delay={200}>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
               <Avatar className="w-[180px] h-[180px] border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
-<<<<<<< HEAD
                 <AvatarImage src="/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png" alt="Sacha Brouck" className="object-cover" />
-=======
-                <AvatarImage src="/lovable-uploads/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png" alt="Sacha Brouck" className="object-cover" />
->>>>>>> f2cf1754b8b2de388d37b486fde77ede5144689d
                 <AvatarFallback>SB</AvatarFallback>
               </Avatar>
               

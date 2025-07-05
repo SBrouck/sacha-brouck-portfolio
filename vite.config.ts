@@ -9,7 +9,7 @@ export default defineConfig({
     port: 8080,
   },
   plugins: [react()],
-  base: process.env.VITE_BASE_URL || '/Sacha-Brouck-testportfolio/',
+  base: process.env.VITE_BASE_URL || '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

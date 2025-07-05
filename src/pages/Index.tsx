@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import KurautoJourney from '@/components/KurautoJourney';
+import Passions from '@/components/Passions';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -44,6 +45,7 @@ const Index = () => {
       <Projects />
       <Experience />
       <KurautoJourney />
+      <Passions />
       <Contact />
       <Footer />
     </main>

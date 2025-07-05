@@ -22,24 +22,7 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
     "Represented the company at VivaTech & Go Entrepreneur"
   ];
 
-  const images = [
-    {
-      src: "/Sacha-Brouck-testportfolio/images/5753c967-9494-46bf-9064-d690f8040bab.png",
-      alt: "Kurauto Journey 1"
-    },
-    {
-      src: "/Sacha-Brouck-testportfolio/images/641c98fb-c1b7-4649-9de3-474b82db27c6.png",
-      alt: "Kurauto Journey 2"
-    },
-    {
-      src: "/Sacha-Brouck-testportfolio/images/06af1053-9676-4dd2-aca3-2fcb20b1e5a7.png",
-      alt: "Kurauto Journey 3"
-    },
-    {
-      src: "/Sacha-Brouck-testportfolio/images/a3d37439-d950-45c7-aded-69b2d76f7765.png",
-      alt: "Kurauto Journey 4"
-    }
-  ];
+  const videoSrc = "/images/Kurauto 30.MP4";
 
   return (
     <section id="kurauto" className={cn('py-20 md:py-32 bg-white', className)}>
@@ -52,27 +35,19 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn delay={100}>
               <div className="relative w-full mb-8">
-                <Carousel className="w-full max-w-full">
-                  <CarouselContent>
-                    {images.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
-                            <img 
-                              src={image.src}
-                              alt={image.alt}
-                              className="w-full aspect-[4/3] object-cover"
-                            />
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <div className="flex items-center justify-center gap-2 mt-4">
-                    <CarouselPrevious className="relative inset-auto h-8 w-8 rounded-full" />
-                    <CarouselNext className="relative inset-auto h-8 w-8 rounded-full" />
-                  </div>
-                </Carousel>
+                <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+                  <video 
+                    src={videoSrc}
+                    className="w-full h-auto max-h-[600px] object-cover"
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                  </video>
+                </div>
               </div>
             </FadeIn>
             

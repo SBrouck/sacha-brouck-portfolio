@@ -26,29 +26,26 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div className="container mx-auto px-6 md:px-12 py-20 md:py-32 relative z-10 max-w-5xl">
         <div className="max-w-3xl">
           <FadeIn delay={200}>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-6">
               <Avatar className="w-[180px] h-[180px] border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
                 <AvatarImage src={avatarImage} alt="Sacha Brouck" className="object-cover" />
                 <AvatarFallback>SB</AvatarFallback>
               </Avatar>
               
               <div className="bg-white/90 rounded-xl p-6 md:p-8 shadow-md flex-1">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-4">
                   Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-[#1B1F3B] font-semibold">Data & Analytics Professional</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-[#3E4A59] font-normal leading-relaxed mb-6">
+                <p className="text-xl md:text-2xl text-[#3E4A59] font-normal leading-relaxed mb-0">
                   Turning data into predictions, automation and business clarity
                 </p>
               </div>
             </div>
             
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-xl shadow-md -z-10"></div>
-              <p className="text-lg text-gray-700 mb-8 max-w-2xl p-6">
-                I'm a French data analyst and MSBA candidate at the University of Washington – Foster School of Business. 
-                I design and deploy end-to-end data systems that forecast, automate, and drive strategic decisions. 
-                With strong foundations in Python, SQL and BI tools, I translate raw data into real business value — at scale, with clarity.
+            <div className="relative bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-6 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                I'm an MSBA candidate at the University of Washington – Foster School of Business with a background in finance, real estate, and analytics. I design data-driven systems that forecast trends, automate insights, and support high-stakes decision-making — turning complex datasets into strategic business value.
               </p>
             </div>
             

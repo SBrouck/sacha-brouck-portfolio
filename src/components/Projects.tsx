@@ -276,17 +276,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
               />
             ))}
             
-            {/* Placeholder card for visual balance */}
-            <FadeIn delay={300}>
-              <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow opacity-50">
-                <CardContent className="p-6 flex items-center justify-center h-full">
-                  <div className="text-center text-gray-400">
-                    <h3 className="text-xl font-medium mb-2 font-playfair">Reserved for Future Project</h3>
-                    <p className="text-sm">This placeholder is intentionally left to maintain visual balance and will be replaced shortly.</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </FadeIn>
+            <ProjectCard 
+              title="GRE Question Answering Model Training Pipeline"
+              description="Automated web scraping pipeline to collect GRE practice questions and answers from multiple sources, enabling the training of a specialized question-answering model for GRE test preparation."
+              stack="Python, Selenium, BeautifulSoup, Transformers, PyTorch, web scraping, NLP, model training"
+              githubUrl="https://github.com/SBrouck/gre-qa-model-training"
+              delay={300}
+            />
           </div>
         </div>
       </div>

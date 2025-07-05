@@ -36,17 +36,16 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
             <FadeIn delay={100}>
               <div className="relative w-full mb-8">
                 <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
-                  <video 
-                    src={videoSrc}
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src="https://www.youtube.com/embed/8eFU9nIxVkU"
+                    title="Kurauto"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     className="w-full h-auto max-h-[600px] object-cover"
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                  </video>
+                  ></iframe>
                 </div>
               </div>
             </FadeIn>

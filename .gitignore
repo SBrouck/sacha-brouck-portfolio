@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large media files
+*.MP4
+*.mp4
+public/images/Kurauto 30.MP4

@@ -22,7 +22,7 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
     "Represented the company at VivaTech & Go Entrepreneur"
   ];
 
-  const videoSrc = "/images/Kurauto 30.MP4";
+  const videoSrc = "/images/Kurauto.MP4";
 
   return (
     <section id="kurauto" className={cn('py-20 md:py-32 bg-white', className)}>

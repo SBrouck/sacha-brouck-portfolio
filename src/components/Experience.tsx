@@ -67,6 +67,17 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
         "Developed a data model to analyze top agent performance and search behavior across Washington, supporting talent identification (first Master's thesis)",
         "Worked directly with the Washington State E&V President, providing business support on agent growth and recruitment"
       ]
+    },
+    {
+      role: "Automation & Data Engineer",
+      company: "MOSAIC",
+      period: "2024/2025",
+      achievements: [
+        "Built GRE strategy engine for France's first graduate school prep company, analyzing student profiles and parsing question types to deliver personalized study plans",
+        "Automated competitive intelligence from Chinese websites via web scraping and screenshot-based monitoring for real-time market tracking",
+        "Created custom email-to-CRM data flow using scripts + n8n, automating lead registration and client onboarding processes",
+        "Increased lead acquisition by 5× for an early-stage startup by automating LinkedIn scraping, prospect tracking, and outreach workflows"
+      ]
     }
   ];
 

@@ -34,17 +34,26 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn delay={100}>
-              <div className="relative w-full mb-8">
-                <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+              <div className="flex justify-center">
+                <div
+                  style={{
+                    width: "320px",
+                    maxWidth: "100vw",
+                    aspectRatio: "9/16",
+                    background: "#000",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+                  }}
+                >
                   <iframe
-                    width="100%"
-                    height="400"
                     src="https://www.youtube.com/embed/8eFU9nIxVkU"
                     title="Kurauto"
-                    frameBorder="0"
+                    width="100%"
+                    height="100%"
+                    style={{ border: "none", width: "100%", height: "100%" }}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="w-full h-auto max-h-[600px] object-cover"
                   ></iframe>
                 </div>
               </div>

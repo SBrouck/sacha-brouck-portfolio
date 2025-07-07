@@ -64,8 +64,8 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       achievements: [
         "Designed state-wide real estate performance dashboards (Power BI)",
         "Analyzed CRM + NWMLS data with SQL to optimize agent efficiency",
-        "Création d'un modèle d'analyse des performances des meilleurs agents de l'État de Washington, permettant de mettre en avant les tendances de recherche de chaque broker et d'accélérer la recherche de talents (dans le cadre de mon premier mémoire)",
-        "Support direct de la Présidente Engel & Völkers de l'État de Washington"
+        "Developed a data model to analyze top agent performance and search behavior across Washington, supporting talent identification (first Master's thesis)",
+        "Worked directly with the Washington State E&V President, providing business support on agent growth and recruitment"
       ]
     }
   ];

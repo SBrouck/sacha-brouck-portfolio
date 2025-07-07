@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -64,7 +63,9 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       period: "2024",
       achievements: [
         "Designed state-wide real estate performance dashboards (Power BI)",
-        "Analyzed CRM + NWMLS data with SQL to optimize agent efficiency"
+        "Analyzed CRM + NWMLS data with SQL to optimize agent efficiency",
+        "Création d'un modèle d'analyse des performances des meilleurs agents de l'État de Washington, permettant de mettre en avant les tendances de recherche de chaque broker et d'accélérer la recherche de talents (dans le cadre de mon premier mémoire)",
+        "Support direct de la Présidente Engel & Völkers de l'État de Washington"
       ]
     }
   ];

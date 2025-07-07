@@ -73,7 +73,7 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       company: "MOSAIC",
       period: "2024/2025",
       achievements: [
-        "Built GRE strategy engine for France's first graduate school prep company, analyzing student profiles and parsing question types to deliver personalized study plans",
+        "Developed a rule-based and statistical model to classify GRE questions and match them with student profiles, powering personalized prep strategies for France's first grad school prep platform",
         "Automated competitive intelligence from Chinese websites via web scraping and screenshot-based monitoring for real-time market tracking",
         "Created custom email-to-CRM data flow using scripts + n8n, automating lead registration and client onboarding processes",
         "Increased lead acquisition by 5× for an early-stage startup by automating LinkedIn scraping, prospect tracking, and outreach workflows"

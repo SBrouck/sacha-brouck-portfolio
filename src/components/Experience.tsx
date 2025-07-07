@@ -37,16 +37,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ role, company, period, achi
 const Experience: React.FC<ExperienceProps> = ({ className }) => {
   const experiences = [
     {
-      role: "Founder & CEO",
-      company: "Kurauto",
-      period: "2022–2024",
-      achievements: [
-        "Built and scaled an eco-friendly car care startup (€100K+ revenue)",
-        "Closed €37,500 pre-seed round with AYOMI, exited at €300K valuation",
-        "Led analytics, ops, growth, partnerships with luxury hotels"
-      ]
-    },
-    {
       role: "Investment Analyst (Full-time offer received)",
       company: "Mantu / H4 Family Office",
       period: "2025",
@@ -55,6 +45,17 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
         "Developed financial models for acquisitions in Lisbon, Madrid, Bogota",
         "Created Power BI dashboard for board KPI tracking ($200M+ portfolio)",
         "Worked on data extraction, normalization, and modeling to support Yardi implementation across the portfolio"
+      ]
+    },
+    {
+      role: "Automation & Data Engineer",
+      company: "MOSAIC",
+      period: "2024/2025",
+      achievements: [
+        "Developed a rule-based and statistical model to classify GRE questions and match them with student profiles, powering personalized prep strategies for France's first grad school prep platform",
+        "Automated competitive intelligence from Chinese websites via web scraping and screenshot-based monitoring for real-time market tracking",
+        "Created custom email-to-CRM data flow using scripts + n8n, automating lead registration and client onboarding processes",
+        "Increased lead acquisition by 5× for an early-stage startup by automating LinkedIn scraping, prospect tracking, and outreach workflows"
       ]
     },
     {
@@ -69,14 +70,13 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       ]
     },
     {
-      role: "Automation & Data Engineer",
-      company: "MOSAIC",
-      period: "2024/2025",
+      role: "Founder & CEO",
+      company: "Kurauto",
+      period: "2022–2024",
       achievements: [
-        "Developed a rule-based and statistical model to classify GRE questions and match them with student profiles, powering personalized prep strategies for France's first grad school prep platform",
-        "Automated competitive intelligence from Chinese websites via web scraping and screenshot-based monitoring for real-time market tracking",
-        "Created custom email-to-CRM data flow using scripts + n8n, automating lead registration and client onboarding processes",
-        "Increased lead acquisition by 5× for an early-stage startup by automating LinkedIn scraping, prospect tracking, and outreach workflows"
+        "Built and scaled an eco-friendly car care startup (€100K+ revenue)",
+        "Closed €37,500 pre-seed round with AYOMI, exited at €300K valuation",
+        "Led analytics, ops, growth, partnerships with luxury hotels"
       ]
     }
   ];

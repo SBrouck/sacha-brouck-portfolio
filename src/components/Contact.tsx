@@ -35,18 +35,31 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
     setIsSubmitting(true);
     
     try {
-      // In a real implementation, this would send an email
-      // For now we'll simulate a successful submission
-      console.log('Form submitted to sachabrou@gmail.com:', formData);
-      
-      // Show success message
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out! I'll get back to you shortly.",
+      // Send email via Formspree
+      const response = await fetch('https://formspree.io/f/manjgqvy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
-      
-      // Reset form
-      setFormData({ name: '', email: '', message: '' });
+
+      if (response.ok) {
+        // Show success message
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out! I'll get back to you shortly.",
+        });
+        
+        // Reset form
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       toast({
         title: "Something went wrong",

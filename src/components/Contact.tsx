@@ -75,7 +75,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
   const contactChannels = [
     {
       icon: <PhoneCall />,
-      label: "Téléphone",
+      label: "Phone",
       href: "tel:+12066832509",
       value: "+1 (206) 683 2509"
     },

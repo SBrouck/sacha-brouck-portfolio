@@ -41,10 +41,10 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       company: "Mantu / H4 Family Office",
       period: "2025",
       achievements: [
-        "Built automated Python tool for email-based deal sourcing (7M+ EUR sourced)",
-        "Developed financial models for acquisitions in Lisbon, Madrid, Bogota",
-        "Created Power BI dashboard for board KPI tracking ($200M+ portfolio)",
-        "Worked on data extraction, normalization, and modeling to support Yardi implementation across the portfolio"
+        "Led full investment process for international acquisitions — from market research and financial due diligence to valuation modeling and investment committee support (Excel, VBA)",
+        "Automated data extraction, normalization and modeling processes to support portfolio management and enable scalable analysis (Python, SQL)",
+        "Designed reporting tools and dashboards for the board, covering KPIs and asset performance across a $200M+ real estate portfolio (Power BI, Streamlit)",
+        "Developed a sourcing tool to detect and score off-market deal opportunities (Python, Selenium, NLP, APIs)"
       ]
     },
     {

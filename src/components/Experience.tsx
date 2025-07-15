@@ -37,7 +37,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ role, company, period, achi
 const Experience: React.FC<ExperienceProps> = ({ className }) => {
   const experiences = [
     {
-      role: "Investment Analyst (Full-time offer received)",
+      role: "Investment Analyst",
       company: "Mantu / H4 Family Office",
       period: "2025",
       achievements: [

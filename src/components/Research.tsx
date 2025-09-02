@@ -59,13 +59,34 @@ const Research = () => {
                       </span>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                      <Button className="bg-terracotta hover:bg-terracotta/90 text-white">
-                        <Download className="w-4 h-4 mr-2" />
-                        Download Paper
+                      <Button 
+                        size="sm"
+                        className="bg-terracotta hover:bg-navy transition-colors flex items-center gap-2"
+                        asChild
+                      >
+                        <a
+                          href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=share_link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Download className="w-4 h-4" />
+                          Download Paper
+                        </a>
                       </Button>
-                      <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
-                        <Presentation className="w-4 h-4 mr-2" />
-                        Defense Slides
+                      <Button 
+                        size="sm"
+                        variant="outline"
+                        className="border-navy text-navy hover:bg-navy hover:text-white transition-colors flex items-center gap-2"
+                        asChild
+                      >
+                        <a
+                          href="https://drive.google.com/file/d/1hXQwaVCWd_2LrCrLkiGyVJLHOeVa-xHz/view?usp=share_link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Presentation className="w-4 h-4" />
+                          Defense Slides
+                        </a>
                       </Button>
                     </div>
                     

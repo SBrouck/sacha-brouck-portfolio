@@ -44,7 +44,7 @@ const Research = () => {
                       Causal Inference from Weak Urban Signals for Off-Market Forecasting
                     </h3>
                     <p className="text-gray-600 mb-4 text-base">
-                      This project investigates whether faint, web-native weak signals can be organized into causally motivated signal families—Selling Pressure, Market Opportunity, and Context & Controls—that explain (not merely predict) off-market real-estate transactions. I reconstruct the Paris micro-market as a parcel-by-month panel from public registries and targeted scraping, then formalize an SCM-consistent taxonomy that maps observed proxies to latent drivers of sale. The pipeline is validity-first: month-blocked cross-validation; strict leakage tripwires (future-shift, parcel OOF integrity); orthogonality checks; and post-hoc isotonic calibration. Family salience is adjudicated with LOFO ablations and month-blocked bootstrap CIs, while SHAP tests directional consistency with expert priors; when priors over-regularize, they are relocated from training constraints to the decision layer. A calibrated Top-K utility policy converts probabilities into operational selections under explicit value/cost assumptions. The result is a transferable methodology that links causal structure, weak-signal engineering, and deployable ranking policy on a real, city-scale market.
+                      This project investigates whether web-native weak signals can be organized into causally motivated signal families—Selling Pressure, Market Opportunity, and Context & Controls—that explain off-market real-estate transactions. I reconstruct the Paris micro-market as a parcel-by-month panel from public registries and targeted scraping, then formalize an SCM-consistent taxonomy mapping observed proxies to latent drivers of sale. The pipeline is validity-first: month-blocked cross-validation, strict leakage tripwires, orthogonality checks, and post-hoc isotonic calibration. Family salience is adjudicated with LOFO ablations and month-blocked bootstrap CIs, while SHAP tests directional consistency with expert priors. A calibrated Top-K utility policy converts probabilities into operational selections under explicit value/cost assumptions, resulting in a transferable methodology linking causal structure, weak-signal engineering, and deployable ranking policy on a real, city-scale market.
                     </p>
                     
                     {/* Keywords Section */}
@@ -71,12 +71,6 @@ const Research = () => {
                         </span>
                         <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
                           Leakage Tripwires
-                        </span>
-                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
-                          LOFO
-                        </span>
-                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
-                          SHAP
                         </span>
                         <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
                           Calibration

@@ -92,169 +92,149 @@ const Research = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Contenu détaillé intégré DANS le bloc principal */}
+                {showDetails && (
+                  <>
+                    {/* Séparateur visuel */}
+                    <div className="border-t border-gray-200 my-6"></div>
+                    
+                    {/* Key Results Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                      <FadeIn delay={250}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-navy/10 rounded-lg">
+                                <TrendingUp className="w-5 h-5 text-navy" />
+                              </div>
+                              <h4 className="font-semibold text-gray-900">Data Scale</h4>
+                            </div>
+                            <ul className="space-y-1 text-sm text-gray-600">
+                              <li>• 41,419 parcel-months</li>
+                              <li>• 12 signal families</li>
+                              <li>• 1.24M raw records</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+
+                      <FadeIn delay={300}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-terracotta/10 rounded-lg">
+                                <Target className="w-5 h-5 text-terracotta" />
+                              </div>
+                              <h4 className="font-semibold text-gray-900">Performance</h4>
+                            </div>
+                            <ul className="space-y-1 text-sm text-gray-600">
+                              <li>• PR-AUC: 0.956</li>
+                              <li>• ROC-AUC: 0.981</li>
+                              <li>• Prec@100: 1.00</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+
+                      <FadeIn delay={350}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-navy/10 rounded-lg">
+                                <Zap className="w-5 h-5 text-navy" />
+                              </div>
+                              <h4 className="font-semibold text-gray-900">Methodology</h4>
+                            </div>
+                            <ul className="space-y-1 text-sm text-gray-600">
+                              <li>• Month-blocked CV</li>
+                              <li>• Tripwires & integrity</li>
+                              <li>• Isotonic calibration</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+                    </div>
+
+                    {/* Research Insights Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      <FadeIn delay={400}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <h4 className="font-semibold text-gray-900 mb-3">LOFO Family Analysis</h4>
+                            <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                              <img
+                                src="/images/lofo_by_family_corrected.png"
+                                alt="LOFO family analysis results"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <p className="text-sm text-gray-600 mt-3">
+                              Family-based feature importance analysis showing signal strength variations.
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+
+                      <FadeIn delay={450}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <h4 className="font-semibold text-gray-900 mb-3">SHAP Feature Analysis</h4>
+                            <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                              <img
+                                src="/images/shap_family_bar_corrected.png"
+                                alt="SHAP feature importance analysis"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <p className="text-sm text-gray-600 mt-3">
+                              SHAP values analysis revealing key predictive features and their contributions.
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+                    </div>
+
+                    {/* Key Findings & Next Steps */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <FadeIn delay={500}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <h4 className="font-semibold text-gray-900 mb-3">Key Findings</h4>
+                            <ul className="space-y-2 text-sm text-gray-600">
+                              <li>• Multi-source weak signals significantly improve prediction accuracy</li>
+                              <li>• Family-based feature engineering enhances model robustness</li>
+                              <li>• Month-blocked cross-validation prevents data leakage</li>
+                              <li>• Isotonic calibration improves probability estimates</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+
+                      <FadeIn delay={550}>
+                        <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
+                          <CardContent className="p-4">
+                            <h4 className="font-semibold text-gray-900 mb-3">Next Steps</h4>
+                            <ul className="space-y-2 text-sm text-gray-600">
+                              <li>• Extend to other real estate markets</li>
+                              <li>• Implement real-time prediction pipeline</li>
+                              <li>• Explore deep learning architectures</li>
+                              <li>• Develop causal discovery methods</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </FadeIn>
+                    </div>
+                  </>
+                )}
               </CardContent>
             </Card>
           </FadeIn>
         </div>
 
-        {/* Suppression de l'ancien bouton Show More externe */}
+        {/* Suppression de l'ancien contenu détaillé externe */}
         
-        {/* Collapsible Detailed Sections */}
-        {showDetails && (
-          <>
-            {/* Key Results Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <FadeIn delay={250}>
-                <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow group hover:border-terracotta border border-transparent">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <TrendingUp className="w-6 h-6 text-navy" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors font-playfair">Data Scale</h3>
-                    <p className="text-sm text-gray-600">
-                      <strong className="text-navy">41,419</strong> parcel–months<br />
-                      <strong className="text-navy">12</strong> signal families<br />
-                      <strong className="text-navy">1.24M</strong> raw records
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-              
-              <FadeIn delay={300}>
-                <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow group hover:border-terracotta border border-transparent">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-terracotta/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <Target className="w-6 h-6 text-terracotta" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors font-playfair">Performance</h3>
-                    <p className="text-sm text-gray-600">
-                      <strong className="text-navy">PR-AUC:</strong> 0.956<br />
-                      <strong className="text-navy">ROC-AUC:</strong> 0.981<br />
-                      <strong className="text-navy">Prec@100:</strong> 1.00
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-              
-              <FadeIn delay={350}>
-                <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow group hover:border-terracotta border border-transparent">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                      <Zap className="w-6 h-6 text-navy" />
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors font-playfair">Methodology</h3>
-                    <p className="text-sm text-gray-600">
-                      Month-blocked CV<br />
-                      Tripwires & integrity<br />
-                      Isotonic calibration
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-            </div>
-
-            {/* Research Insights Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <FadeIn delay={400}>
-                <Card className="border-0 shadow-sm hover:shadow-md transition-shadow group hover:border-terracotta border border-transparent">
-                  <CardContent className="p-4">
-                    <img
-                      src="/images/lofo_by_family_corrected.png"
-                      alt="LOFO impact analysis showing PR-AUC delta with 95% month-block confidence intervals"
-                      className="w-full h-auto rounded-lg mb-3"
-                    />
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors font-playfair">LOFO Impact Analysis</h3>
-                    <p className="text-sm text-gray-600">
-                      Leave-One-Family-Out (LOFO) impact showing PR-AUC Δ with 95% month-block confidence intervals. 
-                      Reveals which signal families are most critical for prediction performance.
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-              
-              <FadeIn delay={450}>
-                <Card className="border-0 shadow-sm hover:shadow-md transition-shadow group hover:border-terracotta border border-transparent">
-                  <CardContent className="p-4">
-                    <img
-                      src="/images/shap_family_bar_corrected.png"
-                      alt="SHAP importance analysis by signal family showing total feature importance"
-                      className="w-full h-auto rounded-lg mb-3"
-                    />
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-navy transition-colors font-playfair">SHAP Feature Importance</h3>
-                    <p className="text-sm text-gray-600">
-                      Total SHAP importance by family with direction consistent with domain priors. 
-                      Shows which features contribute most to model decisions.
-                    </p>
-                  </CardContent>
-                </Card>
-              </FadeIn>
-            </div>
-
-            {/* Key Findings & Next Steps */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <FadeIn delay={500}>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 font-playfair">Key Findings</h3>
-                  <div className="space-y-3">
-                    <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-navy">
-                      <strong className="text-navy">Broker activity:</strong> Indispensable for prediction
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-terracotta">
-                      <strong className="text-terracotta">DVF/tenure:</strong> Lifts Top-K performance
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-navy">
-                      <strong className="text-navy">Permits:</strong> Orthogonal (targeting different properties)
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-terracotta">
-                      <strong className="text-terracotta">3D distress:</strong> Better handled via expert triage
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-              
-              <FadeIn delay={550}>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 font-playfair">Future Directions</h3>
-                  <div className="space-y-3">
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-navy/10 rounded-lg flex items-center justify-center">
-                          <TrendingUp className="w-4 h-4 text-navy" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900">Spatial GNN</h4>
-                          <p className="text-sm text-gray-600">GraphSAGE/GAT for neighborhood relationships</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-terracotta/10 rounded-lg flex items-center justify-center">
-                          <Target className="w-4 h-4 text-terracotta" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900">California Replication</h4>
-                          <p className="text-sm text-gray-600">Validate findings on US real estate market</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-navy/10 rounded-lg flex items-center justify-center">
-                          <Zap className="w-4 h-4 text-navy" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900">Deployment</h4>
-                          <p className="text-sm text-gray-600">Production pipeline for real-world application</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-          </>
-        )}
+        {/* Collapsible Detailed Sections - SUPPRIMÉ */}
       </div>
     </section>
   );

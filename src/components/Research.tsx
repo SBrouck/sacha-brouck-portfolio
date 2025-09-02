@@ -30,11 +30,12 @@ const Research = () => {
               <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden shadow-sm">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-sm">
                       <img
                         src="/images/GNNillustration.png"
                         alt="Research preview showing GNN architecture"
-                        className="w-full h-full object-cover"
+                        className="w-3/4 h-3/4 object-cover mx-auto"
+                        style={{ marginTop: '12.5%' }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
                     </div>

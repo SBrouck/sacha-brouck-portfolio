@@ -23,7 +23,7 @@ const Research = () => {
                 </div>
                 <div className="flex-1 text-center lg:text-left">
                   <div className="inline-flex items-center gap-2 bg-[#C5A572]/10 text-[#C5A572] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <span>🎓</span> Master's Thesis
+                    <span></span> Master's Thesis
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-[#1F1F1F] mb-3">
                     Causal Inference from Multi-Source Weak Signals
@@ -50,7 +50,7 @@ const Research = () => {
                       rel="noopener noreferrer"
                       className="px-6 py-3 bg-[#C5A572] text-white rounded-full text-lg font-semibold hover:bg-[#B08D5F] transition-all duration-300 text-center"
                     >
-                      📄 Download Paper
+                       Download Paper
                     </a>
                     <a
                       href="/asset_thesis/Thesis_Defense_Slides copy.pdf"
@@ -58,7 +58,7 @@ const Research = () => {
                       rel="noopener noreferrer"
                       className="px-6 py-3 bg-[#006241] text-white rounded-full text-lg font-semibold hover:bg-[#004D33] transition-all duration-300 text-center"
                     >
-                      📊 Defense Slides
+                       Defense Slides
                     </a>
                   </div>
                 </div>
@@ -70,7 +70,7 @@ const Research = () => {
         {/* Key Results Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 text-center group hover:border-[#C5A572] border border-transparent">
-            <div className="text-4xl mb-4">📊</div>
+            <div className="text-4xl mb-4"></div>
             <h3 className="text-xl font-bold text-[#1F1F1F] mb-3 group-hover:text-[#006241] transition-colors">Data Scale</h3>
             <p className="text-gray-600">
               <strong className="text-[#006241]">41,419</strong> parcel–months<br />
@@ -79,7 +79,7 @@ const Research = () => {
             </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 text-center group hover:border-[#C5A572] border border-transparent">
-            <div className="text-4xl mb-4">🎯</div>
+            <div className="text-4xl mb-4"></div>
             <h3 className="text-xl font-bold text-[#1F1F1F] mb-3 group-hover:text-[#006241] transition-colors">Performance</h3>
             <p className="text-gray-600">
               <strong className="text-[#006241]">PR-AUC:</strong> 0.956<br />
@@ -88,7 +88,7 @@ const Research = () => {
             </p>
           </div>
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 text-center group hover:border-[#C5A572] border border-transparent">
-            <div className="text-4xl mb-4">🔬</div>
+            <div className="text-4xl mb-4"></div>
             <h3 className="text-xl font-bold text-[#1F1F1F] mb-3 group-hover:text-[#006241] transition-colors">Methodology</h3>
             <p className="text-gray-600">
               Month-blocked CV<br />
@@ -150,7 +150,7 @@ const Research = () => {
             <div className="space-y-4">
               <div className="p-4 bg-[#F8F6F2] rounded-lg">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🧠</span>
+                  <span className="text-2xl"></span>
                   <div>
                     <h4 className="font-semibold text-[#1F1F1F]">Spatial GNN</h4>
                     <p className="text-sm text-gray-600">GraphSAGE/GAT for neighborhood relationships</p>
@@ -159,7 +159,7 @@ const Research = () => {
               </div>
               <div className="p-4 bg-[#F8F6F2] rounded-lg">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🌎</span>
+                  <span className="text-2xl"></span>
                   <div>
                     <h4 className="font-semibold text-[#1F1F1F]">California Replication</h4>
                     <p className="text-sm text-gray-600">Validate findings on US real estate market</p>
@@ -168,7 +168,7 @@ const Research = () => {
               </div>
               <div className="p-4 bg-[#F8F6F2] rounded-lg">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🚀</span>
+                  <span className="text-2xl"></span>
                   <div>
                     <h4 className="font-semibold text-[#1F1F1F]">Deployment</h4>
                     <p className="text-sm text-gray-600">Production pipeline for real-world application</p>

@@ -42,8 +42,8 @@ const Index = () => {
     <main className="relative">
       <Header />
       <Hero />
-      <Projects />
       <Research />
+      <Projects />
       <Experience />
       <KurautoJourney />
       <Passions />

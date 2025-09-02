@@ -30,7 +30,7 @@ const Research = () => {
               <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-lg overflow-hidden shadow-sm">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden shadow-sm">
                       <img
                         src="/images/GNNillustration.png"
                         alt="Research preview showing GNN architecture"
@@ -96,8 +96,8 @@ const Research = () => {
           </FadeIn>
         </div>
 
-        {/* Show More Button - Integrated with the card */}
-        <div className="text-center -mt-4 mb-8">
+        {/* Show More Button - Centered relative to the card */}
+        <div className="flex justify-center -mt-4 mb-8">
           <FadeIn delay={200}>
             <Button
               variant="ghost"

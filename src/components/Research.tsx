@@ -30,7 +30,7 @@ const Research = () => {
               <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden shadow-sm">
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden shadow-sm">
                       <img
                         src="/images/GNNillustration.png"
                         alt="Research preview showing GNN architecture"

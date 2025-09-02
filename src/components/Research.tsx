@@ -55,7 +55,7 @@ const Research: React.FC<ResearchProps> = ({ className }) => {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                       <a
-                        href="/asset_thesis/Causal_Inference_from_Multi_Source_Weak_Signals_in_the_Prediction_of_Off_Market_Real_Estate_Transactions copy.pdf"
+                        href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-6 py-3 bg-terracotta text-white rounded-none text-lg font-semibold hover:bg-navy transition-colors text-center"
@@ -63,7 +63,7 @@ const Research: React.FC<ResearchProps> = ({ className }) => {
                         Download Paper
                       </a>
                       <a
-                        href="/asset_thesis/Thesis_Defense_Slides copy.pdf"
+                        href="https://drive.google.com/file/d/1hXQwaVCWd_2LrCrLkiGyVJLHOeVa-xHz/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-6 py-3 bg-[#1B1F3B] text-white rounded-none text-lg font-semibold hover:bg-navy transition-colors text-center"

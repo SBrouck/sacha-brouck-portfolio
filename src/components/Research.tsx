@@ -34,7 +34,7 @@ const Research = () => {
                       <img
                         src="/images/GNNillustration.png"
                         alt="Research preview showing GNN architecture"
-                        className="max-w-[85%] max-h-[85%] object-contain"
+                        className="max-w-[95%] max-h-[95%] object-contain"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent pointer-events-none" />
                     </div>
@@ -44,49 +44,50 @@ const Research = () => {
                       Causal Inference from Multi-Source Weak Signals
                     </h3>
                     <p className="text-gray-600 mb-4 text-base">
-                      Off-market real estate prediction using advanced ML pipeline. 
+                      Off-market real estate prediction using advanced ML pipeline.
                       Achieved 95.6% PR-AUC with 41,419 parcel-months and 12 signal families.
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4 justify-center lg:justify-start">
-                      <span className="px-2 py-1 bg-gray-100 border border-terracotta text-xs rounded-full text-terracotta font-semibold">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
                         XGBoost
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 border border-navy text-xs rounded-full text-navy font-semibold">
+                      <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
                         Causal Inference
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 border border-terracotta text-xs rounded-full text-terracotta font-semibold">
+                      <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
                         Real Estate
                       </span>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                      <Button 
-                        size="sm"
-                        className="bg-terracotta hover:bg-navy transition-colors flex items-center gap-2"
-                        asChild
-                      >
-                        <a
-                          href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Download className="w-4 h-4" />
-                          Download Paper
-                        </a>
+                    <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                      <Button className="bg-terracotta hover:bg-terracotta/90 text-white">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Paper
                       </Button>
-                      <Button 
+                      <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
+                        <Presentation className="w-4 h-4 mr-2" />
+                        Defense Slides
+                      </Button>
+                    </div>
+                    
+                    {/* Show More Button - Intégré dans le bloc principal */}
+                    <div className="flex justify-center lg:justify-start">
+                      <Button
+                        variant="ghost"
                         size="sm"
-                        variant="outline"
-                        className="border-navy text-navy hover:bg-navy hover:text-white transition-colors flex items-center gap-2"
-                        asChild
+                        onClick={() => setShowDetails(!showDetails)}
+                        className="text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors flex items-center gap-2 px-4 py-2"
                       >
-                        <a
-                          href="https://drive.google.com/file/d/1hXQwaVCWd_2LrCrLkiGyVJLHOeVa-xHz/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Presentation className="w-4 h-4" />
-                          Defense Slides
-                        </a>
+                        {showDetails ? (
+                          <>
+                            <ChevronUp className="w-4 h-4" />
+                            Show Less
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-4 h-4" />
+                            Show More Details
+                          </>
+                        )}
                       </Button>
                     </div>
                   </div>
@@ -96,30 +97,8 @@ const Research = () => {
           </FadeIn>
         </div>
 
-        {/* Show More Button - Centered relative to the card */}
-        <div className="flex justify-center -mt-4 mb-8">
-          <FadeIn delay={200}>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setShowDetails(!showDetails)}
-              className="text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors flex items-center gap-2 px-4 py-2"
-            >
-              {showDetails ? (
-                <>
-                  <ChevronUp className="w-4 h-4" />
-                  Show Less
-                </>
-              ) : (
-                <>
-                  <ChevronDown className="w-4 h-4" />
-                  Show More Details
-                </>
-              )}
-            </Button>
-          </FadeIn>
-        </div>
-
+        {/* Suppression de l'ancien bouton Show More externe */}
+        
         {/* Collapsible Detailed Sections */}
         {showDetails && (
           <>

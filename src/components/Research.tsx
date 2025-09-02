@@ -28,7 +28,7 @@ const Research = () => {
           <FadeIn delay={150}>
             <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 md:p-8">
-                <div className="flex flex-col lg:flex-row items-center gap-8">
+                <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="flex-shrink-0">
                     <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-sm bg-gray-50 flex items-center justify-center">
                       <img

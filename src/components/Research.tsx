@@ -21,35 +21,7 @@ const Research = () => {
           </FadeIn>
         </div>
         
-        {/* Project Overview Illustration */}
-        <div className="mb-16">
-          <FadeIn delay={125}>
-            <Card className="border-0 shadow-lg overflow-hidden">
-              <CardContent className="p-0">
-                <div className="bg-gradient-to-r from-navy to-terracotta p-1">
-                  <div className="bg-white p-8 md:p-12">
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-playfair">
-                        Project Overview
-                      </h3>
-                      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        A comprehensive machine learning pipeline for off-market real estate prediction, 
-                        combining multiple weak signal sources through advanced causal inference techniques.
-                      </p>
-                    </div>
-                    <div className="flex justify-center">
-                      <img
-                        src="/images/GNNillustration.png"
-                        alt="Graph Neural Network illustration showing the overall project architecture"
-                        className="w-full max-w-4xl h-auto rounded-lg shadow-lg"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </FadeIn>
-        </div>
+
         
         {/* Hero Research Card */}
         <div className="mb-16">

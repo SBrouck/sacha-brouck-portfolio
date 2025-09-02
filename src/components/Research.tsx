@@ -24,13 +24,13 @@ const Research = () => {
         </div>
         
         {/* Hero Research Card with GNN Preview */}
-        <div className="mb-12">
+        <div className="mb-8">
           <FadeIn delay={150}>
             <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6 md:p-8">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden shadow-sm">
+                    <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-lg overflow-hidden shadow-sm">
                       <img
                         src="/images/GNNillustration.png"
                         alt="Research preview showing GNN architecture"
@@ -40,14 +40,10 @@ const Research = () => {
                     </div>
                   </div>
                   <div className="flex-1 text-center lg:text-left">
-                    <div className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1.5 rounded-full text-sm font-semibold mb-3">
-                      <Download className="w-4 h-4" />
-                      Master's Thesis
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-playfair">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 font-playfair">
                       Causal Inference from Multi-Source Weak Signals
                     </h3>
-                    <p className="text-gray-600 mb-3 text-base">
+                    <p className="text-gray-600 mb-4 text-base">
                       Off-market real estate prediction using advanced ML pipeline. 
                       Achieved 95.6% PR-AUC with 41,419 parcel-months and 12 signal families.
                     </p>
@@ -100,23 +96,23 @@ const Research = () => {
           </FadeIn>
         </div>
 
-        {/* Show More Button */}
-        <div className="text-center mb-8">
+        {/* Show More Button - Integrated with the card */}
+        <div className="text-center -mt-4 mb-8">
           <FadeIn delay={200}>
             <Button
-              variant="outline"
-              size="lg"
+              variant="ghost"
+              size="sm"
               onClick={() => setShowDetails(!showDetails)}
-              className="border-navy text-navy hover:bg-navy hover:text-white transition-colors flex items-center gap-2"
+              className="text-gray-600 hover:text-navy hover:bg-navy/5 transition-colors flex items-center gap-2 px-4 py-2"
             >
               {showDetails ? (
                 <>
-                  <ChevronUp className="w-5 h-5" />
+                  <ChevronUp className="w-4 h-4" />
                   Show Less
                 </>
               ) : (
                 <>
-                  <ChevronDown className="w-5 h-5" />
+                  <ChevronDown className="w-4 h-4" />
                   Show More Details
                 </>
               )}

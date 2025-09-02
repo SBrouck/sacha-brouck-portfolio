@@ -162,11 +162,11 @@ const Research = () => {
                         <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
                           <CardContent className="p-4">
                             <h4 className="font-semibold text-gray-900 mb-3">LOFO Family Analysis</h4>
-                            <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                            <div className="relative w-full rounded-lg">
                               <img
                                 src="/images/lofo_by_family_corrected.png"
                                 alt="LOFO family analysis results"
-                                className="w-full h-full object-cover"
+                                className="w-full h-auto object-contain"
                               />
                             </div>
                             <p className="text-sm text-gray-600 mt-3">
@@ -180,11 +180,11 @@ const Research = () => {
                         <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
                           <CardContent className="p-4">
                             <h4 className="font-semibold text-gray-900 mb-3">SHAP Feature Analysis</h4>
-                            <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                            <div className="relative w-full rounded-lg">
                               <img
                                 src="/images/shap_family_bar_corrected.png"
                                 alt="SHAP feature importance analysis"
-                                className="w-full h-full object-cover"
+                                className="w-full h-auto object-contain"
                               />
                             </div>
                             <p className="text-sm text-gray-600 mt-3">

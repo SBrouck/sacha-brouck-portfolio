@@ -41,23 +41,64 @@ const Research = () => {
                   </div>
                   <div className="flex-1 text-center lg:text-left">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 font-playfair">
-                      Causal Inference from Multi-Source Weak Signals
+                      Causal Inference from Weak Urban Signals for Off-Market Forecasting
                     </h3>
                     <p className="text-gray-600 mb-4 text-base">
-                      Off-market real estate prediction using advanced ML pipeline.
-                      Achieved 95.6% PR-AUC with 41,419 parcel-months and 12 signal families.
+                      This project investigates whether faint, web-native weak signals can be organized into causally motivated signal families—Selling Pressure, Market Opportunity, and Context & Controls—that explain (not merely predict) off-market real-estate transactions. I reconstruct the Paris micro-market as a parcel-by-month panel from public registries and targeted scraping, then formalize an SCM-consistent taxonomy that maps observed proxies to latent drivers of sale. The pipeline is validity-first: month-blocked cross-validation; strict leakage tripwires (future-shift, parcel OOF integrity); orthogonality checks; and post-hoc isotonic calibration. Family salience is adjudicated with LOFO ablations and month-blocked bootstrap CIs, while SHAP tests directional consistency with expert priors; when priors over-regularize, they are relocated from training constraints to the decision layer. A calibrated Top-K utility policy converts probabilities into operational selections under explicit value/cost assumptions. The result is a transferable methodology that links causal structure, weak-signal engineering, and deployable ranking policy on a real, city-scale market.
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
-                        XGBoost
-                      </span>
-                      <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
-                        Causal Inference
-                      </span>
-                      <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
-                        Real Estate
-                      </span>
+                    
+                    {/* Keywords Section */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Keywords:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Causal Inference
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Weak Signals
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Feature Engineering
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Off-Market Real Estate
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Micro-Market Simulation
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Identification
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Leakage Tripwires
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          LOFO
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          SHAP
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Calibration
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Data Mining
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Data Engineering
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Urban Analytics
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-sm font-medium border border-terracotta/20">
+                          Machine Learning
+                        </span>
+                        <span className="inline-flex items-center gap-2 bg-navy/10 text-navy px-3 py-1 rounded-full text-sm font-medium border border-navy/20">
+                          Statistical Modeling
+                        </span>
+                      </div>
                     </div>
+                    
                     <div className="flex flex-col sm:flex-row gap-3 mb-4">
                       <Button 
                         size="sm"

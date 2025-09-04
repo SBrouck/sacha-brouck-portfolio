@@ -68,7 +68,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className={`p-2 bg-gray-100 rounded-lg ${getCategoryColor(category)}`}>
               {getCategoryIcon(category)}
             </div>
-            <span className="text-sm font-medium text-gray-600 capitalize">{category}</span>
+            <span className="text-sm font-medium text-gray-600 capitalize">
+              {title === "Airbnb Seattle SQL Market Analysis" 
+                ? "SQL" 
+                : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
+                  ? "Visualisation" 
+                  : category
+              }
+            </span>
           </div>
           
           <h3 className="text-xl font-medium mb-3 font-playfair group-hover:text-navy transition-colors">{title}</h3>

@@ -236,10 +236,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "Airbnb Seattle SQL Analysis",
-      description: "Exploratory analysis of Airbnb listings using SQL. Built queries to investigate pricing trends and occupancy metrics.",
-      stack: "PostgreSQL, SQL, BigQuery, data analysis",
+      title: "Airbnb Seattle SQL Market Analysis",
+      description: "Strategic market analysis of Seattle's Airbnb ecosystem using SQL, completing my West Coast portfolio alongside LA. Built comprehensive SQL queries to analyze pricing dynamics, occupancy patterns, and neighborhood performance, providing actionable insights for real estate investment decisions in the Pacific Northwest market.",
+      stack: "SQL, PostgreSQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",
       githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics",
+      image: "/Projects images/SeattleSQLairbnb.png", // Seattle SQL Airbnb project
       category: 'analytics' as const
     }
   ];
@@ -303,11 +304,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </div>
         </div>
 
-        {/* Analytics Dashboards & Business Intelligence */}
+        {/* Data Visualization & SQL */}
         <div className="mb-16">
           <FadeIn delay={150}>
             <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Analytics Dashboards & Business Intelligence
+              Data Visualization & SQL
             </h3>
           </FadeIn>
           

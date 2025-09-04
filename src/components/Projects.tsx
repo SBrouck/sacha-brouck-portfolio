@@ -222,20 +222,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "Île-de-France Policy Analytics",
-      description: "Survey analysis for a public policy evaluation project. Explored satisfaction levels across education and mobility domains.",
-      stack: "Python, pandas, seaborn, stakeholder reporting",
-      linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/",
-      category: 'analytics' as const
-    },
-    {
-      title: "Product Analytics Simulator",
-      description: "Simulated e-commerce customer funnel for behavioral analytics and segmentation.",
-      stack: "Python, NumPy, data modeling",
-      githubUrl: "https://github.com/SBrouck/product-analytics-simulator",
-      category: 'analytics' as const
-    },
-    {
       title: "Airbnb Seattle SQL Market Analysis",
       description: "Strategic market analysis of Seattle's Airbnb ecosystem using SQL, completing my West Coast portfolio alongside LA. Built comprehensive SQL queries to analyze pricing dynamics, occupancy patterns, and neighborhood performance, providing actionable insights for real estate investment decisions in the Pacific Northwest market.",
       stack: "SQL, PostgreSQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",

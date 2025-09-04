@@ -80,20 +80,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <p className="text-sm text-terracotta font-medium">{stack}</p>
           </div>
           
-          {/* Project Image - Déplacée après le texte */}
-          {image && (
-            <div className="mb-4 relative">
-              <img
-                src={image}
-                alt={`${title} project illustration`}
-                className="w-full h-64 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          )}
-          
           {/* Project Video - Déplacée après le texte, avant les liens */}
           {videoUrl && (
-            <div className="mb-4 relative">
+            <div className="mb-2 relative">
               <div className="aspect-video w-full rounded-lg overflow-hidden shadow-sm">
                 <iframe
                   src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
@@ -104,7 +93,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   allowFullScreen
                 />
               </div>
-              <p className="text-xs text-gray-500 mt-2 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+              <p className="text-xs text-gray-500 mt-1 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+            </div>
+          )}
+          
+          {/* Project Image - Déplacée après le texte */}
+          {image && (
+            <div className="mb-2 relative">
+              <img
+                src={image}
+                alt={`${title} project illustration`}
+                className="w-full h-64 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
           )}
           

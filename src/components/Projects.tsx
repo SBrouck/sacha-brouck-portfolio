@@ -61,18 +61,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <FadeIn delay={delay}>
       <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow group">
         <CardContent className="p-6">
-          {/* Project Image */}
-          {image && (
-            <div className="mb-4 relative overflow-hidden rounded-lg">
-              <img
-                src={image}
-                alt={`${title} project illustration`}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-          )}
-          
           {/* Category Badge */}
           <div className="flex items-center gap-2 mb-3">
             <div className={`p-2 bg-gray-100 rounded-lg ${getCategoryColor(category)}`}>
@@ -89,6 +77,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <p className="text-xs font-medium text-gray-500 mb-2">TECHNOLOGIES</p>
             <p className="text-sm text-terracotta font-medium">{stack}</p>
           </div>
+          
+          {/* Project Image - Déplacée après le texte */}
+          {image && (
+            <div className="mb-4 relative">
+              <img
+                src={image}
+                alt={`${title} project illustration`}
+                className="w-full h-32 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          )}
           
           {/* Action Links */}
           <div className="flex flex-col gap-2">

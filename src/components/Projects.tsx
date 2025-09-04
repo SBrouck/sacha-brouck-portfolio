@@ -160,10 +160,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
   const mlProjects = [
     {
-      title: "Construction Permits Forecasting (Chicago)",
-      description: "Forecasting building permit volumes in Chicago through 2025 using time-series models. Includes feature engineering, benchmarking (XGBoost, Prophet), and accuracy evaluation.",
-      stack: "Python, pandas, XGBoost, Prophet, forecasting, time-series modeling",
+      title: "Chicago Construction Time Series Modeling",
+      description: "Strategic analysis of Chicago's construction permit trends to assess office market dynamics and new development opportunities. As a real estate investment analyst evaluating office market entry strategies, I developed forecasting models to identify optimal timing based on construction permit signals. The pipeline predicts monthly new construction permits using Random Forest, XGBoost, and Prophet models, providing early indicators of market supply changes for informed investment decisions.",
+      stack: "Python, pandas, scikit-learn, XGBoost, Prophet, time-series modeling, feature engineering",
       githubUrl: "https://github.com/SBrouck/chicago-construction-ts-modeling",
+      image: "/Projects images/ChicagoML.png", // Chicago Construction ML project
       category: 'ml' as const
     },
     {

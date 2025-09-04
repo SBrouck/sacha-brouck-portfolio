@@ -143,15 +143,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             
             {videoUrl && (
               <div className="mb-4 relative">
-                <a 
-                  href={videoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg hover:from-red-600 hover:to-red-700 transition-all gap-3 group/video"
-                >
-                  <Play size={20} className="group-hover/video:scale-110 transition-transform" />
-                  <span className="font-medium">🎥 Watch Streamlit Demo</span>
-                </a>
+                <div className="aspect-video w-full rounded-lg overflow-hidden shadow-sm">
+                  <iframe
+                    src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
+                    title="Streamlit Real Estate Dashboard Demo"
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mt-2 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
               </div>
             )}
             

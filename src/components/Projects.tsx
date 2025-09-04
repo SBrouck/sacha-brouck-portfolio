@@ -171,7 +171,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       description: "During my master's program in Seattle, I developed regression models to identify the best housing opportunities for my accommodation choice. Built models to estimate housing prices using property and postal code features, including geospatial visualization with Folium.",
       stack: "Python, pandas, scikit-learn, XGBoost, Folium, data modeling",
       githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling",
-      image: "/Projects images/SeattleML.png",
+      image: "/Projects images/SeattleML.png", // Image Seattle ML project
       category: 'ml' as const
     },
     {

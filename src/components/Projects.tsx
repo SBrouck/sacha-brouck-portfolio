@@ -233,7 +233,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       description: "Strategic market analysis of Seattle's Airbnb ecosystem using SQL, completing my West Coast portfolio alongside LA. Built comprehensive SQL queries to analyze pricing dynamics, occupancy patterns, and neighborhood performance, providing actionable insights for real estate investment decisions in the Pacific Northwest market.",
       stack: "SQL, MySQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",
       githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics",
-      image: "/Projects images/Capture d'écran 2025-09-04 à 11.33.37.png", // New SQL project screenshot
+      image: "/Projects images/SALairbnb.png", // Seattle Airbnb SQL project
       category: 'analytics' as const
     }
   ];

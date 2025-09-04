@@ -23,6 +23,7 @@ interface ProjectCardProps {
   delay?: number;
   image?: string;
   category: 'ml' | 'analytics' | 'automation';
+  videoUrl?: string; // Added for Streamlit app
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
@@ -37,7 +38,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   isInternal = false,
   delay = 0,
   image,
-  category
+  category,
+  videoUrl // Added for Streamlit app
 }) => {
   const getCategoryIcon = (cat: string) => {
     switch (cat) {
@@ -139,6 +141,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </a>
             )}
             
+            {videoUrl && (
+              <div className="mb-4 relative">
+                <a 
+                  href={videoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg hover:from-red-600 hover:to-red-700 transition-all gap-3 group/video"
+                >
+                  <Play size={20} className="group-hover/video:scale-110 transition-transform" />
+                  <span className="font-medium">🎥 Watch Streamlit Demo</span>
+                </a>
+              </div>
+            )}
+            
             {isWip && (
               <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
                 <span>→ In progress</span>
@@ -187,11 +203,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   const analyticsProjects = [
     {
-      title: "Real Estate Dashboard – Leasing & KPIs",
-      description: "Streamlit application to simulate real estate investments, track leasing performance, and visualize financial KPIs.",
-      stack: "Streamlit, pandas, NumPy, dashboard design, stakeholder reporting",
-      githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
-      demoUrl: "https://www.youtube.com/watch?v=eujHW_2d-Zg",
+      title: "Real Estate Investment Dashboard",
+      description: "Custom Streamlit application developed for a real estate investment strategy, adapted to specific data inputs and requirements. Enables comprehensive KPI analysis and geographic asset visualization from simple Excel files, providing strategic insights for portfolio management and investment decisions.",
+      stack: "Streamlit, pandas, NumPy, dashboard design, stakeholder reporting, investment analytics",
+      githubUrl: "https://github.com/SBrouck/streamlit-real-estate-dashboard",
+      videoUrl: "https://youtu.be/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-", // YouTube video for Streamlit app
       category: 'analytics' as const
     },
     {

@@ -213,10 +213,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "USA Data Center Dashboard",
-      description: "Interactive Tableau dashboard analyzing pricing, power, and availability trends across 18 U.S. markets using CBRE data.",
-      stack: "Python, Tableau, dashboard design, data visualization",
+      title: "U.S. Data Center Market Dashboard",
+      description: "Comprehensive market study of the U.S. data center industry through automated Python web scraping and data extraction. Built an automated pipeline that scrapes CBRE reports, FCC data, and EIA information to create a structured Excel dataset, then visualized market trends, hyperscaler presence, and capacity distribution using Tableau interactive dashboards.",
+      stack: "Python, web scraping, pandas, data extraction, Excel automation, Tableau, market analysis",
       githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard",
+      image: "/Projects images/USADCtableau.png", // USA Data Center Tableau project
       category: 'analytics' as const
     },
     {

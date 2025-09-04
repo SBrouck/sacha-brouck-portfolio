@@ -91,6 +91,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           )}
           
+          {/* Project Video - Déplacée après le texte, avant les liens */}
+          {videoUrl && (
+            <div className="mb-4 relative">
+              <div className="aspect-video w-full rounded-lg overflow-hidden shadow-sm">
+                <iframe
+                  src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
+                  title="Streamlit Real Estate Dashboard Demo"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <p className="text-xs text-gray-500 mt-2 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+            </div>
+          )}
+          
           {/* Action Links */}
           <div className="flex flex-col gap-2">
             {githubUrl && (
@@ -139,22 +156,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <Play size={16} className="group-hover/link:scale-110 transition-transform" />
                 <span>Watch Demo</span>
               </a>
-            )}
-            
-            {videoUrl && (
-              <div className="mb-4 relative">
-                <div className="aspect-video w-full rounded-lg overflow-hidden shadow-sm">
-                  <iframe
-                    src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
-                    title="Streamlit Real Estate Dashboard Demo"
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-                <p className="text-xs text-gray-500 mt-2 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
-              </div>
             )}
             
             {isWip && (

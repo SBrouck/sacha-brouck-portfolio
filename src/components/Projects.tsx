@@ -84,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <img
                 src={image}
                 alt={`${title} project illustration`}
-                className="w-full h-32 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-64 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           )}

@@ -93,7 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   allowFullScreen
                 />
               </div>
-              <p className="text-xs text-gray-500 mt-1 text-center">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+              <p className="text-xs text-gray-500 mt-1 text-center mb-0">🎥 Streamlit Dashboard Demo - Click play to watch</p>
             </div>
           )}
           
@@ -224,7 +224,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Airbnb Seattle SQL Market Analysis",
       description: "Strategic market analysis of Seattle's Airbnb ecosystem using SQL, completing my West Coast portfolio alongside LA. Built comprehensive SQL queries to analyze pricing dynamics, occupancy patterns, and neighborhood performance, providing actionable insights for real estate investment decisions in the Pacific Northwest market.",
-      stack: "SQL, PostgreSQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",
+      stack: "SQL, MySQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",
       githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics",
       image: "/Projects images/SeattleSQLairbnb.png", // Seattle SQL Airbnb project
       category: 'analytics' as const

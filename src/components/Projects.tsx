@@ -240,6 +240,14 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   const dataAnalyticsProjects = [
     {
+      title: "Airport Baggage Distribution Statistical Analysis",
+      description: "Statistical analysis and probability modeling for airport operations optimization. Developed comprehensive statistical models to help airports implement optimal baggage distribution strategies, analyzing passenger flow patterns, baggage handling efficiency, and resource allocation to minimize delays and maximize operational performance.",
+      stack: "Python, Jupyter Notebook, statistical analysis, probability modeling, data science, operations research, airport analytics",
+      githubUrl: "https://github.com/SBrouck/statistical-analysis-airport",
+      image: "/Projects images/statairport.png",
+      category: 'analytics' as const
+    },
+    {
       title: "Smoking Effects on Medical Charges Analysis",
       description: "Exploratory analysis of health insurance costs comparing smokers vs non-smokers using Python. Built comprehensive visualizations including histograms, boxplots, and line charts to identify smoking as the main driver of higher and volatile medical expenses across age groups and regions.",
       stack: "Python, pandas, matplotlib, seaborn, data visualization, statistical analysis, healthcare analytics",

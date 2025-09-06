@@ -211,7 +211,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     }
   ];
 
-  const analyticsProjects = [
+  const dataAnalyticsProjects = [
     {
       title: "Real Estate Investment Dashboard",
       description: "Custom Streamlit application developed for a real estate investment strategy, adapted to specific data inputs and requirements. Enables comprehensive KPI analysis and geographic asset visualization from simple Excel files, providing strategic insights for portfolio management and investment decisions.",
@@ -238,7 +238,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     }
   ];
 
-  const analyticsProjects = [
+  const dataAnalyticsProjects = [
     {
       title: "Smoking Effects on Medical Charges Analysis",
       description: "Exploratory analysis of health insurance costs comparing smokers vs non-smokers using Python. Built comprehensive visualizations including histograms, boxplots, and line charts to identify smoking as the main driver of higher and volatile medical expenses across age groups and regions.",
@@ -314,7 +314,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </FadeIn>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {analyticsProjects.map((project, index) => (
+            {dataAnalyticsProjects.map((project, index) => (
               <ProjectCard 
                 key={project.title}
                 {...project}
@@ -333,7 +333,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </FadeIn>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {analyticsProjects.map((project, index) => (
+            {dataAnalyticsProjects.map((project, index) => (
               <ProjectCard 
                 key={project.title}
                 {...project}

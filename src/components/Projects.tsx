@@ -211,7 +211,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     }
   ];
 
-  const dataAnalyticsProjects = [
+  const analyticsProjects = [
     {
       title: "Real Estate Investment Dashboard",
       description: "Custom Streamlit application developed for a real estate investment strategy, adapted to specific data inputs and requirements. Enables comprehensive KPI analysis and geographic asset visualization from simple Excel files, providing strategic insights for portfolio management and investment decisions.",
@@ -314,7 +314,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </FadeIn>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {dataAnalyticsProjects.map((project, index) => (
+            {analyticsProjects.map((project, index) => (
               <ProjectCard 
                 key={project.title}
                 {...project}

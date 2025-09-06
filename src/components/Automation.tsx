@@ -33,7 +33,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-navy to-terracotta rounded-xl flex items-center justify-center">
                     <img 
-                      src="/Projects images/AUTOMATION/mosaiclogo_transparent.png" 
+                      src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
                       alt="MOSAIC Logo" 
                       className="w-10 h-10 object-contain"
                     />
@@ -54,19 +54,19 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-green-600" />
+                    <Shield className="w-5 h-5 text-navy" />
                     <span className="text-sm font-medium">Data Security</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-blue-600" />
+                    <Zap className="w-5 h-5 text-terracotta" />
                     <span className="text-sm font-medium">Performance</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Bot className="w-5 h-5 text-purple-600" />
+                    <Bot className="w-5 h-5 text-navy" />
                     <span className="text-sm font-medium">Local AI</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Cpu className="w-5 h-5 text-orange-600" />
+                    <Cpu className="w-5 h-5 text-terracotta" />
                     <span className="text-sm font-medium">Automation</span>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow group">
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-navy to-terracotta rounded-xl flex items-center justify-center">
                     <Brain className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -126,11 +126,11 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Shield className="w-4 h-4 text-green-600" />
+                    <Shield className="w-4 h-4 text-navy" />
                     <span>100% Local Processing</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Zap className="w-4 h-4 text-blue-600" />
+                    <Zap className="w-4 h-4 text-terracotta" />
                     <span>Enterprise-Grade Performance</span>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <FadeIn delay={500}>
             <Card className="border-0 shadow-sm hover:shadow-md transition-shadow text-center">
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-navy to-terracotta rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-medium mb-3 text-navy">Zapier Integration</h4>
@@ -171,7 +171,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <FadeIn delay={600}>
             <Card className="border-0 shadow-sm hover:shadow-md transition-shadow text-center">
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-navy to-terracotta rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Bot className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-medium mb-3 text-navy">N8N Workflows</h4>
@@ -186,7 +186,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <FadeIn delay={700}>
             <Card className="border-0 shadow-sm hover:shadow-md transition-shadow text-center">
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-navy to-terracotta rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-medium mb-3 text-navy">Secure Deployment</h4>

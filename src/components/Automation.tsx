@@ -14,7 +14,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
     <section id="automation" className={cn('py-20 md:py-32 bg-gray-50', className)}>
       <div className="container mx-auto px-6 md:px-12">
         <FadeIn delay={100}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-navy">
               AI Automation
             </h2>
@@ -27,18 +27,18 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
         {/* MOSAIC Logo Section */}
         <FadeIn delay={200}>
-          <div className="text-center mb-16">
-            <div className="mb-6">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-6">
               <img 
                 src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
                 alt="MOSAIC Logo" 
-                className="w-48 h-48 md:w-64 md:h-64 object-contain"
+                className="w-64 h-64 md:w-80 md:h-80 object-contain bg-black rounded-2xl p-4 shadow-2xl"
               />
             </div>
             <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-4">
               MOSAIC Agency
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
               Student-led agency bridging cutting-edge AI technology with enterprise needs. 
               We specialize in secure, local AI systems and intelligent automation workflows.
             </p>

@@ -263,8 +263,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       image: "/Projects images/consumerecom.png",
       category: 'analytics' as const
     },
-      category: 'analytics' as const
-    },
     {
       title: "Airbnb & Booking.com Revenue Scraper",
       description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",

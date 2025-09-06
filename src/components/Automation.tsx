@@ -14,8 +14,8 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
     <section id="automation" className={cn('py-20 md:py-32 bg-gray-50', className)}>
       <div className="container mx-auto px-6 md:px-12">
         <FadeIn delay={100}>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-navy">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-playfair mb-3 text-navy">
               AI Automation
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -27,18 +27,18 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
         {/* MOSAIC Logo Section */}
         <FadeIn delay={200}>
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-6">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-3">
               <img 
                 src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
                 alt="MOSAIC Logo" 
-                className="w-64 h-64 md:w-80 md:h-80 object-contain bg-black rounded-2xl p-4 shadow-2xl"
+                className="w-64 h-64 md:w-80 md:h-80 object-contain bg-black rounded-2xl p-2 shadow-2xl"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-4">
+            <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-2">
               MOSAIC Agency
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-3">
               Student-led agency bridging cutting-edge AI technology with enterprise needs. 
               We specialize in secure, local AI systems and intelligent automation workflows.
             </p>
@@ -60,7 +60,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <FadeIn delay={300}>
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow group">
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2 mb-3">
                   <div className="w-16 h-16 bg-gradient-to-br from-navy to-terracotta rounded-xl flex items-center justify-center">
                     <Brain className="w-8 h-8 text-white" />
                   </div>
@@ -72,12 +72,12 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-3 leading-relaxed">
                   Deploy secure, local AI systems using OLLAMA for enterprise environments. 
                   Keep sensitive data completely private within your infrastructure.
                 </p>
 
-                <div className="bg-gray-100 rounded-lg p-4 mb-6">
+                <div className="bg-gray-100 rounded-lg p-2 mb-3">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-navy rounded-full mt-2"></div>
                     <div className="flex-1">
@@ -105,7 +105,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <FadeIn delay={400}>
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow group">
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2 mb-3">
                   <div className="w-16 h-16 bg-gradient-to-br from-navy to-terracotta rounded-xl flex items-center justify-center">
                     <Bot className="w-8 h-8 text-white" />
                   </div>
@@ -117,12 +117,12 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-3 leading-relaxed">
                   Build intelligent automation workflows that connect your business tools 
                   and trigger actions based on data patterns and business rules.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-2 mb-3">
                   <div className="flex items-center gap-2">
                     <Zap className="w-5 h-5 text-navy" />
                     <span className="text-sm font-medium">Zapier Integration</span>

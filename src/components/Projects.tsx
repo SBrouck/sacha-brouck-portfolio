@@ -100,7 +100,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   allowFullScreen
                 />
               </div>
-              <p className="text-xs text-gray-500 mt-1 text-center mb-0">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+              <p className="text-xs text-gray-500 mt-0 text-center mb-0">🎥 Streamlit Dashboard Demo - Click play to watch</p>
             </div>
           )}
           
@@ -116,7 +116,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
           
           {/* Action Links */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 mt-auto">
             {githubUrl && (
               <a 
                 href={githubUrl} 

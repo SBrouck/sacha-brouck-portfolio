@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FadeIn } from '@/components/animations/FadeIn';
+import FadeIn from '@/components/animations/FadeIn';
 import { cn } from '@/lib/utils';
 import { Bot, Zap, Shield, ExternalLink, Brain, Cpu } from 'lucide-react';
 

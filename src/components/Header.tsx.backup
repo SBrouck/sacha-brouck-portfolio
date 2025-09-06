@@ -127,7 +127,13 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <button 
             className="text-left text-gray-900 hover:text-terracotta transition-colors"
             onClick={() => scrollToSection('projects')}
+          </button>
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('automation')}
           >
+            Automation
+          </button>    </button>          >
             Projects
           </button>
           <button 
@@ -203,7 +209,19 @@ const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection }) => (
     <button 
       className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
       onClick={() => scrollToSection('projects')}
+          </button>
+          <button 
+            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            onClick={() => scrollToSection('automation')}
+          >
+            Automation
+          </button>    </button>
+    <button 
+      className="text-sm font-medium text-gray-900 hover:text-terracotta transition-colors"
+      onClick={() => scrollToSection('automation')}
     >
+      Automation
+    </button>    >
       Projects
     </button>
     <button 

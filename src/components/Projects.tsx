@@ -256,6 +256,16 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
+      title: "E-Commerce Consumer Analytics & Behavioral Segmentation",
+      description: "Consumer analytics project for an e-commerce boutique to optimize marketing strategy and website design. Built comprehensive user behavior analysis pipeline using simulated e-commerce data, implementing K-Means clustering for customer segmentation, engagement pattern analysis, and purchase funnel optimization to drive personalized marketing campaigns and improve conversion rates.",
+      stack: "Python, pandas, seaborn, matplotlib, scikit-learn, K-Means clustering, data visualization, consumer analytics, e-commerce optimization",
+      githubUrl: "https://github.com/SBrouck/product-analytics-simulator",
+      image: "/Projects images/consumerecom.png",
+      category: 'analytics' as const
+    },
+      category: 'analytics' as const
+    },
+    {
       title: "Airbnb & Booking.com Revenue Scraper",
       description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",
       stack: "Python, Selenium, Openpyxl, web scraping, automation workflows",

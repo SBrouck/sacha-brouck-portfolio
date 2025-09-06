@@ -238,13 +238,21 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     }
   ];
 
-  const automationProjects = [
+  const analyticsProjects = [
+    {
+      title: "Smoking Effects on Medical Charges Analysis",
+      description: "Exploratory analysis of health insurance costs comparing smokers vs non-smokers using Python. Built comprehensive visualizations including histograms, boxplots, and line charts to identify smoking as the main driver of higher and volatile medical expenses across age groups and regions.",
+      stack: "Python, pandas, matplotlib, seaborn, data visualization, statistical analysis, healthcare analytics",
+      githubUrl: "https://github.com/SBrouck/smoking-effects-on-medical-charges",
+      image: "/Projects images/smokingeffect.png",
+      category: 'analytics' as const
+    },
     {
       title: "Airbnb & Booking.com Revenue Scraper",
       description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",
       stack: "Python, Selenium, Openpyxl, web scraping, automation workflows",
       githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb",
-      category: 'automation' as const
+      category: 'analytics' as const
     },
     {
       title: "Master's Thesis – ML Workflow for Real Estate Sourcing",
@@ -252,14 +260,14 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       stack: "Python, NLP, scikit-learn, PostgreSQL, data modeling",
       linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/",
       isWip: true,
-      category: 'automation' as const
+      category: 'analytics' as const
     },
     {
       title: "GRE Question Answering Model Training Pipeline",
       description: "Automated web scraping pipeline to collect GRE practice questions and answers from multiple sources, enabling the training of a specialized question-answering model for GRE test preparation.",
       stack: "Python, Selenium, BeautifulSoup, Transformers, PyTorch, web scraping, NLP, model training",
       githubUrl: "https://github.com/SBrouck/gre-qa-model-training",
-      category: 'automation' as const
+      category: 'analytics' as const
     }
   ];
 
@@ -316,16 +324,16 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </div>
         </div>
 
-        {/* Data Automation & Engineering */}
+        {/* Data Analytics */}
         <div className="mb-16 last:mb-0">
           <FadeIn delay={150}>
             <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Data Automation & Engineering
+              Data Analytics
             </h3>
           </FadeIn>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {automationProjects.map((project, index) => (
+            {analyticsProjects.map((project, index) => (
               <ProjectCard 
                 key={project.title}
                 {...project}

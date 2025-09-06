@@ -262,28 +262,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       githubUrl: "https://github.com/SBrouck/product-analytics-simulator",
       image: "/Projects images/consumerecom.png",
       category: 'analytics' as const
-    },
-    {
-      title: "Airbnb & Booking.com Revenue Scraper",
-      description: "Automated pipeline to extract, structure, and report rental income data from Airbnb and Booking dashboards into Excel.",
-      stack: "Python, Selenium, Openpyxl, web scraping, automation workflows",
-      githubUrl: "https://github.com/SBrouck/data-automation-booking-airbnb",
-      category: 'analytics' as const
-    },
-    {
-      title: "Master's Thesis – ML Workflow for Real Estate Sourcing",
-      description: "Designing a machine learning pipeline to identify off-market real estate investment opportunities using weak signals from public data.",
-      stack: "Python, NLP, scikit-learn, PostgreSQL, data modeling",
-      linkedinUrl: "https://www.linkedin.com/in/sacha-brouck/details/projects/",
-      isWip: true,
-      category: 'analytics' as const
-    },
-    {
-      title: "GRE Question Answering Model Training Pipeline",
-      description: "Automated web scraping pipeline to collect GRE practice questions and answers from multiple sources, enabling the training of a specialized question-answering model for GRE test preparation.",
-      stack: "Python, Selenium, BeautifulSoup, Transformers, PyTorch, web scraping, NLP, model training",
-      githubUrl: "https://github.com/SBrouck/gre-qa-model-training",
-      category: 'analytics' as const
     }
   ];
 

@@ -1,0 +1,20 @@
+        {/* MOSAIC Logo Section */}
+        <FadeIn delay={200}>
+          <div className="text-center mb-6">
+            <div className="flex justify-center mb-1">
+              <a 
+                href="https://www.use-mosaic.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-navy text-white px-8 py-3 rounded-lg hover:bg-navy/90 transition-colors group/link"
+              >
+                <ExternalLink size={18} className="group-hover/link:scale-110 transition-transform" />
+                <span>Visit MOSAIC Website</span>
+              </a>
+            </div>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-1">
+              MOSAIC is a student-led agency bridging cutting-edge AI technology with enterprise needs. 
+              We specialize in secure, local AI systems and intelligent automation workflows.
+            </p>
+          </div>
+        </FadeIn>

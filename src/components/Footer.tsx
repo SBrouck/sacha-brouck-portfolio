@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
@@ -46,10 +45,22 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               Home
             </button>
             <button
+              onClick={() => scrollToSection('research')} 
+              className="text-sm hover:text-terracotta transition-colors text-gray-600"
+            >
+              Research
+            </button>
+            <button
               onClick={() => scrollToSection('projects')} 
               className="text-sm hover:text-terracotta transition-colors text-gray-600"
             >
               Projects
+            </button>
+            <button
+              onClick={() => scrollToSection('automation')} 
+              className="text-sm hover:text-terracotta transition-colors text-gray-600"
+            >
+              AI Automation
             </button>
             <button
               onClick={() => scrollToSection('experience')} 

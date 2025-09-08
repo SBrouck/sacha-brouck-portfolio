@@ -14,7 +14,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
     <section id="automation" className={cn('py-20 md:py-32 bg-gray-50', className)}>
       <div className="container mx-auto px-6 md:px-12">
         <FadeIn delay={100}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-navy">
               AI Automation
             </h2>
@@ -27,11 +27,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
         {/* MOSAIC Link Section */}
         <FadeIn delay={200}>
-          <div className="text-center mb-16">
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              MOSAIC is a student-led agency bridging cutting-edge AI technology with enterprise needs. 
-              We specialize in secure, local AI systems and intelligent automation workflows.
-            </p>
+          <div className="text-center mb-8">
             <div className="flex justify-center">
               <a 
                 href="https://www.use-mosaic.com" 
@@ -46,7 +42,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           </div>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-8">
           {/* Local AI Solutions Card */}
           <FadeIn delay={200}>
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow group">

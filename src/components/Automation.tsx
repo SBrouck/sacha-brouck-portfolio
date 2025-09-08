@@ -30,14 +30,14 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
           <div className="text-center mb-6">
             <div className="flex justify-center mb-1">
               
-                <div className="bg-black rounded-lg p-1 shadow-lg">
-              <img 
-                  src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
-                  alt="MOSAIC Logo" 
-                  className="w-64 h-64 md:w-80 md:h-80 object-contain"
-                />
-              </div>
-            </div>            <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-1">
+              <div className="text-center">
+                <div className="text-6xl md:text-8xl font-bold text-black mb-2 font-mono tracking-wider">
+                  MOSAIC
+                </div>
+                <div className="text-sm text-gray-600 font-medium">
+                  AI AUTOMATION AGENCY
+                </div>
+              </div>            </div>            <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-1">
               MOSAIC Agency
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto mb-1">

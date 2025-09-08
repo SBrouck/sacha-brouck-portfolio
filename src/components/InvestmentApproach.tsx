@@ -12,11 +12,11 @@ const InvestmentApproach: React.FC<InvestmentApproachProps> = ({ className }) =>
   const investmentTiers = [
     {
       title: "Pre-Seed Accelerator Fund",
-      description: "€30K–€150K tickets, with teams participating in our 16-week acceleration program focused on validation and early traction."
+      description: "$30K–$150K tickets, with teams participating in our 16-week acceleration program focused on validation and early traction."
     },
     {
       title: "Seed Fund",
-      description: "€200K–€400K investments in 15+ startups to support scaling, market expansion, and team growth, with follow-on capital available."
+      description: "$200K–$400K investments in 15+ startups to support scaling, market expansion, and team growth, with follow-on capital available."
     }
   ];
 

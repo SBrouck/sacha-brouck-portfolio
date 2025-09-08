@@ -74,8 +74,8 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       company: "Kurauto",
       period: "2022–2024",
       achievements: [
-        "Built and scaled an eco-friendly car care startup (€100K+ revenue)",
-        "Closed €37,500 pre-seed round with AYOMI, exited at €300K valuation",
+        "Built and scaled an eco-friendly car care startup ($100K+ revenue)",
+        "Closed $45,000 pre-seed round with AYOMI, exited at $300K valuation",
         "Led analytics, ops, growth, partnerships with luxury hotels"
       ]
     }

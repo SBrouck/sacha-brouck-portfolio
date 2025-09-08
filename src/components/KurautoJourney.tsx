@@ -27,13 +27,23 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
   return (
     <section id="kurauto" className={cn('py-20 md:py-32 bg-white', className)}>
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-playfair mb-8 text-center">The Kurauto Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-center">The Kurauto Journey</h2>
+          </FadeIn>
+          
+          <FadeIn delay={100}>
+            <div className="text-center mb-12">
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Kurauto is a cleantech company revolutionizing the automotive detailing industry with zero-emission, 
+                zero-water technologies. We bring professional car washing services directly to customers, 
+                whether you need the service on public streets or in your private parking spot.
+              </p>
+            </div>
           </FadeIn>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <FadeIn delay={100}>
+            <FadeIn delay={150}>
               <div className="flex justify-center">
                 <div
                   style={{
@@ -60,19 +70,25 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
             </FadeIn>
             
             <div className="space-y-6">
-              <FadeIn delay={150}>
-                <p className="text-lg text-gray-700">
-                  Kurauto was born from the idea of merging sustainability with mobile convenience. 
+              <FadeIn delay={200}>
+                <h3 className="text-xl font-semibold text-navy mb-4 font-playfair">
+                  My Founder Journey
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Kurauto was born from the vision of merging sustainability with mobile convenience. 
                   As founder, I built the company from zero — from product design to fundraising and scaling operations.
                 </p>
               </FadeIn>
               
-              <FadeIn delay={200}>
-                <ul className="space-y-3 mt-6">
+              <FadeIn delay={250}>
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">
+                  Key Achievements
+                </h4>
+                <ul className="space-y-3">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-terracotta mr-3">—</span>
-                      <span className="text-gray-600">{achievement}</span>
+                      <span className="text-terracotta mr-3 mt-1">•</span>
+                      <span className="text-gray-600 leading-relaxed">{achievement}</span>
                     </li>
                   ))}
                 </ul>

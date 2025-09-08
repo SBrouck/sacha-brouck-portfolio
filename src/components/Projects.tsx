@@ -69,11 +69,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               {getCategoryIcon(category)}
             </div>
             <span className="text-sm font-medium text-gray-600 capitalize">
-              {title === "Airbnb Seattle SQL Market Analysis" 
-                ? "SQL" 
-                : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
-                  ? "Visualisation" 
-                  : category
+              {title === "Airbnb NLP Analysis for Los Angeles" 
+                ? "NLP" 
+                : title === "Seattle Housing Price Prediction" || title === "Chicago Construction Time Series Modeling" 
+                  ? "ML" 
+                  : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
+                    ? "Visualisation" 
+                    : title === "Airbnb Seattle SQL Market Analysis" 
+                      ? "SQL" 
+                      : title === "Smoking Effects on Medical Charges Analysis" || title === "Airport Baggage Distribution Statistical Analysis" || title === "E-Commerce Consumer Analytics & Behavioral Segmentation" 
+                        ? "Analytics" 
+                        : category
               }
             </span>
           </div>

@@ -29,13 +29,11 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
         <FadeIn delay={200}>
           <div className="text-center mb-8">
             <div className="flex justify-center mb-3">
-              <div className="bg-black rounded-2xl p-0.5 shadow-2xl">
-                <img 
-                  src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
-                  alt="MOSAIC Logo" 
-                  className="w-64 h-64 md:w-80 md:h-80 object-contain"
-                />
-              </div>
+              <img 
+                src="/Projects images/AUTOMATION/mosaiclogo_transparent copy.png" 
+                alt="MOSAIC Logo" 
+                className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+              />
             </div>            <h3 className="text-2xl md:text-3xl font-playfair text-navy mb-2">
               MOSAIC Agency
             </h3>

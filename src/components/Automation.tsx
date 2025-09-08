@@ -27,8 +27,12 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
 
         {/* MOSAIC Link Section */}
         <FadeIn delay={200}>
-          <div className="text-center mb-6">
-            <div className="flex justify-center mb-1">
+          <div className="text-center mb-16">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              MOSAIC is a student-led agency bridging cutting-edge AI technology with enterprise needs. 
+              We specialize in secure, local AI systems and intelligent automation workflows.
+            </p>
+            <div className="flex justify-center">
               <a 
                 href="https://www.use-mosaic.com" 
                 target="_blank" 
@@ -39,10 +43,6 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
                 <span>Visit MOSAIC Website</span>
               </a>
             </div>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-1">
-              MOSAIC is a student-led agency bridging cutting-edge AI technology with enterprise needs. 
-              We specialize in secure, local AI systems and intelligent automation workflows.
-            </p>
           </div>
         </FadeIn>
 

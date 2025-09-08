@@ -1,0 +1,6 @@
+                    <p className="text-gray-600 mb-4 text-base">
+                      This project organizes web-native weak signals into causally motivated families—Selling Pressure, Market Opportunity, and Context & Controls—to explain off-market transactions. I reconstruct the Paris micro-market as a parcel×month panel from public registries and targeted scraping, and define an SCM-consistent mapping from proxies to latent drivers.
+                    </p>
+                    <p className="text-gray-600 mb-4 text-base">
+                      The pipeline is validity-first: month-blocked CV, strict leakage tripwires, orthogonality checks, and isotonic calibration; family salience is tested with LOFO (month-blocked bootstrap CIs) and SHAP for directional agreement with expert priors. A calibrated Top-K utility policy turns probabilities into actions under explicit value/costs, yielding a transferable link between causal structure, weak-signal engineering, and deployable ranking.
+                    </p>

@@ -86,7 +86,7 @@ const Passions: React.FC<PassionsProps> = ({ className }) => {
                   </div>
                   
                   <p className="text-gray-700 mb-6 leading-relaxed">
-                    Les Étoiles d'Élonga is an association dedicated to empowering young Congolese entrepreneurs to develop and scale their international business projects. We provide mentorship, resources, and networking opportunities to help them transform innovative ideas into successful ventures that can compete on the global stage.
+                    Les Étoiles d'Élonga supports young Congolese entrepreneurs in developing their international business projects. We provide mentorship and resources to help them scale innovative ideas into successful ventures on the global stage.
                   </p>
                   
                   <Carousel className="w-full">

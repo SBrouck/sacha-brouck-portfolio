@@ -44,11 +44,15 @@ const Research = () => {
                       Causal Inference from Weak Urban Signals for Off-Market Forecasting
                     </h3>
                     <p className="text-gray-600 mb-4 text-base">
-                      This project organizes web-native weak signals into causally motivated families—Selling Pressure, Market Opportunity, and Context & Controls—to explain off-market transactions. I reconstruct the Paris micro-market as a parcel×month panel from public registries and targeted scraping, and define an SCM-consistent mapping from proxies to latent drivers.
+                      At the core of this work is a simple conviction: the faint, messy traces cities leave online can be turned into meaning. I organize those web-native "weak signals" into causally motivated families: Selling Pressure, Market Opportunity, and Context & Controls, in order to explain who sells off-market and when.
                     </p>
                     <p className="text-gray-600 mb-4 text-base">
-                      The pipeline is validity-first: month-blocked CV, strict leakage tripwires, orthogonality checks, and isotonic calibration; family salience is tested with LOFO (month-blocked bootstrap CIs) and SHAP for directional agreement with expert priors. A calibrated Top-K utility policy turns probabilities into actions under explicit value/costs, yielding a transferable link between causal structure, weak-signal engineering, and deployable ranking.
-                    </p>                    
+                      I rebuilt the Paris micro-market as a parcel×month panel from public registries and targeted scraping, then mapped each observed proxy to a latent driver through a structural-causal lens. The pipeline is deliberately validity-first: month-blocked cross-validation, hard leakage tripwires, orthogonality checks across families, and post-hoc isotonic calibration.
+                    </p>
+                    <p className="text-gray-600 mb-4 text-base">
+                      I test what truly matters with LOFO ablations (month-blocked bootstrap CIs) and SHAP to verify directional agreement with expert priors. Finally, a utility-calibrated Top-K policy turns probabilities into ranked actions under explicit value/cost assumptions, yielding a transferable bridge between causal structure, weak-signal engineering, and decisions you can trust.
+                    </p>
+                    
                     {/* Keywords Section */}
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">Keywords:</h4>

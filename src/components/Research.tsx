@@ -44,9 +44,11 @@ const Research = () => {
                       Causal Inference from Weak Urban Signals for Off-Market Forecasting
                     </h3>
                     <p className="text-gray-600 mb-4 text-base">
-                      At the core of this work is a simple conviction: faint, messy web traces can be turned into meaning. I organize web-native weak signals into causally motivated families: Selling Pressure, Market Opportunity, and Context & Controls. I rebuilt the Paris micro-market as a parcel×month panel from public registries and targeted scraping, then mapped each proxy to a latent driver with a structural-causal lens. The pipeline is validity-first with month-blocked cross-validation, strict leakage tripwires, orthogonality checks, and post-hoc isotonic calibration. I test salience with LOFO ablations and SHAP, and I convert calibrated probabilities into ranked actions through a utility-aware Top-K policy.
-                    </p>                    
-                    {/* Keywords Section */}
+                      At the core of this work is a simple conviction: faint, messy web traces can be turned into meaning. I organize web-native weak signals into causally motivated families: Selling Pressure, Market Opportunity, and Context & Controls. I rebuilt the Paris micro-market as a parcel×month panel from public registries and targeted scraping, then mapped each proxy to a latent driver with a structural-causal lens.
+                    </p>
+                    <p className="text-gray-600 mb-4 text-base">
+                      The pipeline is validity-first with month-blocked cross-validation, strict leakage tripwires, orthogonality checks, and post-hoc isotonic calibration. I test salience with LOFO ablations and SHAP, and I convert calibrated probabilities into ranked actions through a utility-aware Top-K policy.
+                    </p>                    {/* Keywords Section */}
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">Keywords:</h4>
                       <div className="flex flex-wrap gap-2">

@@ -59,7 +59,7 @@ const Experience: React.FC<ExperienceProps> = ({ className }) => {
       ]
     },
     {
-      role: "Real Estate Analyst",
+      role: "Real Estate Research Intern",
       company: "Engel & Völkers (Seattle)",
       period: "2024",
       achievements: [

@@ -76,7 +76,7 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Kurauto was born from the vision of merging sustainability with mobile convenience. 
-                  As founder, I built the company from zero , from product design to fundraising and scaling operations.
+                  As founder, I built the company from zero—from product design to fundraising and scaling operations.
                 </p>
               </FadeIn>
               

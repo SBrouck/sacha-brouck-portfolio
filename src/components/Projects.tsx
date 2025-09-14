@@ -281,7 +281,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           
           <FadeIn delay={100}>
             <p className="text-xl text-center mb-12 text-gray-600">
-              Selected projects in machine learning, analytics, and automation , built to deliver real-world impact.
+              Selected projects in machine learning, analytics, and automation—built to deliver real-world impact.
             </p>
           </FadeIn>
         </div>

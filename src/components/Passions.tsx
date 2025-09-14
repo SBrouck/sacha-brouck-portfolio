@@ -28,7 +28,7 @@ const Passions: React.FC<PassionsProps> = ({ className }) => {
                   </div>
                   
                   <p className="text-gray-700 mb-6 leading-relaxed">
-                    I've played football since I could walk. I've coached kids, played tournaments, and shared a lot of laughs (and bruises) along the way. It keeps me grounded and connected — it's my way of recharging.
+                    I've played football since I could walk. I've coached kids, played tournaments, and shared a lot of laughs (and bruises) along the way. It keeps me grounded and connected , it's my way of recharging.
                   </p>
                   
                   <Carousel className="w-full">

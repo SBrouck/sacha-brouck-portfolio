@@ -25,7 +25,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ role, company, period, achi
       <ul className="space-y-2 mt-3">
         {achievements.map((achievement, i) => (
           <li key={i} className="flex items-start">
-            <span className="text-terracotta mr-2">,</span>
+            <span className="text-terracotta mr-2">•</span>
             <span className="text-gray-600">{achievement}</span>
           </li>
         ))}

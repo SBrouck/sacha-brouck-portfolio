@@ -12,7 +12,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const description = "Graduate student in Business Analytics at UW Foster, with a background in finance, real estate and data science. I design data-driven tools that enhance investment decisions, measure risk and translate insights into action.";
+  const description = "Graduate student in Business Analytics at UW Foster, I design end-to-end analytics: from data collection, cleaning, and modeling to clear delivery through dashboards, reports, and automation.";
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               
               <div className="bg-white/90 rounded-xl p-6 md:p-8 shadow-md flex-1">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-4">
-                  Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-[#1B1F3B] font-semibold">Data & Analytics Professional</span>
+                  Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-[#1B1F3B] font-semibold">Data Science & Causal Analytics</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-[#3E4A59] font-normal leading-relaxed mb-0">

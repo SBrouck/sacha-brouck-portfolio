@@ -12,7 +12,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const description = "Graduate student in Business Analytics at UW Foster, I design end-to-end analytics: from data collection, cleaning, and modeling to clear delivery through dashboards, reports, and automation.";
+  const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">

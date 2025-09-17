@@ -222,7 +222,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       title: "Real Estate Investment Dashboard",
       description: "Custom Streamlit application developed for a real estate investment strategy, adapted to specific data inputs and requirements. Enables comprehensive KPI analysis and geographic asset visualization from simple Excel files, providing strategic insights for portfolio management and investment decisions.",
       stack: "Streamlit, pandas, NumPy, dashboard design, stakeholder reporting, investment analytics",
-      githubUrl: "https://github.com/SBrouck/streamlit-real-estate-dashboard",
+      githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
       videoUrl: "https://youtu.be/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-", // YouTube video for Streamlit app
       category: 'analytics' as const
     },

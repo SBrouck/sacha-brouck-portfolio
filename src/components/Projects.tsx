@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 : title === "Seattle Housing Price Prediction" || title === "Chicago Construction Time Series Modeling" 
                   ? "ML" 
                   : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
-                    ? "Visualisation" 
+                    ? "Visualization" 
                     : title === "Airbnb Seattle SQL Market Analysis" 
                       ? "SQL" 
                       : title === "Smoking Effects on Medical Charges Analysis" || title === "Airport Baggage Distribution Statistical Analysis" || title === "E-Commerce Consumer Analytics & Behavioral Segmentation" 

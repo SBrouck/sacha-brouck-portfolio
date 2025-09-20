@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
@@ -13,7 +13,24 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        // Show button when Hero section is in view
+        setIsHeroVisible(rect.bottom > 100 && rect.top < window.innerHeight - 100);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
@@ -28,18 +45,20 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button - positioned relative to Hero section */}
-      <button
-        onClick={() => setShowStory(!showStory)}
-        className="absolute top-6 right-6 z-20 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
-        aria-label="Story about the background"
-      >
-        <Info className="w-5 h-5 text-gray-700" />
-      </button>
+      {/* Info Button - fixed position with scroll detection */}
+      {isHeroVisible && (
+        <button
+          onClick={() => setShowStory(!showStory)}
+          className="fixed top-24 right-6 z-50 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
+          aria-label="Story about the background"
+        >
+          <Info className="w-5 h-5 text-gray-700" />
+        </button>
+      )}
       
-      {/* Story Modal - positioned relative to Hero section */}
-      {showStory && (
-        <div className="absolute top-20 right-6 z-20 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
+      {/* Story Modal */}
+      {showStory && isHeroVisible && (
+        <div className="fixed top-40 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.
@@ -81,7 +100,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             
             <div className="flex flex-wrap gap-4">
               <Button 
-                className="bg-slate-700 hover:bg-slate-800 transition-colors flex items-center gap-2 px-6 py-6 rounded-none"
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 flex items-center gap-2 px-6 py-6 rounded-none"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/sacha-brouck/" target="_blank" rel="noopener noreferrer">

@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled 
           ? 'py-3 bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-sm'
-          : 'py-5 bg-transparent',
+          : 'py-5 bg-white/90 backdrop-blur-sm border-b border-gray-200/10',
         className
       )}
     >

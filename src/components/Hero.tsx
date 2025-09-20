@@ -21,8 +21,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect();
-        // Show button only when Hero section is in view (with some margin)
-        setIsVisible(rect.top <= 100 && rect.bottom >= 200);
+        // Show button when Hero section is in view (more lenient conditions)
+        setIsVisible(rect.top <= 200 && rect.bottom >= 100);
       }
     };
 
@@ -130,7 +130,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   <span>Substack</span> 
                 </a>
               </Button>
-            </div>          </FadeIn>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

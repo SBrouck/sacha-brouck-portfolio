@@ -56,7 +56,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				terracotta: '#D3823C',
+				terracotta: '#2D5A6B',
 				burgundy: '#7A4E2B',
 				navy: '#264653',
 			},

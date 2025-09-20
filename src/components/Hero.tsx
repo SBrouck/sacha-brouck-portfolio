@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Always visible for testing
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
   
   useEffect(() => {
@@ -21,8 +21,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect();
-        // Show button when Hero section is in view (more lenient conditions)
-        setIsVisible(rect.top <= 200 && rect.bottom >= 100);
+        // Simplified: show when Hero section is anywhere in view
+        setIsVisible(rect.bottom > 0 && rect.top < window.innerHeight);
       }
     };
 
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button - only visible when Hero section is in view */}
+      {/* Info Button - simplified visibility */}
       {isVisible && (
         <button
           onClick={() => setShowStory(!showStory)}
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         </button>
       )}
       
-      {/* Story Modal - repositioned with more spacing */}
+      {/* Story Modal */}
       {showStory && isVisible && (
         <div className="fixed top-40 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
@@ -100,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             
             <div className="flex flex-wrap gap-4">
               <Button 
-                className="bg-terracotta hover:bg-navy transition-colors flex items-center gap-2 px-6 py-6 rounded-none"
+                className="bg-slate-700 hover:bg-slate-800 transition-colors flex items-center gap-2 px-6 py-6 rounded-none"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/sacha-brouck/" target="_blank" rel="noopener noreferrer">

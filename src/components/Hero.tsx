@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
@@ -13,7 +13,24 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        // Show button only when Hero section is in view (with some margin)
+        setIsVisible(rect.top <= 100 && rect.bottom >= 200);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
@@ -28,18 +45,20 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button - repositioned to avoid header overlap */}
-      <button
-        onClick={() => setShowStory(!showStory)}
-        className="fixed top-24 right-6 z-50 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
-        aria-label="Story about the background"
-      >
-        <Info className="w-5 h-5 text-gray-700" />
-      </button>
+      {/* Info Button - only visible when Hero section is in view */}
+      {isVisible && (
+        <button
+          onClick={() => setShowStory(!showStory)}
+          className="fixed top-24 right-6 z-50 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
+          aria-label="Story about the background"
+        >
+          <Info className="w-5 h-5 text-gray-700" />
+        </button>
+      )}
       
-      {/* Story Modal - repositioned accordingly */}
-      {showStory && (
-        <div className="fixed top-36 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
+      {/* Story Modal - repositioned with more spacing */}
+      {showStory && isVisible && (
+        <div className="fixed top-40 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.

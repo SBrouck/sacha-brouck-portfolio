@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
-import { Github, Linkedin, Info } from 'lucide-react';
+import { Github, Linkedin, Info, BookOpen } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 import heroBg from '/images/517709ldsdl-964x777.jpg';
 import avatarImage from '@/assets/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png';
@@ -119,8 +119,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   <span>GitHub</span>
                 </a>
               </Button>
-            </div>
-          </FadeIn>
+              
+              <Button 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 flex items-center gap-2 px-6 py-6 rounded-none" 
+                asChild 
+              > 
+                <a href="https://substack.com/@sachabrouck" target="_blank" rel="noopener noreferrer"> 
+                  <BookOpen className="w-5 h-5" /> 
+                  <span>Substack</span> 
+                </a>
+              </Button>
+            </div>          </FadeIn>
         </div>
       </div>
     </section>

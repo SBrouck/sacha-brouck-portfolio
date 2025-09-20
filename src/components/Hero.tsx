@@ -23,28 +23,30 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           alt="Monet's Argenteuil painting - Hero background"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-white/25"></div>
+        {/* Enhanced overlay for better painting display */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-white/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button */}
+      {/* Info Button - repositioned to avoid header overlap */}
       <button
         onClick={() => setShowStory(!showStory)}
-        className="absolute top-6 right-6 z-20 p-2 bg-white/80 hover:bg-white/90 rounded-full shadow-md transition-all duration-300 hover:scale-110"
+        className="fixed top-24 right-6 z-50 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
         aria-label="Story about the background"
       >
-        <Info className="w-4 h-4 text-gray-600" />
+        <Info className="w-5 h-5 text-gray-700" />
       </button>
       
-      {/* Story Modal */}
+      {/* Story Modal - repositioned accordingly */}
       {showStory && (
-        <div className="absolute top-20 right-6 z-20 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-white/20">
+        <div className="fixed top-32 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.
           </p>
           <button
             onClick={() => setShowStory(false)}
-            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-xs"
+            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-lg font-bold leading-none"
           >
             ×
           </button>

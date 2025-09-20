@@ -28,19 +28,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button - ALWAYS VISIBLE FOR TESTING */}
+      {/* Info Button - positioned relative to Hero section */}
       <button
         onClick={() => setShowStory(!showStory)}
-        className="fixed top-24 right-6 z-[9999] p-4 bg-red-500 hover:bg-red-600 shadow-xl rounded-full transition-all duration-300 hover:scale-110 border-2 border-white"
+        className="absolute top-6 right-6 z-20 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
         aria-label="Story about the background"
-        style={{ zIndex: 9999 }}
       >
-        <Info className="w-6 h-6 text-white" />
+        <Info className="w-5 h-5 text-gray-700" />
       </button>
       
-      {/* Story Modal */}
+      {/* Story Modal - positioned relative to Hero section */}
       {showStory && (
-        <div className="fixed top-40 right-6 z-[9999] max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
+        <div className="absolute top-20 right-6 z-20 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.

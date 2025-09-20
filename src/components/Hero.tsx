@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Info } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-import heroBg from '@/assets/images/a0278ce1-b82d-4ed6-a186-14a9503ef65c.png';
+import heroBg from '/images/517709ldsdl-964x777.jpg';
 import avatarImage from '@/assets/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png';
 
 interface HeroProps {
@@ -12,17 +12,44 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
+  const [showStory, setShowStory] = useState(false);
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
+  
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
           src={heroBg}
-          alt="Hero background"
+          alt="Monet's Argenteuil painting - Hero background"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-white/25"></div>
       </div>
+      
+      {/* Info Button */}
+      <button
+        onClick={() => setShowStory(!showStory)}
+        className="absolute top-6 right-6 z-20 p-2 bg-white/80 hover:bg-white/90 rounded-full shadow-md transition-all duration-300 hover:scale-110"
+        aria-label="Story about the background"
+      >
+        <Info className="w-4 h-4 text-gray-600" />
+      </button>
+      
+      {/* Story Modal */}
+      {showStory && (
+        <div className="absolute top-20 right-6 z-20 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-white/20">
+          <p className="text-sm text-gray-700 leading-relaxed">
+            This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
+            Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.
+          </p>
+          <button
+            onClick={() => setShowStory(false)}
+            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-xs"
+          >
+            ×
+          </button>
+        </div>
+      )}
       
       <div className="container mx-auto px-6 md:px-12 py-20 md:py-32 relative z-10 max-w-5xl">
         <div className="max-w-3xl">

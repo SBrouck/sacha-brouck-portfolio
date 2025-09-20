@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       
       {/* Story Modal - repositioned accordingly */}
       {showStory && (
-        <div className="fixed top-32 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
+        <div className="fixed top-36 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
           <p className="text-sm text-gray-700 leading-relaxed">
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.

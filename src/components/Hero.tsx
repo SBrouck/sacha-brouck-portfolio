@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
@@ -13,24 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
-  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector('section');
-      if (heroSection) {
-        const rect = heroSection.getBoundingClientRect();
-        // Show button when Hero section is in view
-        setIsHeroVisible(rect.bottom > 100 && rect.top < window.innerHeight - 100);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
@@ -45,27 +28,57 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* Info Button - fixed position with scroll detection */}
-      {isHeroVisible && (
-        <button
-          onClick={() => setShowStory(!showStory)}
-          className="fixed top-24 right-6 z-50 p-3 bg-white/90 hover:bg-white shadow-lg rounded-full transition-all duration-300 hover:scale-110 border border-white/20"
-          aria-label="Story about the background"
-        >
-          <Info className="w-5 h-5 text-gray-700" />
-        </button>
-      )}
+      {/* SIMPLEST POSSIBLE INFO BUTTON - ALWAYS VISIBLE */}
+      <div 
+        style={{ 
+          position: 'fixed', 
+          top: '100px', 
+          right: '20px', 
+          zIndex: 99999,
+          backgroundColor: 'white',
+          padding: '12px',
+          borderRadius: '50%',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+          cursor: 'pointer',
+          border: '2px solid #ccc'
+        }}
+        onClick={() => setShowStory(!showStory)}
+      >
+        <Info size={20} color="#333" />
+      </div>
       
       {/* Story Modal */}
-      {showStory && isHeroVisible && (
-        <div className="fixed top-40 right-6 z-50 max-w-xs bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 border border-white/30">
-          <p className="text-sm text-gray-700 leading-relaxed">
+      {showStory && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: '160px',
+            right: '20px',
+            zIndex: 99999,
+            backgroundColor: 'rgba(255,255,255,0.95)',
+            padding: '16px',
+            borderRadius: '8px',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+            maxWidth: '300px',
+            border: '1px solid rgba(255,255,255,0.3)'
+          }}
+        >
+          <p style={{ fontSize: '14px', color: '#333', lineHeight: '1.5', margin: 0 }}>
             This painting by <strong>Claude Monet</strong> shows <strong>Argenteuil</strong>, a town in the Paris suburbs where my father lived. 
             Even though it has changed a lot over the years, this town remains special to me and represents my connection to France.
           </p>
           <button
             onClick={() => setShowStory(false)}
-            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-lg font-bold leading-none"
+            style={{
+              position: 'absolute',
+              top: '8px',
+              right: '8px',
+              background: 'none',
+              border: 'none',
+              fontSize: '18px',
+              cursor: 'pointer',
+              color: '#666'
+            }}
           >
             ×
           </button>

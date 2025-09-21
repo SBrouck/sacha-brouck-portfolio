@@ -21,8 +21,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       const heroSection = document.querySelector('section');
       if (heroSection) {
         const rect = heroSection.getBoundingClientRect();
-        // Show button when Hero section is in view
-        setIsHeroVisible(rect.bottom > 100 && rect.top < window.innerHeight - 100);
+        // Very lenient conditions - show button when Hero section is anywhere in view
+        setIsHeroVisible(rect.bottom > 0 && rect.top < window.innerHeight);
       }
     };
 
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* INFO BUTTON - Only visible when Hero section is in view */}
+      {/* INFO BUTTON - Very lenient visibility conditions */}
       {isHeroVisible && (
         <div 
           style={{ 

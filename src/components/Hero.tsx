@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Button } from './ui/button';
@@ -13,24 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
-  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector('section');
-      if (heroSection) {
-        const rect = heroSection.getBoundingClientRect();
-        // Very lenient conditions - show button when Hero section is anywhere in view
-        setIsHeroVisible(rect.bottom > 0 && rect.top < window.innerHeight);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
@@ -45,35 +28,33 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
       </div>
       
-      {/* INFO BUTTON - Very lenient visibility conditions */}
-      {isHeroVisible && (
-        <div 
-          style={{ 
-            position: 'fixed', 
-            top: '100px', 
-            right: '20px', 
-            zIndex: 99999,
-            backgroundColor: 'white',
-            padding: '12px',
-            borderRadius: '50%',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-            cursor: 'pointer',
-            border: '2px solid #ccc'
-          }}
-          onClick={() => setShowStory(!showStory)}
-        >
-          <Info size={20} color="#333" />
-        </div>
-      )}
+      {/* INFO BUTTON - Absolutely positioned relative to Hero section */}
+      <div 
+        style={{ 
+          position: 'absolute', 
+          top: '24px', 
+          right: '24px', 
+          zIndex: 20,
+          backgroundColor: 'white',
+          padding: '12px',
+          borderRadius: '50%',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+          cursor: 'pointer',
+          border: '2px solid #ccc'
+        }}
+        onClick={() => setShowStory(!showStory)}
+      >
+        <Info size={20} color="#333" />
+      </div>
       
-      {/* Story Modal */}
-      {showStory && isHeroVisible && (
+      {/* Story Modal - Also absolutely positioned relative to Hero section */}
+      {showStory && (
         <div 
           style={{
-            position: 'fixed',
-            top: '160px',
-            right: '20px',
-            zIndex: 99999,
+            position: 'absolute',
+            top: '80px',
+            right: '24px',
+            zIndex: 20,
             backgroundColor: 'rgba(255,255,255,0.95)',
             padding: '16px',
             borderRadius: '8px',

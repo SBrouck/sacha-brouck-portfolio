@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div 
         style={{ 
           position: 'absolute', 
-          top: '24px', 
+          top: '100px', 
           right: '24px', 
           zIndex: 20,
           backgroundColor: 'white',
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div 
           style={{
             position: 'absolute',
-            top: '80px',
+            top: '160px',
             right: '24px',
             zIndex: 20,
             backgroundColor: 'rgba(255,255,255,0.95)',

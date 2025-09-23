@@ -18,7 +18,7 @@ const Research = () => {
           
           <FadeIn delay={100}>
             <p className="text-lg text-center mb-8 text-gray-600">
-              My master's thesis on Causal ML for housing: partial identification + DML under noisy, missing covariates.
+              My master's thesis on Causal ML for real estate: partial identification + DML under noisy, missing covariates.
             </p>
           </FadeIn>
         </div>

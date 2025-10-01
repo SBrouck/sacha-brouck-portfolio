@@ -71,7 +71,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span className="text-sm font-medium text-gray-600 capitalize">
               {title === "Airbnb NLP Analysis for Los Angeles" 
                 ? "NLP" 
-                : title === "Seattle Housing Price Prediction" || title === "Chicago Construction Time Series Modeling" 
+                : title === "Robust Risk Parity Portfolio Optimization" || title === "Chicago Construction Time Series Modeling" 
                   ? "ML" 
                   : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
                     ? "Visualization" 
@@ -200,11 +200,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'ml' as const
     },
     {
-      title: "Seattle Housing Price Prediction",
-      description: "During my master's program in Seattle, I developed regression models to identify the best housing opportunities for my accommodation choice. Built models to estimate housing prices using property and postal code features, including geospatial visualization with Folium.",
-      stack: "Python, pandas, scikit-learn, XGBoost, Folium, data modeling",
-      githubUrl: "https://github.com/SBrouck/ml-seattle-real-estate-modeling",
-      image: "/Projects images/SeattleML.png", // Image Seattle ML project
+      title: "Robust Risk Parity Portfolio Optimization",
+      description: "Advanced portfolio optimization framework implementing robust risk parity under covariance uncertainty using Ledoit-Wolf shrinkage. Developed a simulation-based optimization pipeline combining R statistical modeling with Excel @RISK and Evolver to achieve superior risk-adjusted returns (Sharpe 2.95 vs 2.70 for traditional ERC) while maintaining stability across uncertainty scenarios.",
+      stack: "R, Excel @RISK, Evolver, Ledoit-Wolf shrinkage, Latin Hypercube sampling, portfolio optimization, quantitative finance",
+      githubUrl: "https://github.com/SBrouck/rp-with-ledoit-wolf",
+      image: "/images/fig_drawdown.png",
       category: 'ml' as const
     },
     {

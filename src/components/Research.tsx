@@ -6,6 +6,31 @@ import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Download, Presentation, FileText, TrendingUp, Target, Zap, ChevronDown, ChevronUp, Maximize2 } from "lucide-react";
 
+
+
+// Simple fullscreen function with fallback
+const handleFullscreen = (imgSrc: string, imgAlt: string) => {
+  const img = document.createElement('img');
+  img.src = imgSrc;
+  img.alt = imgAlt;
+  img.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain; background: black; z-index: 9999; cursor: pointer;';
+  
+  const closeFullscreen = () => {
+    document.body.removeChild(img);
+    document.body.style.overflow = '';
+  };
+  
+  img.onclick = closeFullscreen;
+  img.onkeydown = (e) => {
+    if (e.key === 'Escape') closeFullscreen();
+  };
+  
+  document.body.style.overflow = 'hidden';
+  document.body.appendChild(img);
+  img.focus();
+};
+
+
 const Research = () => {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -251,19 +276,12 @@ const Research = () => {
                                     src="/images/lofo_by_family_corrected.png"
                                     alt="LOFO family analysis results - enlarged"
                                     className="max-w-full max-h-full object-contain cursor-pointer"
-                                    onClick={(e) => {
-                                      if (e.currentTarget.requestFullscreen) {
-                                        e.currentTarget.requestFullscreen();
-                                      }
-                                    }}
+                                    onClick={() => handleFullscreen('/images/lofo_by_family_corrected.png', 'LOFO family analysis results - fullscreen')}
                                   />
                                   <button
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      const img = e.currentTarget.parentElement?.querySelector('img');
-                                      if (img && img.requestFullscreen) {
-                                        img.requestFullscreen();
-                                      }
+                                      handleFullscreen('/images/lofo_by_family_corrected.png', 'LOFO family analysis results - fullscreen');
                                     }}
                                     className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"
@@ -300,19 +318,12 @@ const Research = () => {
                                     src="/images/shap_family_bar_corrected.png"
                                     alt="SHAP feature importance analysis - enlarged"
                                     className="max-w-full max-h-full object-contain cursor-pointer"
-                                    onClick={(e) => {
-                                      if (e.currentTarget.requestFullscreen) {
-                                        e.currentTarget.requestFullscreen();
-                                      }
-                                    }}
+                                    onClick={() => handleFullscreen('/images/shap_family_bar_corrected.png', 'SHAP feature importance analysis - fullscreen')}
                                   />
                                   <button
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      const img = e.currentTarget.parentElement?.querySelector('img');
-                                      if (img && img.requestFullscreen) {
-                                        img.requestFullscreen();
-                                      }
+                                      handleFullscreen('/images/shap_family_bar_corrected.png', 'SHAP feature importance analysis - fullscreen');
                                     }}
                                     className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import FadeIn from "./animations/FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
@@ -250,16 +250,22 @@ const Research = () => {
                                   <img
                                     src="/images/lofo_by_family_corrected.png"
                                     alt="LOFO family analysis results - enlarged"
-                                    className="max-w-full max-h-full object-contain"
-                                  />
-                                  <button
-                                    onClick={() => {
-                                      const img = document.querySelector('img[alt*="LOFO family analysis results - enlarged"]') as HTMLImageElement;
-                                      if (img) {
-                                        img.requestFullscreen?.();
+                                    className="max-w-full max-h-full object-contain cursor-pointer"
+                                    onClick={(e) => {
+                                      if (e.currentTarget.requestFullscreen) {
+                                        e.currentTarget.requestFullscreen();
                                       }
                                     }}
-                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors"
+                                  />
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      const img = e.currentTarget.parentElement?.querySelector('img');
+                                      if (img && img.requestFullscreen) {
+                                        img.requestFullscreen();
+                                      }
+                                    }}
+                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"
                                   >
                                     <Maximize2 className="w-4 h-4" />
@@ -293,16 +299,22 @@ const Research = () => {
                                   <img
                                     src="/images/shap_family_bar_corrected.png"
                                     alt="SHAP feature importance analysis - enlarged"
-                                    className="max-w-full max-h-full object-contain"
-                                  />
-                                  <button
-                                    onClick={() => {
-                                      const img = document.querySelector('img[alt*="SHAP feature importance analysis - enlarged"]') as HTMLImageElement;
-                                      if (img) {
-                                        img.requestFullscreen?.();
+                                    className="max-w-full max-h-full object-contain cursor-pointer"
+                                    onClick={(e) => {
+                                      if (e.currentTarget.requestFullscreen) {
+                                        e.currentTarget.requestFullscreen();
                                       }
                                     }}
-                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors"
+                                  />
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      const img = e.currentTarget.parentElement?.querySelector('img');
+                                      if (img && img.requestFullscreen) {
+                                        img.requestFullscreen();
+                                      }
+                                    }}
+                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"
                                   >
                                     <Maximize2 className="w-4 h-4" />

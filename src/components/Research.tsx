@@ -270,21 +270,13 @@ const Research = () => {
                                   />
                                 </div>
                               </DialogTrigger>
-                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-2 w-full">
                                 <div className="relative w-full h-full flex items-center justify-center">
                                   <img
                                     src="/images/lofo_by_family_corrected.png"
                                     alt="LOFO family analysis results - enlarged"
-                                    className="max-w-full max-h-full object-contain cursor-pointer"
-                                    
+                                    className="max-w-full max-h-full object-contain"
                                   />
-                                  <button
-                                    
-                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
-                                    title="View in fullscreen"
-                                  >
-                                    <Maximize2 className="w-4 h-4" />
-                                  </button>
                                 </div>
                               </DialogContent>
                             </Dialog>
@@ -309,21 +301,13 @@ const Research = () => {
                                   />
                                 </div>
                               </DialogTrigger>
-                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-2 w-full">
                                 <div className="relative w-full h-full flex items-center justify-center">
                                   <img
                                     src="/images/shap_family_bar_corrected.png"
                                     alt="SHAP feature importance analysis - enlarged"
-                                    className="max-w-full max-h-full object-contain cursor-pointer"
-                                    
+                                    className="max-w-full max-h-full object-contain"
                                   />
-                                  <button
-                                    
-                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
-                                    title="View in fullscreen"
-                                  >
-                                    <Maximize2 className="w-4 h-4" />
-                                  </button>
                                 </div>
                               </DialogContent>
                             </Dialog>

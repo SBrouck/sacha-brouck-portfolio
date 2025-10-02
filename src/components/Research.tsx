@@ -139,21 +139,6 @@ const Research = () => {
                           Defense Slides
                         </a>
                       </Button>
-                      <Button 
-                        size="sm"
-                        variant="outline"
-                        className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white transition-colors flex items-center gap-2"
-                        asChild
-                      >
-                        <a
-                          href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FileText className="w-4 h-4" />
-                          Full Thesis
-                        </a>
-                      </Button>
                     </div>
                     
                     {/* Show More Button - Intégré dans le bloc principal */}
@@ -175,21 +160,6 @@ const Research = () => {
                             Show More Details
                           </>
                         )}
-                      </Button>
-                      <Button 
-                        size="sm"
-                        variant="outline"
-                        className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white transition-colors flex items-center gap-2"
-                        asChild
-                      >
-                        <a
-                          href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FileText className="w-4 h-4" />
-                          Full Thesis
-                        </a>
                       </Button>
                     </div>
                   </div>

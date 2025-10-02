@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import FadeIn from "./animations/FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "./ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Download, Presentation, FileText, TrendingUp, Target, Zap, ChevronDown, ChevronUp } from "lucide-react";
 
 const Research = () => {
@@ -234,13 +235,24 @@ const Research = () => {
                         <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
                           <CardContent className="p-4">
                             <h4 className="font-semibold text-gray-900 mb-3">LOFO Family Analysis</h4>
-                            <div className="relative w-full rounded-lg">
-                              <img
-                                src="/images/lofo_by_family_corrected.png"
-                                alt="LOFO family analysis results"
-                                className="w-full h-auto object-contain"
-                              />
-                            </div>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <div className="relative w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                                  <img
+                                    src="/images/lofo_by_family_corrected.png"
+                                    alt="LOFO family analysis results"
+                                    className="w-full h-auto object-contain"
+                                  />
+                                </div>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-4xl max-h-[90vh] p-2">
+                                <img
+                                  src="/images/lofo_by_family_corrected.png"
+                                  alt="LOFO family analysis results - enlarged"
+                                  className="w-full h-auto object-contain"
+                                />
+                              </DialogContent>
+                            </Dialog>
                             <p className="text-sm text-gray-600 mt-3">
                               Family-based feature importance analysis showing signal strength variations.
                             </p>
@@ -252,13 +264,24 @@ const Research = () => {
                         <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
                           <CardContent className="p-4">
                             <h4 className="font-semibold text-gray-900 mb-3">SHAP Feature Analysis</h4>
-                            <div className="relative w-full rounded-lg">
-                              <img
-                                src="/images/shap_family_bar_corrected.png"
-                                alt="SHAP feature importance analysis"
-                                className="w-full h-auto object-contain"
-                              />
-                            </div>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <div className="relative w-full rounded-lg cursor-pointer hover:opacity-90 transition-opacity">
+                                  <img
+                                    src="/images/shap_family_bar_corrected.png"
+                                    alt="SHAP feature importance analysis"
+                                    className="w-full h-auto object-contain"
+                                  />
+                                </div>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-4xl max-h-[90vh] p-2">
+                                <img
+                                  src="/images/shap_family_bar_corrected.png"
+                                  alt="SHAP feature importance analysis - enlarged"
+                                  className="w-full h-auto object-contain"
+                                />
+                              </DialogContent>
+                            </Dialog>
                             <p className="text-sm text-gray-600 mt-3">
                               SHAP values analysis revealing key predictive features and their contributions.
                             </p>

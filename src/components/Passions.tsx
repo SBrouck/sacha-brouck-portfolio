@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 interface PassionsProps {
   className?: string;
@@ -93,24 +94,50 @@ const Passions: React.FC<PassionsProps> = ({ className }) => {
                     <CarouselContent>
                       <CarouselItem>
                         <div className="p-1">
-                          <div className="overflow-hidden rounded-lg">
-                            <img 
-                              src="/images/elongasalon.jpg"
-                              alt="Les Étoiles d'Élonga Salon"
-                              className="w-full h-64 object-cover"
-                            />
-                          </div>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <div className="overflow-hidden rounded-lg cursor-pointer">
+                                <img 
+                                  src="/images/elongasalon.jpg"
+                                  alt="Les Étoiles d'Élonga Salon"
+                                  className="w-full h-64 object-cover"
+                                />
+                              </div>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                              <div className="relative w-full h-full flex items-center justify-center">
+                                <img
+                                  src="/images/elongasalon.jpg"
+                                  alt="Les Étoiles d'Élonga Salon - enlarged"
+                                  className="max-w-full max-h-full object-contain"
+                                />
+                              </div>
+                            </DialogContent>
+                          </Dialog>
                         </div>
                       </CarouselItem>
                       <CarouselItem>
                         <div className="p-1">
-                          <div className="overflow-hidden rounded-lg">
-                            <img 
-                              src="/images/elongalogo.jpeg"
-                              alt="Les Étoiles d'Élonga Logo"
-                              className="w-full h-64 object-contain"
-                            />
-                          </div>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <div className="overflow-hidden rounded-lg cursor-pointer">
+                                <img 
+                                  src="/images/elongalogo.jpeg"
+                                  alt="Les Étoiles d'Élonga Logo"
+                                  className="w-full h-64 object-contain"
+                                />
+                              </div>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                              <div className="relative w-full h-full flex items-center justify-center">
+                                <img
+                                  src="/images/elongalogo.jpeg"
+                                  alt="Les Étoiles d'Élonga Logo - enlarged"
+                                  className="max-w-full max-h-full object-contain"
+                                />
+                              </div>
+                            </DialogContent>
+                          </Dialog>
                         </div>
                       </CarouselItem>
                     </CarouselContent>

@@ -3,6 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import FadeIn from './animations/FadeIn';
 import { Github, ExternalLink, Play, Linkedin, Brain, BarChart3, Zap, Database, Eye } from 'lucide-react';
 
@@ -113,11 +114,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {/* Project Image - Déplacée après le texte */}
           {image && (
             <div className="mb-4 relative">
-              <img
-                src={image}
-                alt={`${title} project illustration`}
-                className="w-full h-48 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
-              />
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="cursor-pointer">
+                    <img
+                      src={image}
+                      alt={`${title} project illustration`}
+                      className="w-full h-48 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={image}
+                      alt={`${title} project illustration - enlarged`}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           )}
           

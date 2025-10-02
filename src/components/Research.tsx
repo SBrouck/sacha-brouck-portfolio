@@ -276,12 +276,12 @@ const Research = () => {
                                     src="/images/lofo_by_family_corrected.png"
                                     alt="LOFO family analysis results - enlarged"
                                     className="max-w-full max-h-full object-contain cursor-pointer"
-                                    onClick={() => handleFullscreen('/images/lofo_by_family_corrected.png', 'LOFO family analysis results - fullscreen')}
+                                    onClick={() => window.open('/images/lofo_by_family_corrected.png', '_blank')}
                                   />
                                   <button
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      handleFullscreen('/images/lofo_by_family_corrected.png', 'LOFO family analysis results - fullscreen');
+                                      window.open('/images/lofo_by_family_corrected.png', '_blank');
                                     }}
                                     className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"
@@ -318,12 +318,12 @@ const Research = () => {
                                     src="/images/shap_family_bar_corrected.png"
                                     alt="SHAP feature importance analysis - enlarged"
                                     className="max-w-full max-h-full object-contain cursor-pointer"
-                                    onClick={() => handleFullscreen('/images/shap_family_bar_corrected.png', 'SHAP feature importance analysis - fullscreen')}
+                                    onClick={() => window.open('/images/shap_family_bar_corrected.png', '_blank')}
                                   />
                                   <button
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      handleFullscreen('/images/shap_family_bar_corrected.png', 'SHAP feature importance analysis - fullscreen');
+                                      window.open('/images/shap_family_bar_corrected.png', '_blank');
                                     }}
                                     className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors z-10"
                                     title="View in fullscreen"

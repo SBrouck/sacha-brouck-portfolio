@@ -4,7 +4,7 @@ import FadeIn from "./animations/FadeIn";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Download, Presentation, FileText, TrendingUp, Target, Zap, ChevronDown, ChevronUp } from "lucide-react";
+import { Download, Presentation, FileText, TrendingUp, Target, Zap, ChevronDown, ChevronUp, Maximize2 } from "lucide-react";
 
 const Research = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -245,12 +245,26 @@ const Research = () => {
                                   />
                                 </div>
                               </DialogTrigger>
-                              <DialogContent className="max-w-4xl max-h-[90vh] p-2">
-                                <img
-                                  src="/images/lofo_by_family_corrected.png"
-                                  alt="LOFO family analysis results - enlarged"
-                                  className="w-full h-auto object-contain"
-                                />
+                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                                <div className="relative w-full h-full flex items-center justify-center">
+                                  <img
+                                    src="/images/lofo_by_family_corrected.png"
+                                    alt="LOFO family analysis results - enlarged"
+                                    className="max-w-full max-h-full object-contain"
+                                  />
+                                  <button
+                                    onClick={() => {
+                                      const img = document.querySelector('img[alt*="LOFO family analysis results - enlarged"]') as HTMLImageElement;
+                                      if (img) {
+                                        img.requestFullscreen?.();
+                                      }
+                                    }}
+                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors"
+                                    title="View in fullscreen"
+                                  >
+                                    <Maximize2 className="w-4 h-4" />
+                                  </button>
+                                </div>
                               </DialogContent>
                             </Dialog>
                             <p className="text-sm text-gray-600 mt-3">
@@ -274,12 +288,26 @@ const Research = () => {
                                   />
                                 </div>
                               </DialogTrigger>
-                              <DialogContent className="max-w-4xl max-h-[90vh] p-2">
-                                <img
-                                  src="/images/shap_family_bar_corrected.png"
-                                  alt="SHAP feature importance analysis - enlarged"
-                                  className="w-full h-auto object-contain"
-                                />
+                              <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
+                                <div className="relative w-full h-full flex items-center justify-center">
+                                  <img
+                                    src="/images/shap_family_bar_corrected.png"
+                                    alt="SHAP feature importance analysis - enlarged"
+                                    className="max-w-full max-h-full object-contain"
+                                  />
+                                  <button
+                                    onClick={() => {
+                                      const img = document.querySelector('img[alt*="SHAP feature importance analysis - enlarged"]') as HTMLImageElement;
+                                      if (img) {
+                                        img.requestFullscreen?.();
+                                      }
+                                    }}
+                                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-lg transition-colors"
+                                    title="View in fullscreen"
+                                  >
+                                    <Maximize2 className="w-4 h-4" />
+                                  </button>
+                                </div>
                               </DialogContent>
                             </Dialog>
                             <p className="text-sm text-gray-600 mt-3">

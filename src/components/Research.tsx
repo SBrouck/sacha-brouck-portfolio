@@ -107,22 +107,7 @@ const Research = () => {
                         >
                           <Download className="w-4 h-4" />
                           Download Paper
-                        </a>
-                      </Button>
-                      <Button 
-                        size="sm"
-                        variant="outline"
-                        className="border-terracotta text-terracotta hover:bg-terracotta hover:text-white transition-colors flex items-center gap-2"
-                        asChild
-                      >
-                        <a
-                          href="https://drive.google.com/file/d/1Fdzexf5-ZKV7-fLiF8hAh8XPWQzZSwc8/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FileText className="w-4 h-4" />
-                          Full Thesis
-                        </a>
+                        
                       </Button>
                       <Button 
                         size="sm"
@@ -137,7 +122,7 @@ const Research = () => {
                         >
                           <Presentation className="w-4 h-4" />
                           Defense Slides
-                        </a>
+                        
                       </Button>
                       <Button 
                         size="sm"
@@ -153,6 +138,8 @@ const Research = () => {
                           <FileText className="w-4 h-4" />
                           Full Thesis
                         </a>
+                        
+                        
                       </Button>
                     </div>
                     
@@ -188,8 +175,7 @@ const Research = () => {
                           rel="noopener noreferrer"
                         >
                           <FileText className="w-4 h-4" />
-                          Full Thesis
-                        </a>
+                        
                       </Button>
                     </div>
                   </div>

@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
-  const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
+  const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python, R and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>

@@ -72,7 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span className="text-sm font-medium text-gray-600 capitalize">
               {title === "Airbnb NLP Analysis for Los Angeles" 
                 ? "NLP" 
-                : title === "Robust Risk Parity Portfolio Optimization" || title === "Chicago Construction Time Series Modeling" 
+                : title === "Neural Portfolio Policy: Deep Learning for Asset Allocation" || title === "Chicago Construction Time Series Modeling" 
                   ? "ML" 
                   : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
                     ? "Visualization" 
@@ -216,11 +216,11 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'ml' as const
     },
     {
-      title: "Robust Risk Parity Portfolio Optimization",
-      description: "Advanced portfolio optimization framework implementing robust risk parity under covariance uncertainty using Ledoit-Wolf shrinkage. Developed a simulation-based optimization pipeline combining R statistical modeling with Excel @RISK and Evolver to achieve superior risk-adjusted returns (Sharpe 2.95 vs 2.70 for traditional ERC) while maintaining stability across uncertainty scenarios.",
-      stack: "R, Excel @RISK, Evolver, Ledoit-Wolf shrinkage, Latin Hypercube sampling, portfolio optimization, quantitative finance",
-      githubUrl: "https://github.com/SBrouck/rp-with-ledoit-wolf",
-      image: "/images/fig_drawdown.png",
+      title: "Neural Portfolio Policy: Deep Learning for Asset Allocation",
+      description: "Production-grade deep learning system for portfolio optimization using Temporal Convolutional Networks (TCN). Achieved excess Sharpe of 0.519 (8.62% annual return) while reducing transaction costs by 77% vs momentum strategies. On a $100M AUM portfolio, saves $280,000/year in trading costs through intelligent turnover optimization. Implements strict no-look-ahead backtesting with transaction costs, volatility targeting, and multiple baseline comparisons. PyTorch-based system with MPS acceleration, handling 15 ETFs across 5 years of daily data with sub-second training epochs.",
+      stack: "PyTorch, Deep Learning, TCN, quantitative finance, backtesting, feature engineering, risk management, MPS acceleration, portfolio optimization",
+      githubUrl: "https://github.com/SBrouck/neural-portfolio-policy",
+      image: "/Projects images/image.png",
       category: 'ml' as const
     },
     {

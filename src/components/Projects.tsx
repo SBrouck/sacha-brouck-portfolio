@@ -217,10 +217,10 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     },
     {
       title: "Neural Portfolio Policy: Deep Learning for Asset Allocation",
-      description: "Production-grade deep learning system for portfolio optimization using Temporal Convolutional Networks (TCN). Achieved excess Sharpe of 0.519 (8.62% annual return) while reducing transaction costs by 77% vs momentum strategies. On a $100M AUM portfolio, saves $280,000/year in trading costs through intelligent turnover optimization. Implements strict no-look-ahead backtesting with transaction costs, volatility targeting, and multiple baseline comparisons. PyTorch-based system with MPS acceleration, handling 15 ETFs across 5 years of daily data with sub-second training epochs.",
-      stack: "PyTorch, Deep Learning, TCN, quantitative finance, backtesting, feature engineering, risk management, MPS acceleration, portfolio optimization",
+      description: "Production-grade deep learning system for portfolio optimization using Temporal Convolutional Networks (TCN). Achieved excess Sharpe of 0.519 (8.62% annual return) while reducing transaction costs by 77% vs momentum strategies. On a $100M AUM portfolio, saves $280,000/year in trading costs through intelligent turnover optimization.",
+      stack: "PyTorch, Deep Learning, TCN, portfolio optimization, backtesting",
       githubUrl: "https://github.com/SBrouck/neural-portfolio-policy",
-      image: "/Projects images/image.png",
+      image: "/Projects images/TCN.png",
       category: 'ml' as const
     },
     {

@@ -220,7 +220,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       description: "Production-grade deep learning system for portfolio optimization using Temporal Convolutional Networks (TCN). Achieved excess Sharpe of 0.519 (8.62% annual return) while reducing transaction costs by 77% vs momentum strategies. On a $100M AUM portfolio, saves $280,000/year in trading costs through intelligent turnover optimization.",
       stack: "PyTorch, Deep Learning, TCN, portfolio optimization, backtesting",
       githubUrl: "https://github.com/SBrouck/neural-portfolio-policy",
-      image: "/Projects images/TCN.png",
+      image: "/Projects images/neuralportfolio.png",
       category: 'ml' as const
     },
     {

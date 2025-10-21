@@ -15,9 +15,9 @@ interface KurautoJourneyProps {
 
 const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
   const achievements = [
-    "Raised $45,000 at 15% dilution (AYOMI)",
+    "Fundraising with AYOMI",
     "Partnered with Parisian luxury hotels",
-    "Scaled to $100K+ revenue in 12 months",
+    "Scaled to $100K+ revenue in first fiscal year",
     "Exited in 2024",
     "Represented the company at VivaTech & Go Entrepreneur"
   ];

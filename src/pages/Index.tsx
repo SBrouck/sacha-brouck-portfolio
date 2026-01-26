@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Automation from '@/components/Automation';
 import Research from '@/components/Research';
-import Experience from '@/components/Experience';
 import KurautoJourney from '@/components/KurautoJourney';
 import Passions from '@/components/Passions';
 import Contact from '@/components/Contact';
@@ -46,7 +45,6 @@ const Index = () => {
       <Research />
       <Projects />
       <Automation />
-      <Experience />
       <KurautoJourney />
       <Passions />
       <Contact />

@@ -19,8 +19,7 @@ const Automation: React.FC<AutomationProps> = ({ className }) => {
               AI Automation
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Founder of MOSAIC, a student-led agency specializing in enterprise AI solutions and intelligent automation. 
-              We build secure, local AI systems using OLLAMA and deploy intelligent agents via Zapier/N8N to transform business operations.
+              Designed and deployed agent-based automation systems combining local LLMs, orchestration tools, and production workflows for enterprise use cases.
             </p>
           </div>
         </FadeIn>

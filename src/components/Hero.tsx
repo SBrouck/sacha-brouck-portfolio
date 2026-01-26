@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
   const [showStory, setShowStory] = useState(false);
-  const description = "I'm a Business Analytics graduate student at UW Foster, building end-to-end analytics with Python, R and SQL: data collection and cleaning, modeling, and delivery through dashboards, reports, and automation.";
+  const description = "I design and build end-to-end data and AI systems, from large-scale data collection and signal extraction to modeling, scoring, and deployment.\n\nMy work spans causal inference research, agent-based search engines, and production analytics pipelines.";
   
   return (
     <section className={cn('relative min-h-screen flex items-center overflow-hidden py-24', className)}>
@@ -96,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               
               <div className="bg-white/90 rounded-xl p-6 md:p-8 shadow-md flex-1">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-4">
-                  Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-[#1B1F3B] font-semibold">Data Science & Causal Analytics</span>
+                  Sacha Brouck <span className="block text-2xl md:text-3xl mt-2 text-[#1B1F3B] font-semibold">Data Science, Causal ML & Intelligent Systems</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-[#3E4A59] font-normal leading-relaxed mb-0">
@@ -106,9 +106,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </div>
             
             <div className="relative bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-6 mb-8 max-w-2xl mx-auto">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
                 {description}
-              </p>
+              </div>
             </div>
             
             <div className="flex flex-wrap gap-4">

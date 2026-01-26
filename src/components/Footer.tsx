@@ -63,12 +63,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               AI Automation
             </button>
             <button
-              onClick={() => scrollToSection('experience')} 
-              className="text-sm hover:text-terracotta transition-colors text-gray-600"
-            >
-              Experience
-            </button>
-            <button
               onClick={() => scrollToSection('contact')} 
               className="text-sm hover:text-terracotta transition-colors text-gray-600"
             >

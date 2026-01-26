@@ -94,13 +94,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               </Avatar>
               
               <div className="bg-white/90 rounded-xl p-6 md:p-8 shadow-md flex-1">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold tracking-tight text-[#1B1F3B] leading-tight mb-0">
                   Sacha Brouck <span className="block text-xl md:text-2xl mt-2 text-[#1B1F3B] font-semibold">Data Science, Causal ML & Intelligent Systems</span>
                 </h1>
-                
-                <p className="text-xl md:text-2xl text-[#3E4A59] font-normal leading-relaxed mb-0">
-                  Turning data into predictions, automation and business clarity
-                </p>
               </div>
             </div>
             

@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           
           <div className="text-center w-full md:w-auto mt-6 md:mt-0">
             <p className="font-serif text-sm text-gray-500">
-              © {new Date().getFullYear()} Sacha Brouck · Made with Parisian Inspiration
+              © {new Date().getFullYear()} Sacha Brouck
             </p>
           </div>
         </div>

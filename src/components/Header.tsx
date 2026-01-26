@@ -96,9 +96,17 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </button>
       </div>
       
+      {/* Mobile menu overlay backdrop */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+      
       <div 
         className={cn(
-          "fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out transform md:hidden",
+          "fixed inset-0 bg-white/95 backdrop-blur-md z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out transform md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -113,43 +121,43 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         
         <nav className="flex flex-col space-y-6 text-lg">
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('home')}
           >
             Home
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('research')}
           >
             Research
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('projects')}
           >
             Projects
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('automation')}
           >
             AI Automation
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('kurauto')}
           >
             Kurauto
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('passions')}
           >
             Passions
           </button>
           <button 
-            className="text-left text-gray-900 hover:text-terracotta transition-colors"
+            className="text-left text-gray-900 font-medium hover:text-terracotta transition-colors py-2"
             onClick={() => scrollToSection('contact')}
           >
             Contact

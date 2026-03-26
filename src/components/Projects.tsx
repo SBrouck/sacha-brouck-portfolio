@@ -304,6 +304,7 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       stack:
         "Python, decision systems, evaluation pipelines, typed contracts, auditability",
       githubUrl: "https://github.com/SBrouck/decision-trace-engine",
+      image: "/images/InternalDecisionTool.png",
       category: "analytics" as const,
     },
     {

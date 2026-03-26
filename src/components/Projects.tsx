@@ -365,10 +365,8 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
             <p className="text-gray-600 mb-8 leading-relaxed">
               This work focuses on designing systems that make and evaluate decisions
               under real-world constraints: delayed feedback, partial observability,
-              and cost-latency trade-offs.
-            </p>
-            <p className="text-gray-600 mt-4 mb-8 leading-relaxed">
-              The emphasis is on system design rather than isolated models, with
+              and cost-latency trade-offs. The emphasis is on system design rather
+              than isolated models, with
               reproducible environments, explicit evaluation, and feedback-driven
               improvement loops.
             </p>

@@ -287,6 +287,36 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     }
   ];
 
+  const decisionSystemsProjects = [
+    {
+      title: "Delayed Feedback Decision Engine",
+      description:
+        "Learning under delayed, noisy, and censored outcomes. Cohort-level simulator with contextual bandits and explicit reward decomposition.",
+      stack:
+        "Python, simulation systems, contextual bandits, delayed feedback modeling, reward decomposition",
+      githubUrl: "https://github.com/SBrouck/delayed-reward-optimization",
+      category: "ml" as const,
+    },
+    {
+      title: "Decision Trace Engine",
+      description:
+        "Structured decision representation and evaluation layer. Makes model reasoning auditable and separates decision quality from surface outputs.",
+      stack:
+        "Python, decision systems, evaluation pipelines, typed contracts, auditability",
+      githubUrl: "https://github.com/SBrouck/decision-trace-engine",
+      category: "analytics" as const,
+    },
+    {
+      title: "Inference-Aware Routing",
+      description:
+        "Routing layer that selects models under cost, latency, and reliability constraints. Connects inference choices to downstream decision performance.",
+      stack:
+        "Python, model routing, benchmark design, latency-cost trade-offs, orchestration evaluation",
+      githubUrl: "https://github.com/SBrouck/inference-aware-routing",
+      category: "automation" as const,
+    },
+  ];
+
   return (
     <section id="projects" className={cn('py-20 md:py-32 bg-white', className)}>
       <div className="container mx-auto px-6 md:px-12">
@@ -354,6 +384,34 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 key={project.title}
                 {...project}
                 delay={200 + index * 50}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Decision Systems under Uncertainty */}
+        <div className="mb-16 last:mb-4">
+          <FadeIn delay={150}>
+            <h3 className="text-2xl font-playfair mb-4 border-b border-gray-100 pb-3">
+              Decision Systems under Uncertainty
+            </h3>
+          </FadeIn>
+
+          <FadeIn delay={180}>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              This line of work is designed as a coherent system for decision-making
+              under uncertainty: how decisions are evaluated and audited, how they
+              are learned under delayed feedback, and how they are executed under
+              inference constraints. The framing is systemic rather than model-centric.
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {decisionSystemsProjects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                {...project}
+                delay={220 + index * 50}
               />
             ))}
           </div>

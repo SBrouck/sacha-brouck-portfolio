@@ -305,9 +305,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Delayed Feedback Decision Engine",
       description:
-        "Learning under delayed, noisy, and censored outcomes. Cohort-level simulator with contextual bandits and explicit reward decomposition.",
+        "Learning decision policies under delayed, noisy, and censored outcomes. Cohort-level simulator with delayed event queues, contextual bandits, and explicit reward decomposition.",
       stack:
-        "Python, simulation systems, contextual bandits, delayed feedback modeling, reward decomposition",
+        "Python, NumPy, SciPy, linear Thompson sampling, event-driven simulation, delayed outcome modeling",
       githubUrl: "https://github.com/SBrouck/delayed-reward-optimization",
       articleUrl:
         "https://drive.google.com/file/d/15CIyN64NJBjq9Ie_2DOY8looxF7ppsTL/view?usp=sharing",
@@ -317,9 +317,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Decision Trace Engine",
       description:
-        "Structured decision representation and evaluation layer. Makes model reasoning auditable and separates decision quality from surface outputs.",
+        "Structured decision representation and evaluation layer with typed state, option scoring, and audit traces. Separates decision quality from surface outputs.",
       stack:
-        "Python, decision systems, evaluation pipelines, typed contracts, auditability",
+        "Python, Pydantic, JSON schemas, scoring pipelines, evaluation harness, trace logging",
       githubUrl: "https://github.com/SBrouck/decision-trace-engine",
       image: "/images/InternalDecisionTool.png",
       category: "analytics" as const,
@@ -327,9 +327,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
     {
       title: "Inference-Aware Routing",
       description:
-        "Routing layer that selects models under cost, latency, and reliability constraints. Connects inference choices to downstream decision performance.",
+        "Model routing under cost, latency, and reliability constraints, with evaluation of architecture-level trade-offs and downstream decision impact.",
       stack:
-        "Python, model routing, benchmark design, latency-cost trade-offs, orchestration evaluation",
+        "Python, API orchestration, latency benchmarking, cost modeling, routing heuristics, evaluation pipelines",
       githubUrl: "https://github.com/SBrouck/inference-aware-routing",
       demoUrl:
         "https://sbrouck-inference-aware-routing-demo-streamlitapp-jl0q9t.streamlit.app",
@@ -357,16 +357,20 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         <div className="mb-16">
           <FadeIn delay={150}>
             <h3 className="text-2xl font-playfair mb-4 border-b border-gray-100 pb-3">
-              Decision Systems under Uncertainty
+              Intelligent Decision Systems
             </h3>
           </FadeIn>
 
           <FadeIn delay={180}>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              This line of work is designed as a coherent system for decision-making
-              under uncertainty: how decisions are evaluated and audited, how they
-              are learned under delayed feedback, and how they are executed under
-              inference constraints. The framing is systemic rather than model-centric.
+              This work focuses on designing systems that make and evaluate decisions
+              under real-world constraints: delayed feedback, partial observability,
+              and cost-latency trade-offs.
+            </p>
+            <p className="text-gray-600 mt-4 mb-8 leading-relaxed">
+              The emphasis is on system design rather than isolated models, with
+              reproducible environments, explicit evaluation, and feedback-driven
+              improvement loops.
             </p>
           </FadeIn>
 

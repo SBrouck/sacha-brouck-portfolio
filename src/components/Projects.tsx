@@ -313,6 +313,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       stack:
         "Python, model routing, benchmark design, latency-cost trade-offs, orchestration evaluation",
       githubUrl: "https://github.com/SBrouck/inference-aware-routing",
+      demoUrl:
+        "https://sbrouck-inference-aware-routing-demo-streamlitapp-jl0q9t.streamlit.app",
+      image: "/images/Inference_economics.png",
       category: "automation" as const,
     },
   ];

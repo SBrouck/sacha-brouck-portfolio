@@ -353,6 +353,34 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </FadeIn>
         </div>
         
+        {/* Decision Systems under Uncertainty */}
+        <div className="mb-16">
+          <FadeIn delay={150}>
+            <h3 className="text-2xl font-playfair mb-4 border-b border-gray-100 pb-3">
+              Decision Systems under Uncertainty
+            </h3>
+          </FadeIn>
+
+          <FadeIn delay={180}>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              This line of work is designed as a coherent system for decision-making
+              under uncertainty: how decisions are evaluated and audited, how they
+              are learned under delayed feedback, and how they are executed under
+              inference constraints. The framing is systemic rather than model-centric.
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {decisionSystemsProjects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                {...project}
+                delay={220 + index * 50}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Machine Learning & Predictive Modeling */}
         <div className="mb-16">
           <FadeIn delay={150}>
@@ -405,34 +433,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
                 key={project.title}
                 {...project}
                 delay={200 + index * 50}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Decision Systems under Uncertainty */}
-        <div className="mb-16 last:mb-4">
-          <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-4 border-b border-gray-100 pb-3">
-              Decision Systems under Uncertainty
-            </h3>
-          </FadeIn>
-
-          <FadeIn delay={180}>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              This line of work is designed as a coherent system for decision-making
-              under uncertainty: how decisions are evaluated and audited, how they
-              are learned under delayed feedback, and how they are executed under
-              inference constraints. The framing is systemic rather than model-centric.
-            </p>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {decisionSystemsProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-                delay={220 + index * 50}
               />
             ))}
           </div>

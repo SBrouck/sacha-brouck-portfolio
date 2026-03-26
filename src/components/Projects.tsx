@@ -315,16 +315,6 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: "ml" as const,
     },
     {
-      title: "Decision Trace Engine",
-      description:
-        "Structured decision representation and evaluation layer with typed state, option scoring, and audit traces. Separates decision quality from surface outputs.",
-      stack:
-        "Python, Pydantic, JSON schemas, scoring pipelines, evaluation harness, trace logging",
-      githubUrl: "https://github.com/SBrouck/decision-trace-engine",
-      image: "/images/InternalDecisionTool.png",
-      category: "analytics" as const,
-    },
-    {
       title: "Inference-Aware Routing",
       description:
         "Model routing under cost, latency, and reliability constraints, with evaluation of architecture-level trade-offs and downstream decision impact.",
@@ -335,6 +325,16 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
         "https://sbrouck-inference-aware-routing-demo-streamlitapp-jl0q9t.streamlit.app",
       image: "/images/Inference_economics.png",
       category: "automation" as const,
+    },
+    {
+      title: "Decision Trace Engine",
+      description:
+        "Structured decision representation and evaluation layer with typed state, option scoring, and audit traces. Separates decision quality from surface outputs.",
+      stack:
+        "Python, Pydantic, JSON schemas, scoring pipelines, evaluation harness, trace logging",
+      githubUrl: "https://github.com/SBrouck/decision-trace-engine",
+      image: "/images/InternalDecisionTool.png",
+      category: "analytics" as const,
     },
   ];
 

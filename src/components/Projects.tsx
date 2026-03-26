@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     switch (cat) {
       case 'ml': return 'text-navy';
       case 'analytics': return 'text-terracotta';
-      case 'automation': return 'text-green-600';
+      case 'automation': return 'text-navy';
       default: return 'text-navy';
     }
   };
@@ -85,18 +85,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           </div>
           
-          <h3 className="text-xl font-medium mb-3 font-playfair group-hover:text-navy transition-colors">{title}</h3>
-          <p className="text-gray-600 mb-6 text-sm leading-relaxed">{description}</p>
+          <h3 className="text-xl font-medium mb-2 font-playfair group-hover:text-navy transition-colors">{title}</h3>
+          <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
           
           {/* Stack Technologies */}
-          <div className="mb-6">
+          <div className="mb-4">
             <p className="text-xs font-medium text-gray-500 mb-2">TECHNOLOGIES</p>
             <p className="text-sm text-terracotta font-medium">{stack}</p>
           </div>
           
           {/* Project Video - Déplacée après le texte, avant les liens */}
           {videoUrl && (
-            <div className="mb-4 relative">
+            <div className="mb-3 relative">
               <div className="h-48 w-full rounded-lg overflow-hidden shadow-sm">
                 <iframe
                   src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
@@ -107,13 +107,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   allowFullScreen
                 />
               </div>
-              <p className="text-xs text-gray-500 text-center mb-4">🎥 Streamlit Dashboard Demo - Click play to watch</p>
+              <p className="text-xs text-gray-500 text-center mb-2">🎥 Streamlit Dashboard Demo - Click play to try</p>
             </div>
           )}
           
           {/* Project Image - Déplacée après le texte */}
           {image && (
-            <div className="mb-4 relative">
+            <div className="mb-3 relative">
               <Dialog>
                 <DialogTrigger asChild>
                   <div className="cursor-pointer">
@@ -138,7 +138,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
           
           {/* Action Links */}
-          <div className="flex flex-col gap-2 mt-auto">
+          <div className="flex flex-col gap-2">
             {githubUrl && (
               <a 
                 href={githubUrl} 

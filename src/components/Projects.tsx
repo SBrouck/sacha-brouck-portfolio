@@ -183,7 +183,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="inline-flex items-center text-sm text-terracotta hover:text-navy hover:underline transition-all gap-2 group/link"
               >
                 <Play size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>Watch Demo</span>
+                <span>Try Demo</span>
               </a>
             )}
             

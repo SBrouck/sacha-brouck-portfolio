@@ -18,6 +18,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   externalUrl?: string;
   demoUrl?: string;
+  articleUrl?: string;
   linkedinUrl?: string;
   isWip?: boolean;
   isInternal?: boolean;
@@ -34,6 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl, 
   externalUrl, 
   demoUrl,
+  articleUrl,
   linkedinUrl,
   isWip = false,
   isInternal = false,
@@ -186,6 +188,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span>Try Demo</span>
               </a>
             )}
+
+            {articleUrl && (
+              <a
+                href={articleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
+              >
+                <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
+                <span>Read Abstract</span>
+              </a>
+            )}
             
             {isWip && (
               <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
@@ -295,6 +309,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       stack:
         "Python, simulation systems, contextual bandits, delayed feedback modeling, reward decomposition",
       githubUrl: "https://github.com/SBrouck/delayed-reward-optimization",
+      articleUrl:
+        "https://drive.google.com/file/d/15CIyN64NJBjq9Ie_2DOY8looxF7ppsTL/view?usp=sharing",
+      image: "/images/SimulatorUnvertainty.png",
       category: "ml" as const,
     },
     {

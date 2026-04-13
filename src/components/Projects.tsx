@@ -290,20 +290,20 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   const dataAnalyticsProjects = [
     {
-      title: "Airport Baggage Distribution Statistical Analysis",
-      description: "Statistical analysis and probability modeling for airport operations optimization. Developed comprehensive statistical models to help airports implement optimal baggage distribution strategies, analyzing passenger flow patterns, baggage handling efficiency, and resource allocation to minimize delays and maximize operational performance.",
-      stack: "Python, Jupyter Notebook, statistical analysis, probability modeling, data science, operations research, airport analytics",
-      githubUrl: "https://github.com/SBrouck/statistical-analysis-airport",
-      image: "/Projects images/statairport.png",
-      category: 'analytics' as const
-    },
-    {
       title: "H&M Recommender System",
       description: "Developed a personalized recommendation model for the H&M Kaggle competition (UW Customer Analytics), combining collaborative filtering signals with temporal purchase dynamics. Achieved MAP@12 of 0.031 versus ~0.002 baseline, reflecting a >15x lift in ranking performance.",
       stack: "Python, recommender systems, collaborative filtering, temporal modeling, ranking metrics (MAP@12), feature engineering",
       articleUrl: "https://drive.google.com/file/d/1bX-fZE5Zhb_badbBVCF4XnYRVTWDqqNW/view?usp=sharing",
       kaggleUrl: "https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/leaderboard",
       image: "/images/CA_H&Mreco.png",
+      category: 'analytics' as const
+    },
+    {
+      title: "Airport Baggage Distribution Statistical Analysis",
+      description: "Statistical analysis and probability modeling for airport operations optimization. Developed comprehensive statistical models to help airports implement optimal baggage distribution strategies, analyzing passenger flow patterns, baggage handling efficiency, and resource allocation to minimize delays and maximize operational performance.",
+      stack: "Python, Jupyter Notebook, statistical analysis, probability modeling, data science, operations research, airport analytics",
+      githubUrl: "https://github.com/SBrouck/statistical-analysis-airport",
+      image: "/Projects images/statairport.png",
       category: 'analytics' as const
     },
     {

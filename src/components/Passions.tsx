@@ -24,8 +24,7 @@ const Passions: React.FC<PassionsProps> = ({ className }) => {
               <Card className="border-0 shadow-lg h-full">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-3xl">⚽</span>
-                    <h3 className="text-2xl font-playfair font-semibold">Football (or soccer 😉)</h3>
+                    <h3 className="text-2xl font-playfair font-semibold">Football (or soccer)</h3>
                   </div>
                   
                   <p className="text-gray-700 mb-6 leading-relaxed">
@@ -82,7 +81,6 @@ const Passions: React.FC<PassionsProps> = ({ className }) => {
               <Card className="border-0 shadow-lg h-full">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-3xl">🌍</span>
                     <h3 className="text-2xl font-playfair font-semibold">Les Étoiles d'Élonga</h3>
                   </div>
                   

@@ -199,7 +199,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
               >
                 <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>Read Abstract</span>
+                <span>{title === "H&M Recommender System" ? "Read Abstract & Code" : "Read Abstract"}</span>
               </a>
             )}
 

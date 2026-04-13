@@ -26,6 +26,7 @@ interface ProjectCardProps {
   image?: string;
   category: 'ml' | 'analytics' | 'automation';
   videoUrl?: string; // Added for Streamlit app
+  kaggleUrl?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
@@ -42,7 +43,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   delay = 0,
   image,
   category,
-  videoUrl // Added for Streamlit app
+  videoUrl, // Added for Streamlit app
+  kaggleUrl
 }) => {
   const getCategoryIcon = (cat: string) => {
     switch (cat) {
@@ -200,6 +202,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span>Read Abstract</span>
               </a>
             )}
+
+            {kaggleUrl && (
+              <a
+                href={kaggleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
+              >
+                <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
+                <span>Kaggle Competition</span>
+              </a>
+            )}
             
             {isWip && (
               <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
@@ -284,11 +298,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "Smoking Effects on Medical Charges Analysis",
-      description: "Exploratory analysis of health insurance costs comparing smokers vs non-smokers using Python. Built comprehensive visualizations including histograms, boxplots, and line charts to identify smoking as the main driver of higher and volatile medical expenses across age groups and regions.",
-      stack: "Python, pandas, matplotlib, seaborn, data visualization, statistical analysis, healthcare analytics",
-      githubUrl: "https://github.com/SBrouck/smoking-effects-on-medical-charges",
-      image: "/Projects images/smokingeffect.png",
+      title: "H&M Recommender System",
+      description: "Developed a personalized recommendation model for the H&M Kaggle competition (UW Customer Analytics), combining collaborative filtering signals with temporal purchase dynamics. Achieved MAP@12 of 0.031 versus ~0.002 baseline, reflecting a >15x lift in ranking performance.",
+      stack: "Python, recommender systems, collaborative filtering, temporal modeling, ranking metrics (MAP@12), feature engineering",
+      articleUrl: "https://drive.google.com/file/d/1bX-fZE5Zhb_badbBVCF4XnYRVTWDqqNW/view?usp=sharing",
+      kaggleUrl: "https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/leaderboard",
+      image: "/images/CA_H&Mreco.png",
       category: 'analytics' as const
     },
     {
@@ -402,30 +417,13 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
           </div>
         </div>
 
-        {/* Data Visualization & SQL */}
-        <div className="mb-16">
-          <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Data Visualization & SQL
-            </h3>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {analyticsProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.title}
-                {...project}
-                delay={200 + index * 50}
-              />
-            ))}
-          </div>
-        </div>
+        {/* Data Visualization & SQL section intentionally hidden from portfolio */}
 
         {/* Data Analytics */}
         <div className="mb-16 last:mb-4">
           <FadeIn delay={150}>
             <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Data Analytics
+              Applied Data Science
             </h3>
           </FadeIn>
           

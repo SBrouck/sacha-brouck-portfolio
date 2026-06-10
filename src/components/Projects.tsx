@@ -307,11 +307,12 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "E-Commerce Consumer Analytics & Behavioral Segmentation",
-      description: "Consumer analytics project for an e-commerce boutique to optimize marketing strategy and website design. Built comprehensive user behavior analysis pipeline using simulated e-commerce data, implementing K-Means clustering for customer segmentation, engagement pattern analysis, and purchase funnel optimization to drive personalized marketing campaigns and improve conversion rates.",
-      stack: "Python, pandas, seaborn, matplotlib, scikit-learn, K-Means clustering, data visualization, consumer analytics, e-commerce optimization",
-      githubUrl: "https://github.com/SBrouck/product-analytics-simulator",
-      image: "/Projects images/consumerecom.png",
+      title: "Campus Coffee MAB Pricing Analytics",
+      description: "Built a synthetic pricing experimentation framework for a campus coffee shop, modeling off-peak promotions as multi-armed bandit arms with contribution profit as the learning reward. Generated contextual transaction data across customer segments and compared static assignment against adaptive bandit policies to identify promotion strategies that maximize profitability under queue, channel, and demand constraints.",
+      stack: "Python, multi-armed bandits, synthetic data generation, pricing analytics, simulation, contextual bandits, regret analysis",
+      githubUrl: "https://github.com/SBrouck/Pricing_Analytics_Final",
+      articleUrl: "https://drive.google.com/file/d/1S36v0VVVw_u0JMICeLSFb1I6V8MDiJ_x/view?usp=sharing",
+      image: "/images/MABprojectpricing.png",
       category: 'analytics' as const
     }
   ];

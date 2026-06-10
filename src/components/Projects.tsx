@@ -307,9 +307,9 @@ const Projects: React.FC<ProjectsProps> = ({ className }) => {
       category: 'analytics' as const
     },
     {
-      title: "Campus Coffee MAB Pricing Analytics",
-      description: "Built a synthetic pricing experimentation framework for a campus coffee shop, modeling off-peak promotions as multi-armed bandit arms with contribution profit as the learning reward. Generated contextual transaction data across customer segments and compared static assignment against adaptive bandit policies to identify promotion strategies that maximize profitability under queue, channel, and demand constraints.",
-      stack: "Python, multi-armed bandits, synthetic data generation, pricing analytics, simulation, contextual bandits, regret analysis",
+      title: "Campus Coffee Pricing Strategy & MAB Optimization",
+      description: "End-to-end pricing analytics for a campus coffee shop across five promotion arms, combining randomized demand estimation, segment-level logistic models with discount interactions, and multi-armed bandit simulation optimized on contribution profit. Showed that conversion-maximizing discounts (15% off) underperform on profit; targeted policies by customer segment (loyalty, returning, new) lift expected profit per offer by 11.6% versus a uniform 10% discount. Adaptive bandit policies (explore-then-commit, ε-greedy, UCB1) materially outperform random assignment, reducing cumulative regret from ~$1,750 to under $300 over 10,000 rounds.",
+      stack: "Python, logistic regression, causal demand estimation, segmented pricing, multi-armed bandits (ETC, ε-greedy, UCB1), contribution-profit optimization, regret analysis",
       githubUrl: "https://github.com/SBrouck/Pricing_Analytics_Final",
       articleUrl: "https://drive.google.com/file/d/1S36v0VVVw_u0JMICeLSFb1I6V8MDiJ_x/view?usp=sharing",
       image: "/images/MABprojectpricing.png",

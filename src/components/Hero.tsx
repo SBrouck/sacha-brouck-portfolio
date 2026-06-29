@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <FadeIn delay={200}>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-6">
               <Avatar className="w-[180px] h-[180px] border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
-                <AvatarImage src={avatarImage} alt="Sacha Brouck" className="object-cover object-[42%_45%]" />
+                <AvatarImage src={avatarImage} alt="Sacha Brouck" className="object-cover object-[30%_45%]" />
                 <AvatarFallback>SB</AvatarFallback>
               </Avatar>
               

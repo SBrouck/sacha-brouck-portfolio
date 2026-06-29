@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Github, Linkedin, Info, BookOpen } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 import heroBg from '/images/517709ldsdl-964x777.jpg';
-import avatarImage from '@/assets/images/10b7fba5-ef78-49a2-a1f3-cdcd1c33ebe7.png';
+const avatarImage = '/images/150EF959-F347-4CAA-AD96-D8DC264368F5.png';
 
 interface HeroProps {
   className?: string;

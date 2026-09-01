@@ -72,13 +72,389 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-[#fafaf8] text-neutral-900 antialiased;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    font-size: 18px;
+    line-height: 1.65;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair tracking-tight;
+    @apply font-serif tracking-tight text-neutral-900;
   }
+}
+
+/* ——— Portfolio as LaTeX manuscript ——— */
+
+.portfolio-document {
+  @apply relative flex min-h-screen flex-col bg-[#fafaf8] text-neutral-900;
+}
+
+.portfolio-main {
+  @apply relative z-10 flex-1 pt-20;
+}
+
+.article-column {
+  @apply mx-auto w-full max-w-[44rem] px-6 md:px-0;
+}
+
+.article-header {
+  @apply bg-[#fafaf8]/80 backdrop-blur-sm;
+}
+
+.article-header-scrolled {
+  @apply bg-[#fafaf8]/95;
+}
+
+.article-header-inner {
+  @apply mx-auto flex max-w-[44rem] items-center justify-between px-6 py-4 md:px-0;
+}
+
+.article-header-brand {
+  @apply flex items-center gap-3 text-left;
+}
+
+.article-nav-link {
+  @apply rounded px-2 py-1 font-mono text-[12px] tracking-[0.02em] text-neutral-600 transition hover:bg-neutral-100 hover:text-neutral-900;
+}
+
+.article-nav-link-active {
+  @apply bg-neutral-100 text-neutral-900;
+}
+
+.article-front-matter {
+  @apply py-10 md:py-14;
+}
+
+.article-meta {
+  @apply mb-6 font-serif text-sm italic text-neutral-500;
+}
+
+.article-title {
+  @apply font-serif text-4xl font-semibold leading-tight md:text-5xl;
+}
+
+.article-subtitle {
+  @apply mt-3 text-xl text-neutral-700;
+}
+
+.article-affiliation {
+  @apply mt-3 text-base leading-relaxed text-neutral-600;
+}
+
+.latex-formula-block {
+  @apply mt-4 border-l-2 border-neutral-300 pl-4;
+}
+
+.latex-formula {
+  @apply font-serif text-[1.05rem] leading-relaxed text-neutral-800 md:text-[1.12rem];
+  font-variant-numeric: oldstyle-nums;
+}
+
+.latex-formula .math-var {
+  @apply italic;
+}
+
+.latex-formula .math-op {
+  @apply not-italic text-neutral-600;
+}
+
+.latex-formula-gloss {
+  @apply mt-2 font-serif text-sm italic leading-relaxed text-neutral-500;
+}
+
+.math-inline {
+  @apply font-serif italic;
+}
+
+.abstract-block {
+  @apply mt-10 border border-neutral-300 bg-white/80 p-6;
+}
+
+.article-label {
+  @apply mb-3 block font-serif text-sm italic text-neutral-500;
+}
+
+.abstract-label {
+  @apply article-label;
+}
+
+.abstract-text {
+  @apply text-[1.05rem] leading-relaxed text-neutral-800;
+}
+
+.keywords-block {
+  @apply mt-8;
+}
+
+.keywords-label {
+  @apply article-label;
+}
+
+.keywords-list {
+  @apply flex flex-wrap gap-2;
+}
+
+.keyword-chip {
+  @apply border border-neutral-300 bg-white px-2.5 py-1 font-mono text-[11px] text-neutral-700;
+}
+
+.article-actions {
+  @apply mt-10 flex flex-wrap gap-2;
+}
+
+.article-button {
+  @apply border border-neutral-800 bg-neutral-900 px-4 py-2.5 font-mono text-[12px] tracking-[0.02em] text-white transition hover:bg-neutral-800;
+}
+
+.article-button-muted {
+  @apply border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-50;
+}
+
+.article-section {
+  @apply py-14 md:py-16;
+}
+
+.article-section-header {
+  @apply mb-8 flex items-baseline gap-4 border-b border-neutral-200 pb-4;
+}
+
+.article-section-number {
+  @apply font-mono text-sm text-neutral-500;
+}
+
+.article-section-title {
+  @apply font-serif text-3xl font-semibold md:text-4xl;
+}
+
+.article-lead {
+  @apply mb-8 text-[1.05rem] leading-relaxed text-neutral-700;
+}
+
+.about-intro {
+  @apply mb-10 text-[1.05rem] leading-relaxed text-neutral-700;
+}
+
+.about-entries {
+  @apply space-y-10;
+}
+
+.about-entry-title {
+  @apply font-serif text-xl font-semibold text-neutral-900;
+}
+
+.about-entry-body {
+  @apply mt-3 text-[1.05rem] leading-relaxed text-neutral-700;
+}
+
+.about-text-link {
+  @apply text-neutral-800 underline decoration-neutral-300 underline-offset-[3px] transition hover:text-neutral-950 hover:decoration-neutral-500;
+}
+
+.research-panel-subtitle {
+  @apply mb-4 font-serif text-xl font-semibold text-neutral-900;
+}
+
+.work-highlights {
+  @apply mt-6 space-y-3 border border-neutral-200 bg-white/60 p-5;
+}
+
+.work-highlight {
+  @apply grid gap-1 sm:grid-cols-[7rem_1fr];
+}
+
+.work-highlight dt {
+  @apply font-serif text-sm italic text-neutral-500;
+}
+
+.work-highlight dd {
+  @apply text-sm leading-relaxed text-neutral-700;
+}
+
+.contact-form {
+  @apply mb-12 space-y-6 border border-neutral-300 bg-white/80 p-6;
+}
+
+.contact-form-grid {
+  @apply grid gap-6 md:grid-cols-2;
+}
+
+.contact-field-label {
+  @apply article-label mb-2;
+}
+
+.contact-input {
+  @apply w-full border border-neutral-300 bg-white px-3 py-2.5 font-serif text-base text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-800;
+}
+
+.contact-textarea {
+  @apply min-h-[150px] resize-y leading-relaxed;
+}
+
+.contact-channels {
+  @apply border-t border-neutral-200 pt-8;
+}
+
+.contact-channel-list {
+  @apply mt-4 space-y-2;
+}
+
+.contact-channel-link {
+  @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 py-1.5 font-serif text-neutral-800 transition hover:text-neutral-950;
+}
+
+.contact-channel-label {
+  @apply text-sm font-medium;
+}
+
+.contact-channel-value {
+  @apply font-mono text-[11px] text-neutral-500 underline-offset-2 hover:underline;
+}
+
+.article-muted {
+  @apply border border-dashed border-neutral-300 bg-white/70 px-4 py-6 font-serif text-sm italic text-neutral-500;
+}
+
+.line-index {
+  @apply space-y-3;
+}
+
+.line-index-item {
+  @apply list-none;
+}
+
+.line-index-button {
+  @apply flex w-full gap-4 border border-neutral-200 bg-white/85 px-4 py-4 text-left transition hover:border-neutral-400 hover:bg-white;
+}
+
+.line-index-number {
+  @apply shrink-0 font-mono text-xs text-neutral-500;
+}
+
+.line-index-content {
+  @apply flex flex-col gap-1;
+}
+
+.line-index-title {
+  @apply font-serif text-lg font-semibold text-neutral-900;
+}
+
+.line-index-description {
+  @apply text-sm leading-relaxed text-neutral-600;
+}
+
+.dossier-nav {
+  @apply grid gap-2;
+}
+
+.work-select-hint {
+  @apply mb-8 mt-2 font-serif text-xs italic text-neutral-400;
+}
+
+.dossier-nav-item {
+  @apply flex items-center gap-3 border border-neutral-200 bg-white px-4 py-3 text-left transition hover:border-neutral-400;
+}
+
+.dossier-nav-item-active {
+  @apply border-neutral-800 bg-neutral-900 text-white;
+}
+
+.dossier-nav-item-active .font-mono,
+.dossier-nav-item-active .dossier-nav-title,
+.dossier-nav-item-active .dossier-badge {
+  @apply text-neutral-200;
+}
+
+.dossier-nav-title {
+  @apply font-serif text-base font-medium text-neutral-900;
+}
+
+.dossier-badge {
+  @apply ml-auto border-l border-neutral-300 pl-3 font-serif text-[12px] italic leading-snug text-neutral-500 md:text-[13px];
+}
+
+.dossier-nav-item-active .dossier-badge {
+  @apply border-neutral-600 text-neutral-300;
+}
+
+.dossier-panel {
+  @apply border border-neutral-300 bg-white p-6;
+}
+
+.dossier-panel-header {
+  @apply mb-8 border-b border-neutral-200 pb-6;
+}
+
+.dossier-panel-title {
+  @apply font-serif text-2xl font-semibold;
+}
+
+.dossier-panel-description {
+  @apply mt-3 text-base leading-relaxed text-neutral-700;
+}
+
+.artifact-list {
+  @apply space-y-10;
+}
+
+.artifact-entry {
+  @apply border-t border-neutral-200 pt-8 first:border-t-0 first:pt-0;
+}
+
+.artifact-title {
+  @apply font-serif text-xl font-semibold text-neutral-900;
+}
+
+.artifact-body {
+  @apply mt-3 text-base leading-relaxed text-neutral-700;
+}
+
+.artifact-detail {
+  @apply mt-4 font-mono text-[12px] leading-relaxed text-neutral-600;
+}
+
+.artifact-wip-note {
+  @apply mt-3 text-sm italic text-neutral-500;
+}
+
+.project-status-badge {
+  @apply border border-neutral-300 bg-neutral-50 px-2 py-0.5 font-serif text-xs italic text-neutral-600;
+}
+
+.artifact-links {
+  @apply mt-4 flex flex-wrap gap-4;
+}
+
+.artifact-link {
+  @apply inline-flex items-center gap-1.5 font-mono text-[12px] tracking-[0.02em] text-neutral-600 underline-offset-2 transition hover:text-neutral-900 hover:underline;
+}
+
+.artifact-figure {
+  @apply mt-5 border border-neutral-200 bg-[#fafaf8] p-3;
+}
+
+.artifact-image {
+  @apply max-h-56 w-full object-contain;
+}
+
+.portfolio-legacy-section {
+  @apply border-t border-neutral-200 bg-white/75;
+}
+
+.portfolio-legacy-section h2 {
+  @apply font-serif text-3xl font-semibold text-neutral-900;
+}
+
+.article-footer {
+  @apply mt-auto border-t border-neutral-200 bg-[#f4f2ef] py-12;
+}
+
+.article-footer-caption {
+  @apply font-serif text-sm italic text-neutral-500;
+}
+
+.article-footer-link {
+  @apply font-mono text-[12px] tracking-[0.02em] text-neutral-600 transition hover:text-neutral-900;
 }
 
 @layer utilities {
@@ -93,7 +469,18 @@
 
 @layer components {
   .glass-panel {
-    @apply backdrop-blur-md bg-white/40 border border-white/20 shadow-sm;
+    @apply backdrop-blur-md bg-white/70 border border-white/40 shadow-sm;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(27, 31, 59, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 31, 59, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .latex-note {
+    @apply font-mono italic;
   }
 
   .text-wrap-balance {

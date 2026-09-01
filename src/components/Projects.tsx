@@ -1,442 +1,149 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import FadeIn from './animations/FadeIn';
-import { Github, ExternalLink, Play, Linkedin, Brain, BarChart3, Zap, Database, Eye } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { projectDossiers, type Project } from '@/data/projectDossiers';
+import { ExternalLink, Github, Play } from 'lucide-react';
 
 interface ProjectsProps {
   className?: string;
 }
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  stack: string;
-  githubUrl?: string;
-  externalUrl?: string;
-  demoUrl?: string;
-  articleUrl?: string;
-  linkedinUrl?: string;
-  isWip?: boolean;
-  isInternal?: boolean;
-  delay?: number;
-  image?: string;
-  category: 'ml' | 'analytics' | 'automation';
-  videoUrl?: string; // Added for Streamlit app
-  kaggleUrl?: string;
-}
+const ProjectLinks: React.FC<{ project: Project }> = ({ project }) => (
+  <div className="flex flex-wrap gap-x-5 gap-y-2">
+    {project.githubUrl && (
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-sm text-zinc-300 transition hover:text-white"
+      >
+        <Github size={14} />
+        GitHub
+      </a>
+    )}
+    {project.articleUrl && (
+      <a
+        href={project.articleUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-sm text-zinc-300 transition hover:text-white"
+      >
+        <ExternalLink size={14} />
+        {project.title === 'H&M Recommender System' ? 'Abstract & Code' : 'Abstract'}
+      </a>
+    )}
+    {project.demoUrl && (
+      <a
+        href={project.demoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-sm text-zinc-300 transition hover:text-white"
+      >
+        <Play size={14} />
+        Demo
+      </a>
+    )}
+    {project.kaggleUrl && (
+      <a
+        href={project.kaggleUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-sm text-zinc-300 transition hover:text-white"
+      >
+        <ExternalLink size={14} />
+        Kaggle
+      </a>
+    )}
+  </div>
+);
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ 
-  title, 
-  description, 
-  stack, 
-  githubUrl, 
-  externalUrl, 
-  demoUrl,
-  articleUrl,
-  linkedinUrl,
-  isWip = false,
-  isInternal = false,
-  delay = 0,
-  image,
-  category,
-  videoUrl, // Added for Streamlit app
-  kaggleUrl
-}) => {
-  const getCategoryIcon = (cat: string) => {
-    switch (cat) {
-      case 'ml': return <Brain className="w-5 h-5" />;
-      case 'analytics': return <BarChart3 className="w-5 h-5" />;
-      case 'automation': return <Zap className="w-5 h-5" />;
-      default: return <Brain className="w-5 h-5" />;
-    }
-  };
+const ProjectEntry: React.FC<{ project: Project; delay: number }> = ({ project, delay }) => (
+  <FadeIn delay={delay}>
+    <article className="grid gap-6 border border-zinc-800 bg-zinc-900/40 p-6 md:grid-cols-[minmax(0,1fr)_220px] md:items-start">
+      <div>
+        <h4 className="font-playfair text-xl text-white">{project.title}</h4>
+        <p className="mt-3 text-sm leading-relaxed text-zinc-400">{project.description}</p>
+        <p className="mt-4 font-mono text-[12px] tracking-[0.02em] text-zinc-500">
+          {project.implementation}
+        </p>
+        <div className="mt-5">
+          <ProjectLinks project={project} />
+        </div>
+      </div>
 
-  const getCategoryColor = (cat: string) => {
-    switch (cat) {
-      case 'ml': return 'text-navy';
-      case 'analytics': return 'text-terracotta';
-      case 'automation': return 'text-navy';
-      default: return 'text-navy';
-    }
-  };
-
-  return (
-    <FadeIn delay={delay}>
-      <Card className="border-0 shadow-sm h-full hover:shadow-md transition-shadow group">
-        <CardContent className="p-6">
-          {/* Category Badge */}
-          <div className="flex items-center gap-2 mb-3">
-            <div className={`p-2 bg-gray-100 rounded-lg ${getCategoryColor(category)}`}>
-              {title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" ? <Eye className="w-5 h-5" /> : title === "Airbnb Seattle SQL Market Analysis" ? <Database className="w-5 h-5" /> : <BarChart3 className="w-5 h-5" />}
-            </div>
-            <span className="text-sm font-medium text-gray-600 capitalize">
-              {title === "Airbnb NLP Analysis for Los Angeles" 
-                ? "NLP" 
-                : title === "Neural Portfolio Policy: Deep Learning for Asset Allocation" || title === "Chicago Construction Time Series Modeling" 
-                  ? "ML" 
-                  : title === "Real Estate Investment Dashboard" || title === "U.S. Data Center Market Dashboard" 
-                    ? "Visualization" 
-                    : title === "Airbnb Seattle SQL Market Analysis" 
-                      ? "SQL" 
-                      : title === "Smoking Effects on Medical Charges Analysis" || title === "Airport Baggage Distribution Statistical Analysis" || title === "E-Commerce Consumer Analytics & Behavioral Segmentation" 
-                        ? "Analytics" 
-                        : category
-              }
-            </span>
-          </div>
-          
-          <h3 className="text-xl font-medium mb-2 font-playfair group-hover:text-navy transition-colors">{title}</h3>
-          <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
-          
-          {/* Stack Technologies */}
-          <div className="mb-4">
-            <p className="text-xs font-medium text-gray-500 mb-2">TECHNOLOGIES</p>
-            <p className="text-sm text-terracotta font-medium">{stack}</p>
-          </div>
-          
-          {/* Project Video - Déplacée après le texte, avant les liens */}
-          {videoUrl && (
-            <div className="mb-3 relative">
-              <div className="h-48 w-full rounded-lg overflow-hidden shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-"
-                  title="Streamlit Real Estate Dashboard Demo"
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-              <p className="text-xs text-gray-500 text-center mb-2">🎥 Streamlit Dashboard Demo - Click play to try</p>
-            </div>
-          )}
-          
-          {/* Project Image - Déplacée après le texte */}
-          {image && (
-            <div className="mb-3 relative">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <div className="cursor-pointer">
-                    <img
-                      src={image}
-                      alt={`${title} project illustration`}
-                      className="w-full h-48 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </DialogTrigger>
-                <DialogContent className="max-w-[95vw] max-h-[95vh] p-1 w-full">
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <img
-                      src={image}
-                      alt={`${title} project illustration - enlarged`}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </div>
-          )}
-          
-          {/* Action Links */}
-          <div className="flex flex-col gap-2">
-            {githubUrl && (
-              <a 
-                href={githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <Github size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>View on GitHub</span>
-              </a>
-            )}
-            
-            {externalUrl && (
-              <a 
-                href={externalUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>View on Tableau</span>
-              </a>
-            )}
-            
-            {linkedinUrl && (
-              <a 
-                href={linkedinUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <Linkedin size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>View on LinkedIn</span>
-              </a>
-            )}
-            
-            {demoUrl && (
-              <a 
-                href={demoUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-terracotta hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <Play size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>Try Demo</span>
-              </a>
-            )}
-
-            {articleUrl && (
-              <a
-                href={articleUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>{title === "H&M Recommender System" ? "Read Abstract & Code" : "Read Abstract"}</span>
-              </a>
-            )}
-
-            {kaggleUrl && (
-              <a
-                href={kaggleUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-[#1B1F3B] hover:text-navy hover:underline transition-all gap-2 group/link"
-              >
-                <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform" />
-                <span>Kaggle Competition</span>
-              </a>
-            )}
-            
-            {isWip && (
-              <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-                <span>→ In progress</span>
-              </span>
-            )}
-            
-            {isInternal && (
-              <span className="inline-flex items-center text-sm text-gray-500 gap-1.5">
-                <span>→ Internal project</span>
-              </span>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-    </FadeIn>
-  );
-};
+      {project.image && (
+        <Dialog>
+          <DialogTrigger asChild>
+            <button
+              type="button"
+              className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/60"
+            >
+              <img
+                src={project.image}
+                alt={`${project.title} illustration`}
+                className="h-40 w-full object-contain p-2 transition hover:scale-[1.02]"
+              />
+            </button>
+          </DialogTrigger>
+          <DialogContent className="max-h-[95vh] max-w-[95vw] border-zinc-800 bg-zinc-950 p-2">
+            <img
+              src={project.image}
+              alt={`${project.title} illustration enlarged`}
+              className="max-h-[90vh] w-full object-contain"
+            />
+          </DialogContent>
+        </Dialog>
+      )}
+    </article>
+  </FadeIn>
+);
 
 const Projects: React.FC<ProjectsProps> = ({ className }) => {
-  const mlProjects = [
-    {
-      title: "Chicago Construction Time Series Modeling",
-      description: "Strategic analysis of Chicago's construction permit trends to assess office market dynamics and new development opportunities. As a real estate investment analyst evaluating office market entry strategies, I developed forecasting models to identify optimal timing based on construction permit signals.",
-      stack: "Python, pandas, scikit-learn, XGBoost, Prophet, time-series modeling, feature engineering",
-      githubUrl: "https://github.com/SBrouck/chicago-construction-ts-modeling",
-      image: "/Projects images/ChicagoML.png", // Chicago Construction ML project
-      category: 'ml' as const
-    },
-    {
-      title: "Neural Portfolio Policy: Deep Learning for Asset Allocation",
-      description: "End-to-end deep learning system for portfolio optimization using Temporal Convolutional Networks (TCN). Achieved excess Sharpe of 0.519 (8.62% annual return) while reducing transaction costs by 77% vs momentum strategies. On a $100M AUM portfolio, saves $280,000/year in trading costs through intelligent turnover optimization.",
-      stack: "PyTorch, Deep Learning, TCN, portfolio optimization, backtesting",
-      githubUrl: "https://github.com/SBrouck/neural-portfolio-policy",
-      image: "/Projects images/neuralportfolio.png",
-      category: 'ml' as const
-    },
-    {
-      title: "Airbnb NLP Analysis for Los Angeles",
-      description: "Strategic NLP analysis of 1.5M+ Airbnb reviews to identify investment opportunities in Los Angeles. Extracts customer service patterns, competitive advantages, and market insights for real estate investors.",
-      stack: "Python, spaCy, NLTK, Scikit-learn, Pandas, NLP, Business Intelligence",
-      githubUrl: "https://github.com/SBrouck/airbnb-nlp-analysis",
-      image: "/Projects images/nlpairbnb.png",
-      category: 'ml' as const
-    }
-  ];
-
-  const analyticsProjects = [
-    {
-      title: "Real Estate Investment Dashboard",
-      description: "Custom Streamlit application developed for a real estate investment strategy, adapted to specific data inputs and requirements. Enables comprehensive KPI analysis and geographic asset visualization from simple Excel files, providing strategic insights for portfolio management and investment decisions.",
-      stack: "Streamlit, pandas, NumPy, dashboard design, stakeholder reporting, investment analytics",
-      githubUrl: "https://github.com/SBrouck/real-estate-dashboard",
-      videoUrl: "https://youtu.be/eujHW_2d-Zg?si=7ybDoeyq5j1-qiU-", // YouTube video for Streamlit app
-      category: 'analytics' as const
-    },
-    {
-      title: "U.S. Data Center Market Dashboard",
-      description: "Comprehensive market study of the U.S. data center industry through automated Python web scraping and data extraction. Built an automated pipeline that scrapes CBRE reports, FCC data, and EIA information to create a structured Excel dataset, then visualized market trends, hyperscaler presence, and capacity distribution using Tableau interactive dashboards.",
-      stack: "Python, web scraping, pandas, data extraction, Excel automation, Tableau, market analysis",
-      githubUrl: "https://github.com/SBrouck/usa-data-center-dashboard",
-      image: "/Projects images/USADCtableau.png", // USA Data Center Tableau project
-      category: 'analytics' as const
-    },
-    {
-      title: "Airbnb Seattle SQL Market Analysis",
-      description: "Strategic market analysis of Seattle's Airbnb ecosystem using SQL, completing my West Coast portfolio alongside LA. Built comprehensive SQL queries to analyze pricing dynamics, occupancy patterns, and neighborhood performance, providing actionable insights for real estate investment decisions in the Pacific Northwest market.",
-      stack: "SQL, MySQL, BigQuery, Python, pandas, data modeling, market analysis, real estate analytics",
-      githubUrl: "https://github.com/SBrouck/airbnb-seattle-sql-analytics",
-      image: "/Projects images/SALairbnb.png", // Seattle Airbnb SQL project
-      category: 'analytics' as const
-    }
-  ];
-
-  const dataAnalyticsProjects = [
-    {
-      title: "H&M Recommender System",
-      description: "Developed a personalized recommendation model for the H&M Kaggle competition (UW Customer Analytics), combining collaborative filtering signals with temporal purchase dynamics. Achieved MAP@12 of 0.031 versus ~0.002 baseline, reflecting a >15x lift in ranking performance.",
-      stack: "Python, recommender systems, collaborative filtering, temporal modeling, ranking metrics (MAP@12), feature engineering",
-      articleUrl: "https://drive.google.com/file/d/1bX-fZE5Zhb_badbBVCF4XnYRVTWDqqNW/view?usp=sharing",
-      kaggleUrl: "https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/leaderboard",
-      image: "/images/CA_H&Mreco.png",
-      category: 'analytics' as const
-    },
-    {
-      title: "Airport Baggage Distribution Statistical Analysis",
-      description: "Statistical analysis and probability modeling for airport operations optimization. Developed comprehensive statistical models to help airports implement optimal baggage distribution strategies, analyzing passenger flow patterns, baggage handling efficiency, and resource allocation to minimize delays and maximize operational performance.",
-      stack: "Python, Jupyter Notebook, statistical analysis, probability modeling, data science, operations research, airport analytics",
-      githubUrl: "https://github.com/SBrouck/statistical-analysis-airport",
-      image: "/Projects images/statairport.png",
-      category: 'analytics' as const
-    },
-    {
-      title: "Campus Coffee Pricing Strategy & MAB Optimization",
-      description: "Built an end-to-end pricing analytics pipeline across five promotion arms, combining logistic demand estimation, segment-level targeted pricing, and multi-armed bandit simulation on contribution profit. Targeted policies lift profit per offer by 11.6% over uniform pricing; explore-then-commit bandits cut cumulative regret from ~$1,750 to under $300.",
-      stack: "Python, logistic regression, segmented pricing, multi-armed bandits, contribution-profit optimization, regret analysis",
-      githubUrl: "https://github.com/SBrouck/Pricing_Analytics_Final",
-      articleUrl: "https://drive.google.com/file/d/1S36v0VVVw_u0JMICeLSFb1I6V8MDiJ_x/view?usp=sharing",
-      image: "/images/MABprojectpricing.png",
-      category: 'analytics' as const
-    }
-  ];
-
-  const decisionSystemsProjects = [
-    {
-      title: "Delayed Feedback Decision Engine",
-      description:
-        "Learning decision policies under delayed, noisy, and censored outcomes. Cohort-level simulator with delayed event queues, contextual bandits, and explicit reward decomposition.",
-      stack:
-        "Python, NumPy, SciPy, linear Thompson sampling, event-driven simulation, delayed outcome modeling",
-      githubUrl: "https://github.com/SBrouck/delayed-reward-optimization",
-      articleUrl:
-        "https://drive.google.com/file/d/15CIyN64NJBjq9Ie_2DOY8looxF7ppsTL/view?usp=sharing",
-      image: "/images/SimulatorUnvertainty.png",
-      category: "ml" as const,
-    },
-    {
-      title: "Inference-Aware Routing",
-      description:
-        "Model routing under cost, latency, and reliability constraints, with evaluation of architecture-level trade-offs and downstream decision impact.",
-      stack:
-        "Python, API orchestration, latency benchmarking, cost modeling, routing heuristics, evaluation pipelines",
-      githubUrl: "https://github.com/SBrouck/inference-aware-routing",
-      demoUrl:
-        "https://sbrouck-inference-aware-routing-demo-streamlitapp-jl0q9t.streamlit.app",
-      image: "/images/Inference_economics.png",
-      category: "automation" as const,
-    },
-    {
-      title: "Decision Trace Engine",
-      description:
-        "Structured decision representation and evaluation layer with typed state, option scoring, and audit traces. Separates decision quality from surface outputs.",
-      stack:
-        "Python, Pydantic, JSON schemas, scoring pipelines, evaluation harness, trace logging",
-      githubUrl: "https://github.com/SBrouck/decision-trace-engine",
-      image: "/images/InternalDecisionTool.png",
-      category: "analytics" as const,
-    },
-  ];
-
   return (
-    <section id="projects" className={cn('py-20 md:py-32 bg-white', className)}>
+    <section id="projects" className={cn('bg-zinc-950 py-24 md:py-32 text-zinc-100', className)}>
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mx-auto mb-16">
+        <div className="max-w-3xl">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-playfair mb-8 text-center">Projects</h2>
-          </FadeIn>
-          
-          <FadeIn delay={100}>
-            <p className="text-xl text-center mb-12 text-gray-600">
-              Selected projects in machine learning, analytics, and automation, built to deliver real-world impact.
+            <p className="font-serif text-sm italic text-zinc-500">
+              Expertise
+            </p>
+            <h2 className="mt-4 font-playfair text-4xl text-white md:text-5xl">Project Dossiers</h2>
+            <p className="mt-5 text-lg leading-relaxed text-zinc-400">
+              Organized by system layer: inference, decision logic, mathematical modeling, and
+              applied deployment. Each dossier maps to shipped work below.
             </p>
           </FadeIn>
         </div>
-        
-        {/* Decision Systems under Uncertainty */}
-        <div className="mb-16">
-          <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-4 border-b border-gray-100 pb-3">
-              Intelligent Decision Systems
-            </h3>
-          </FadeIn>
 
-          <FadeIn delay={180}>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              This work focuses on designing systems that make and evaluate decisions
-              under real-world constraints: delayed feedback, partial observability,
-              and cost-latency trade-offs. The emphasis is on system design rather
-              than isolated models, with
-              reproducible environments, explicit evaluation, and feedback-driven
-              improvement loops.
-            </p>
-          </FadeIn>
+        <div className="mt-20 space-y-20">
+          {projectDossiers.map((dossier, dossierIndex) => (
+            <div key={dossier.id} className="border-t border-zinc-800 pt-16 first:border-t-0 first:pt-0">
+              <FadeIn delay={dossierIndex * 40}>
+                <div className="mb-10 max-w-3xl">
+                  <div className="mb-3 flex flex-wrap items-center gap-3">
+                    <h3 className="font-playfair text-2xl text-white md:text-3xl">{dossier.title}</h3>
+                    {dossier.badge && (
+                      <span className="rounded-full border border-zinc-700 px-3 py-1 font-serif text-xs italic text-zinc-400">
+                        {dossier.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-base leading-relaxed text-zinc-400">{dossier.description}</p>
+                </div>
+              </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {decisionSystemsProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-                delay={220 + index * 50}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Machine Learning & Predictive Modeling */}
-        <div className="mb-16">
-          <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Machine Learning & Predictive Modeling
-            </h3>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {mlProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.title}
-                {...project}
-                delay={200 + index * 50}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Data Visualization & SQL section intentionally hidden from portfolio */}
-
-        {/* Data Analytics */}
-        <div className="mb-16 last:mb-4">
-          <FadeIn delay={150}>
-            <h3 className="text-2xl font-playfair mb-8 border-b border-gray-100 pb-3">
-              Applied Data Science
-            </h3>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {dataAnalyticsProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.title}
-                {...project}
-                delay={200 + index * 50}
-              />
-            ))}
-          </div>
+              <div className="space-y-4">
+                {dossier.projects.map((project, projectIndex) => (
+                  <ProjectEntry
+                    key={project.title}
+                    project={project}
+                    delay={120 + dossierIndex * 40 + projectIndex * 50}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

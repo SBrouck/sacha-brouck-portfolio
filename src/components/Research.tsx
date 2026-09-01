@@ -35,11 +35,11 @@ const Research = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <section id="research" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="research" className="portfolio-legacy-section py-16 md:py-24">
+      <div className="article-column">
         <div className="max-w-3xl mx-auto mb-12">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-center">Research</h2>
+            <h2 className="article-section-title mb-6 text-left">2 · Research</h2>
           </FadeIn>
           
           <FadeIn delay={100}>

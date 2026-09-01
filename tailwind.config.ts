@@ -19,8 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				playfair: ['Playfair Display', 'Georgia', 'serif'],
+				sans: ['EB Garamond', 'Georgia', 'serif'],
+				serif: ['EB Garamond', 'Georgia', 'serif'],
+				playfair: ['EB Garamond', 'Georgia', 'serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -59,6 +61,8 @@ export default {
 				terracotta: '#2D5A6B',
 				burgundy: '#7A4E2B',
 				navy: '#264653',
+				ink: '#1B1F3B',
+				paper: '#F7F5F1',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

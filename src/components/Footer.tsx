@@ -1,74 +1,21 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
-import FadeIn from './animations/FadeIn';
+import { Link } from 'react-router-dom';
+import { navItems } from '@/config/navigation';
 
-interface FooterProps {
-  className?: string;
-}
-
-const Footer: React.FC<FooterProps> = ({ className }) => {
-  const scrollToSection = (id: string) => {
-    if (id === 'home') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
-
+const Footer: React.FC = () => {
   return (
-    <footer className={cn('py-12 md:py-16 bg-white border-t border-gray-100', className)}>
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <button
-              onClick={() => scrollToSection('home')} 
-              className="text-xl font-playfair font-medium tracking-tight text-gray-900"
-            >
-              Sacha Brouck
-            </button>
-          </div>
-          
-          <div className="flex space-x-6 mb-4 md:mb-0">
-            <button
-              onClick={() => scrollToSection('home')} 
-              className="text-sm hover:text-terracotta transition-colors text-gray-600"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('research')} 
-              className="text-sm hover:text-terracotta transition-colors text-gray-600"
-            >
-              Research
-            </button>
-            <button
-              onClick={() => scrollToSection('projects')} 
-              className="text-sm hover:text-terracotta transition-colors text-gray-600"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')} 
-              className="text-sm hover:text-terracotta transition-colors text-gray-600"
-            >
-              Contact
-            </button>
-          </div>
-          
-          <div className="text-center w-full md:w-auto mt-6 md:mt-0">
-            <p className="font-serif text-sm text-gray-500">
-              © {new Date().getFullYear()} Sacha Brouck
-            </p>
-          </div>
+    <footer className="article-footer">
+      <div className="article-column">
+        <p className="article-footer-caption">End of document</p>
+        <p className="mt-2 text-sm text-neutral-600">
+          © {new Date().getFullYear()} Sacha Brouck · AI Engineer
+        </p>
+        <div className="mt-4 flex flex-wrap gap-4">
+          {navItems.map((item) => (
+            <Link key={item.path} to={item.path} className="article-footer-link">
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

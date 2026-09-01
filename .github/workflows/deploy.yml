@@ -29,7 +29,7 @@ jobs:
           ls -la dist
           ls -la dist/images
         env:
-          VITE_BASE_URL: '/Sacha-Brouck-testportfolio/'
+          VITE_BASE_URL: '/sacha-brouck-portfolio/'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

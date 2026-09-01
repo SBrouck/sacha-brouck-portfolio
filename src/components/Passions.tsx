@@ -11,11 +11,11 @@ interface PassionsProps {
 
 const Passions: React.FC<PassionsProps> = ({ className }) => {
   return (
-    <section id="passions" className={cn('py-20 md:py-32 bg-gray-50', className)}>
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="passions" className={cn('portfolio-legacy-section py-20 md:py-28', className)}>
+      <div className="article-column">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-playfair mb-8 text-center">Passions & Engagement</h2>
+            <h2 className="article-section-title mb-8 text-left">5 · Engagement</h2>
           </FadeIn>
           
           <div className="grid md:grid-cols-2 gap-12">

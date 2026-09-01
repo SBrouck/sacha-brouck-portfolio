@@ -1,53 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Projects from '@/components/Projects';
+import SectionIndex from '@/components/SectionIndex';
+import WorkSection from '@/components/WorkSection';
 import Research from '@/components/Research';
 import KurautoJourney from '@/components/KurautoJourney';
 import Passions from '@/components/Passions';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ArtBand from '@/components/layout/ArtBand';
 
 const Index = () => {
-  useEffect(() => {
-    // Smooth scroll behavior for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80, // Account for header height
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {
-          // Cleanup
-        });
-      });
-    };
-  }, []);
-  
   return (
-    <main className="relative">
+    <div className="portfolio-document">
+      <ArtBand variant="margin" position="right" />
       <Header />
-      <Hero />
-      <Research />
-      <Projects />
-      <KurautoJourney />
-      <Passions />
-      <Contact />
+      <main className="portfolio-main">
+        <Hero />
+        <SectionIndex />
+        <ArtBand variant="slim" />
+        <Research />
+        <ArtBand variant="slim" />
+        <WorkSection />
+        <ArtBand variant="slim" />
+        <KurautoJourney />
+        <Passions />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

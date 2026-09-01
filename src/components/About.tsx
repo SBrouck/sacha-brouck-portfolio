@@ -1,55 +1,65 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
-import FadeIn from './animations/FadeIn';
-import aboutImage from '@/assets/images/47f9a1d0-4458-400a-8fc0-79adf093cf18.png';
+import ArticleSection from '@/components/layout/ArticleSection';
 
-interface AboutProps {
-  className?: string;
-}
+const KURAUTO_TRAILER = 'https://www.youtube.com/watch?v=8eFU9nIxVkU';
+const ELONGA_TEAM_PHOTO = '/images/elongasalon.jpg';
 
-const About: React.FC<AboutProps> = ({ className }) => {
+const About: React.FC = () => {
   return (
-    <section className={cn('py-24 bg-white', className)}>
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-terracotta/10 rounded-lg transform rotate-3"></div>
-                <img 
-                  src={aboutImage}
-                  alt="About Sacha Brouck"
-                  className="relative rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-              
-              <div>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[#1B1F3B] mb-6">
-                  About Me
-                </h2>
-                
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    I'm a data analyst and MSBA candidate at the University of Washington – Foster School of Business. 
-                    My passion lies in transforming complex data into actionable insights that drive business decisions.
-                  </p>
-                  
-                  <p>
-                    With a strong foundation in Python, SQL, and BI tools, I specialize in designing and deploying 
-                    end-to-end data systems that forecast trends, automate processes, and provide strategic clarity.
-                  </p>
-                  
-                  <p>
-                    My approach combines technical expertise with business acumen, ensuring that data solutions 
-                    not only work technically but also deliver real business value at scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
+    <ArticleSection number="3" title="About Me">
+      <p className="article-lead">
+        My work has always extended beyond software. Before focusing on AI and systems engineering,
+        I built companies, teams, and operational projects from the ground up. Those experiences
+        shaped how I approach engineering today: start from the problem, understand the constraints,
+        build quickly, measure what works, and iterate.
+      </p>
+
+      <p className="about-intro">
+        I remain involved in entrepreneurial and nonprofit initiatives alongside my technical work,
+        particularly where technology, operations, and economic opportunity intersect.
+      </p>
+
+      <div className="about-entries">
+        <article className="about-entry">
+          <h3 className="about-entry-title">Kurauto</h3>
+          <p className="about-entry-body">
+            I founded{' '}
+            <a
+              href={KURAUTO_TRAILER}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-text-link"
+            >
+              Kurauto
+            </a>{' '}
+            while still a student, building a waterless mobile car-care company from an initial
+            product into a full operating business. I worked across product design, technology,
+            fundraising, partnerships, hiring, and day-to-day operations, scaling the company to a
+            six-person team and €100K+ in annual revenue while saving more than 50,000 liters of
+            water. I exited the company in 2024.
+          </p>
+        </article>
+
+        <article className="about-entry">
+          <h3 className="about-entry-title">Les Étoiles d&apos;Élonga</h3>
+          <p className="about-entry-body">
+            I co-founded{' '}
+            <a
+              href={ELONGA_TEAM_PHOTO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about-text-link"
+            >
+              Les Étoiles d&apos;Élonga
+            </a>{' '}
+            to support young Congolese entrepreneurs in turning early-stage ideas into structured,
+            internationally oriented projects. We built a network of 50+ mentors and operators across
+            multiple countries, combining mentorship, practical resources, and access to professional
+            networks to help founders move from ideas toward execution.
+          </p>
+        </article>
       </div>
-    </section>
+    </ArticleSection>
   );
 };
 

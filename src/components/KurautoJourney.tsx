@@ -25,11 +25,11 @@ const KurautoJourney: React.FC<KurautoJourneyProps> = ({ className }) => {
   const videoSrc = "/images/Kurauto.MP4";
 
   return (
-    <section id="kurauto" className={cn('py-20 md:py-32 bg-white', className)}>
-      <div className="container mx-auto px-6 md:px-12">
+    <section id="kurauto" className={cn('portfolio-legacy-section py-20 md:py-28', className)}>
+      <div className="article-column">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-center">The Kurauto Journey</h2>
+            <h2 className="article-section-title mb-6 text-left">4 · Founder Experience</h2>
           </FadeIn>
           
           <FadeIn delay={100}>

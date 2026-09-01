@@ -129,9 +129,9 @@ export const projectDossiers: ProjectDossier[] = [
       'From-scratch serving for open-weight models: CUDA kernels, memory orchestration, scheduling, and parallelism, not a thin wrapper around existing runtimes.',
     projects: [
       {
-        title: 'HARNESS',
+        title: 'From-Scratch Inference Runtime',
         description:
-          'Inference engine for open-weight models: CUDA kernels, KV-cache scheduling, memory orchestration, and tensor/pipeline parallelism, designed from LLM internals outward.',
+          'Open inference stack for open-weight models: CUDA kernels, KV-cache scheduling, memory orchestration, and tensor/pipeline parallelism, designed from LLM internals outward.',
         implementation: 'C++ · CUDA · CMake',
         isWip: true,
         category: 'automation',

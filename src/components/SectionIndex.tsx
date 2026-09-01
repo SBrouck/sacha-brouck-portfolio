@@ -15,7 +15,7 @@ const researchLines = [
     id: 'inference-systems',
     number: '3.1',
     title: 'Inference Engine Engineering',
-    badge: 'HARNESS',
+    badge: 'Current focus',
     description:
       'From-scratch serving for open-weight models: CUDA kernels, memory orchestration, parallelism, and scheduler design.',
     href: '/work?dossier=inference-systems',

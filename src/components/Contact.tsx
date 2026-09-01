@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ArticleSection from '@/components/layout/ArticleSection';
-import { Github, Linkedin, Mail, PhoneCall, BookOpen, type LucideIcon } from 'lucide-react';
+import { Github, Linkedin, Mail, BookOpen, type LucideIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface ContactChannel {
@@ -13,20 +13,8 @@ interface ContactChannel {
 
 const contactChannels: ContactChannel[] = [
   {
-    icon: PhoneCall,
-    label: 'Phone',
-    href: 'tel:+12066832509',
-    value: '+1 (206) 683 2509',
-  },
-  {
     icon: Mail,
-    label: 'Email (UW)',
-    href: 'mailto:sbrouck@uw.edu',
-    value: 'sbrouck@uw.edu',
-  },
-  {
-    icon: Mail,
-    label: 'Email (Personal)',
+    label: 'Email',
     href: 'mailto:sachabrou@gmail.com',
     value: 'sachabrou@gmail.com',
   },

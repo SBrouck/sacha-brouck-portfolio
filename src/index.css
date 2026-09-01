@@ -300,7 +300,11 @@
 }
 
 .contact-channel-link {
-  @apply flex flex-wrap items-baseline gap-x-3 gap-y-1 py-1.5 font-serif text-neutral-800 transition hover:text-neutral-950;
+  @apply grid grid-cols-[1.125rem_5.5rem_1fr] items-center gap-x-3 py-1.5 font-serif text-neutral-800 transition hover:text-neutral-950 sm:grid-cols-[1.125rem_6.5rem_1fr];
+}
+
+.contact-channel-link svg {
+  @apply block;
 }
 
 .contact-channel-label {

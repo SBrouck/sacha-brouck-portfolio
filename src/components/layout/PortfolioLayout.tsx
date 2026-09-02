@@ -12,7 +12,7 @@ const PortfolioLayout: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="portfolio-document">
+    <div className="portfolio-document notranslate" translate="no">
       <ArtBand variant="margin" position="left" />
       <ArtBand variant="margin" position="right" />
       <Header />

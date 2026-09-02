@@ -41,7 +41,9 @@ const About: React.FC = () => {
         </article>
 
         <article className="about-entry">
-          <h3 className="about-entry-title">Les Étoiles d&apos;Élonga</h3>
+          <h3 className="about-entry-title">
+            <span translate="no">Les Étoiles d&apos;Élonga</span>
+          </h3>
           <p className="about-entry-body">
             I co-founded{' '}
             <a
@@ -49,6 +51,7 @@ const About: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="about-text-link"
+              translate="no"
             >
               Les Étoiles d&apos;Élonga
             </a>{' '}

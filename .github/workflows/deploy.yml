@@ -31,6 +31,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CONTRIBUTIONS_TOKEN || secrets.GITHUB_TOKEN }}
 
+      # sbrouck.org is built by Cloudflare Pages from main, so the refreshed snapshot must be
+      # committed there. Pushes made with GITHUB_TOKEN do not re-trigger this workflow.
+      - name: Commit refreshed contributions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/contributions.json
+          if git diff --cached --quiet; then
+            echo "Contributions unchanged."
+          else
+            git commit -m "Refresh GitHub contributions snapshot"
+            git push origin HEAD:main
+          fi
+
       - name: Build
         run: |
           npm run build

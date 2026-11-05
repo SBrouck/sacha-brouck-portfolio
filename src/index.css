@@ -332,12 +332,20 @@ html[class*='translated'] font {
 }
 
 /* Home: open source contributions and contribution graph */
+.article-front-matter:has(+ .home-block) {
+  @apply pb-6 md:pb-8;
+}
+
 .home-block {
-  @apply pb-8;
+  @apply pb-6;
 }
 
 .home-block + .home-block {
-  @apply pt-4;
+  @apply pt-2;
+}
+
+.home-block .article-actions {
+  @apply mt-2;
 }
 
 .oss-list {

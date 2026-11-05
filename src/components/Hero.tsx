@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import FadeIn from './animations/FadeIn';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
@@ -93,30 +92,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 </span>
               ))}
             </div>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={280}>
-          <div className="article-actions">
-            <Link to="/work" className="article-button">
-              §2 Work
-            </Link>
-            <a
-              href="https://github.com/SBrouck"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="article-button article-button-muted"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sacha-brouck/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="article-button article-button-muted"
-            >
-              LinkedIn
-            </a>
           </div>
         </FadeIn>
       </div>

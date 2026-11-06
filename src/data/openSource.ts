@@ -15,6 +15,16 @@ export interface OpenSourceContribution {
 // Newest first. Add an entry here when a new contribution lands; logos live in public/images/oss/.
 export const openSourceContributions: OpenSourceContribution[] = [
   {
+    project: 'TransformerLens',
+    repo: 'TransformerLensOrg/TransformerLens',
+    logo: '/images/oss/transformerlens.png',
+    kind: 'PR',
+    number: 1987,
+    status: 'Merged',
+    title: 'Make residual-decomposition APIs work on SSM / hybrid bridges',
+    url: 'https://github.com/TransformerLensOrg/TransformerLens/pull/1987',
+  },
+  {
     project: 'Hugging Face Datasets',
     repo: 'huggingface/datasets',
     logo: '/images/oss/huggingface.png',
